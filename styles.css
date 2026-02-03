@@ -2,441 +2,646 @@
    RESET & VARIABLES
 ========================= */
 * {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
+   margin: 0;
+   padding: 0;
+   box-sizing: border-box;
 }
 
 :root {
-  --bg-dark: radial-gradient(circle at top, #0f1b38, #070d1f);
-  --text: #e5e7eb;
-  --muted: #9ca3af;
-  --primary: #38bdf8;
+   --bg-dark: radial-gradient(circle at top, #0f1b38, #070d1f);
+   --text: #e5e7eb;
+   --muted: #9ca3af;
+   --primary: #38bdf8;
 
-  --card: rgba(255, 255, 255, 0.06);
-  --border: rgba(255, 255, 255, 0.08);
-
-  --soft-text: #cbd5f5;
+   --card: rgba(255, 255, 255, 0.06);
+   --border: rgba(255, 255, 255, 0.08);
+   --soft-text: #cbd5f5;
 }
 
 body {
-  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
-  background: var(--bg-dark);
-  color: var(--text);
-  line-height: 1.6;
+   font-family:
+      system-ui,
+      -apple-system,
+      BlinkMacSystemFont,
+      "Segoe UI",
+      sans-serif;
+   background: var(--bg-dark);
+   color: var(--text);
+   line-height: 1.6;
 }
 
 /* =========================
    LAYOUT
 ========================= */
 .container {
-  max-width: 1100px;
-  margin: 0 auto;
-  padding: 1.5rem;
+   max-width: 1100px;
+   margin: 0 auto;
+   padding: 1.5rem;
 }
 
 /* =========================
    HEADER & NAV
 ========================= */
 .top-header {
-  text-align: center;
-  padding: 1.25rem 1rem 0.75rem;
+   text-align: center;
+   padding: 1.25rem 1rem 0.75rem;
 }
 
 .top-header h1 {
-  font-size: 1.5rem;
-  font-weight: 700;
-  margin-bottom: 0.75rem;
+   font-size: 1.5rem;
+   font-weight: 700;
+   margin-bottom: 0.75rem;
 }
 
 .top-nav {
-  display: flex;
-  justify-content: center;
-  gap: 1.5rem;
-  flex-wrap: wrap;
-  border-bottom: 1px solid var(--border);
-  padding-bottom: 0.75rem;
+   display: flex;
+   justify-content: center;
+   gap: 1.5rem;
+   flex-wrap: wrap;
+   border-bottom: 1px solid var(--border);
+   padding-bottom: 0.75rem;
 }
 
 .top-nav a {
-  text-decoration: none;
-  font-weight: 500;
-  color: var(--muted);
-  padding: 0.15rem 0.25rem;
+   text-decoration: none;
+   font-weight: 500;
+   color: var(--muted);
 }
 
 .top-nav a.active {
-  color: var(--primary);
-  border-bottom: 2px solid var(--primary);
+   color: var(--primary);
+   border-bottom: 2px solid var(--primary);
 }
 
 /* =========================
    BUTTONS
 ========================= */
 .btn {
-  display: block;
-  width: 100%;
-  max-width: 420px;
-  margin: 0 auto;
-  padding: 1.35rem;
-  border-radius: 16px;
-  font-weight: 700;
-  font-size: 1.1rem;
-  text-decoration: none;
-  text-align: center;
+   display: block;
+   width: 100%;
+   max-width: 420px;
+   margin: 0 auto;
+   padding: 1.35rem;
+   border-radius: 16px;
+   font-weight: 700;
+   font-size: 1.1rem;
+   text-decoration: none;
+   text-align: center;
+   cursor: pointer;
 }
 
 .btn.primary {
-  background: var(--primary);
-  color: #021018;
+   background: var(--primary);
+   color: #021018;
+   border: none;
 }
 
 .btn.secondary {
-  background: rgba(255, 255, 255, 0.18);
-  color: #ffffff;
-  border: 1px solid rgba(255, 255, 255, 0.35);
+   background: rgba(255, 255, 255, 0.18);
+   color: #ffffff;
+   border: 1px solid rgba(255, 255, 255, 0.35);
 }
 
 /* =========================
-   HERO (HOME)
-========================= */
-.hero-card {
-  position: relative;
-  height: 70vh;
-  border-radius: 20px;
-  overflow: hidden;
-  background-image: url("https://placehold.co/800x1200");
-  background-size: cover;
-  background-position: center;
-  margin: 2rem 0 3rem;
-}
-
-.hero-overlay {
-  position: absolute;
-  inset: 0;
-  padding: 2rem 2rem 13.5rem;
-  background: linear-gradient(
-    to top,
-    rgba(0, 0, 0, 0.75),
-    rgba(0, 0, 0, 0.2)
-  );
-  display: flex;
-  flex-direction: column;
-  justify-content: flex-end;
-  text-align: center;
-}
-
-.hero-overlay h2 {
-  font-size: 2.3rem;
-  margin-bottom: 0.75rem;
-}
-
-.hero-overlay p {
-  color: var(--soft-text);
-  max-width: 520px;
-  margin: 0 auto;
-}
-
-.hero-buttons {
-  position: absolute;
-  bottom: 2rem;
-  left: 50%;
-  transform: translateX(-50%);
-  width: 100%;
-  max-width: 420px;
-  display: grid;
-  gap: 1rem;
-  padding: 0 1.25rem;
-}
-
-/* =========================
-   SECTION TITLES
-========================= */
-section h3 {
-  text-align: center;
-  letter-spacing: 0.08em;
-  font-size: 0.85rem;
-  color: var(--muted);
-  margin: 2.5rem 0 1.75rem;
-}
-
-/* =========================
-   WHY JOIN (HOME)
-========================= */
-.why-list {
-  display: grid;
-  gap: 1.5rem;
-}
-
-.why-card {
-  background: var(--card);
-  border: 1px solid var(--border);
-  border-radius: 18px;
-  padding: 1.5rem;
-  display: flex;
-  gap: 1rem;
-}
-
-.why-card p {
-  color: var(--soft-text);
-}
-
-.why-icon {
-  background: rgba(56, 189, 248, 0.15);
-  color: var(--primary);
-  font-size: 1.4rem;
-  padding: 0.6rem;
-  border-radius: 12px;
-}
-
-/* =========================
-   EXPERIENCE NATURE (HOME)
-========================= */
-.experience-wrap {
-  padding: 5rem 1.5rem 2rem;
-}
-
-.experience-inner {
-  max-width: 900px;
-  margin: 0 auto;
-  text-align: center;
-}
-
-.experience-inner h2 {
-  font-size: 2rem;
-  margin-bottom: 1rem;
-}
-
-.experience-text {
-  color: var(--soft-text);
-  max-width: 520px;
-  margin: 0 auto 2rem;
-}
-
-.experience-btn {
-  margin: 0 auto 3.5rem;
-}
-
-.experience-stack {
-  display: grid;
-  gap: 3rem;
-}
-
-.experience-card img {
-  width: 100%;
-  border-radius: 22px;
-  margin-bottom: 1.25rem;
-}
-
-.experience-card p {
-  color: var(--soft-text);
-}
-
-/* =========================
-   ACTIVITIES PAGE HERO
+   PAGE HERO (GENERIC)
 ========================= */
 .page-hero {
-  padding: 1.5rem 0 1rem;
-  text-align: center;
+   padding: 1.5rem 0 1rem;
+   text-align: center;
 }
 
 .page-hero h2 {
-  font-size: 2rem;
-  margin-bottom: 0.5rem;
+   font-size: 2rem;
+   margin-bottom: 0.5rem;
 }
 
 .page-hero-text {
-  color: var(--soft-text);
-  max-width: 780px;
-  margin: 0 auto;
+   color: var(--soft-text);
+   max-width: 780px;
+   margin: 0 auto;
 }
 
 /* =========================
-   PHOTO SECTION (ACTIVITIES)
+   SECTION TITLES (GENERIC)
+========================= */
+section h3 {
+   text-align: center;
+   letter-spacing: 0.08em;
+   font-size: 0.85rem;
+   color: var(--muted);
+   margin: 2.5rem 0 1.75rem;
+}
+
+/* =========================
+   HOME: HERO
+========================= */
+.hero-card {
+   position: relative;
+   height: 70vh;
+   border-radius: 20px;
+   overflow: hidden;
+   background-image: url("https://placehold.co/800x1200");
+   background-size: cover;
+   background-position: center;
+   margin: 2rem 0 3rem;
+}
+
+.hero-overlay {
+   position: absolute;
+   inset: 0;
+   padding: 2rem 2rem 13.5rem;
+   background: linear-gradient(to top, rgba(0, 0, 0, 0.75), rgba(0, 0, 0, 0.2));
+   display: flex;
+   flex-direction: column;
+   justify-content: flex-end;
+   text-align: center;
+}
+
+.hero-overlay h2 {
+   font-size: 2.3rem;
+   margin-bottom: 0.75rem;
+}
+
+.hero-overlay p {
+   color: var(--soft-text);
+   max-width: 520px;
+   margin: 0 auto;
+}
+
+.hero-buttons {
+   position: absolute;
+   bottom: 2rem;
+   left: 50%;
+   transform: translateX(-50%);
+   width: 100%;
+   max-width: 420px;
+   display: grid;
+   gap: 1rem;
+   padding: 0 1.25rem;
+}
+
+/* =========================
+   HOME: WHY JOIN
+========================= */
+.why-list {
+   display: grid;
+   gap: 1.5rem;
+}
+
+.why-card {
+   background: var(--card);
+   border: 1px solid var(--border);
+   border-radius: 18px;
+   padding: 1.5rem;
+   display: flex;
+   gap: 1rem;
+}
+
+.why-card p {
+   color: var(--soft-text);
+}
+
+.why-icon {
+   background: rgba(56, 189, 248, 0.15);
+   color: var(--primary);
+   font-size: 1.4rem;
+   padding: 0.6rem;
+   border-radius: 12px;
+}
+
+/* =========================
+   HOME: EXPERIENCE
+========================= */
+.experience-wrap {
+   padding: 5rem 1.5rem 2rem;
+}
+
+.experience-inner {
+   max-width: 900px;
+   margin: 0 auto;
+   text-align: center;
+}
+
+.experience-inner h2 {
+   font-size: 2rem;
+   margin-bottom: 1rem;
+}
+
+.experience-text {
+   color: var(--soft-text);
+   max-width: 520px;
+   margin: 0 auto 2rem;
+}
+
+.experience-btn {
+   margin: 0 auto 3.5rem;
+}
+
+.experience-stack {
+   display: grid;
+   gap: 3rem;
+}
+
+.experience-card img {
+   width: 100%;
+   border-radius: 22px;
+   margin-bottom: 1.25rem;
+}
+
+.experience-card p {
+   color: var(--soft-text);
+}
+
+/* =========================
+   ACTIVITIES: PHOTO GRID
 ========================= */
 .photo-grid {
-  display: grid;
-  gap: 1.25rem;
+   display: grid;
+   gap: 1.25rem;
 }
 
 .photo-card {
-  background: var(--card);
-  border: 1px solid var(--border);
-  border-radius: 18px;
-  overflow: hidden;
+   background: var(--card);
+   border: 1px solid var(--border);
+   border-radius: 18px;
+   overflow: hidden;
 }
 
 .photo-card img {
-  width: 100%;
-  height: auto;
-  display: block;
+   width: 100%;
+   display: block;
 }
 
 .photo-card-body {
-  padding: 1rem 1.1rem 1.2rem;
+   padding: 1rem 1.1rem 1.2rem;
 }
 
 .photo-card-body h4 {
-  margin-bottom: 0.25rem;
+   margin-bottom: 0.25rem;
 }
 
 .photo-card-body p {
-  color: var(--soft-text);
+   color: var(--soft-text);
 }
 
 /* =========================
-   GOOGLE CALENDAR EMBED
+   GOOGLE CALENDAR EMBED (FIXED)
 ========================= */
 .calendar-embed {
-  margin-top: 2.5rem;
-}
-
-.calendar-embed-head {
-  display: grid;
-  gap: 1rem;
-  align-items: end;
-  margin-bottom: 1rem;
-}
-
-.calendar-embed-sub {
-  color: var(--soft-text);
-  margin-top: 0.25rem;
-}
-
-.calendar-open {
-  max-width: 420px;
+   margin-top: 2.5rem;
+   text-align: center;
 }
 
 .gcal-frame {
-  border-radius: 18px;
-  overflow: hidden;
-  border: 1px solid var(--border);
-  background: rgba(255, 255, 255, 0.04);
+   margin-top: 1rem;
+   border-radius: 18px;
+   overflow: hidden;
+   border: 1px solid var(--border);
+   background: rgba(255, 255, 255, 0.04);
 }
 
-/* Make iframe responsive */
 .gcal-frame iframe {
-  width: 100%;
-  height: 760px;
-  border: 0;
-  display: block;
+   width: 100%;
+   height: 760px;
+   border: 0;
+   display: block;
 }
 
 .calendar-note {
-  margin-top: 1rem;
-  color: var(--muted);
-  font-size: 0.95rem;
+   margin-top: 1rem;
+   color: var(--muted);
+   font-size: 0.95rem;
+}
+
+.calendar-note a {
+   color: var(--primary);
+   text-decoration: underline;
+}
+
+/* =========================
+   CONTACT PAGE (DIVIDER)
+========================= */
+.contact-grid {
+   display: grid;
+   gap: 2.5rem;
+   margin-top: 2.5rem;
+   align-items: stretch;
+}
+
+.contact-card {
+   background: var(--card);
+   border: 1px solid var(--border);
+   border-radius: 18px;
+   padding: 2rem;
+}
+
+.contact-card h3 {
+   margin: 0 0 1.25rem;
+   text-align: left;
+   letter-spacing: normal;
+   color: var(--text);
+}
+
+.contact-item {
+   display: grid;
+   gap: 0.25rem;
+   margin-bottom: 1rem;
+}
+
+.contact-label {
+   color: var(--muted);
+   font-size: 0.9rem;
+}
+
+.contact-value {
+   color: var(--primary);
+   text-decoration: none;
+   font-size: 1.05rem;
+}
+
+.contact-text {
+   color: var(--soft-text);
+   margin-bottom: 1.5rem;
+}
+
+.contact-divider {
+   background: var(--border);
+   border-radius: 999px;
+}
+
+@media (max-width: 767px) {
+   .contact-divider {
+      height: 1px;
+      width: 100%;
+   }
+}
+
+@media (min-width: 768px) {
+   .contact-grid {
+      grid-template-columns: 1fr auto 1fr;
+   }
+
+   .contact-divider {
+      width: 1px;
+      height: auto;
+   }
+}
+
+/* =========================
+   ABOUT PAGE (RESTORED / FIXED)
+========================= */
+.about-grid {
+   display: grid;
+   gap: 1.5rem;
+   margin-top: 2.5rem;
+}
+
+.about-card {
+   background: var(--card);
+   border: 1px solid var(--border);
+   border-radius: 18px;
+   padding: 2rem;
+}
+
+/* IMPORTANT: override generic section h3 styling */
+.about-card h3 {
+   margin: 0 0 1rem;
+   text-align: left;
+   letter-spacing: normal;
+   font-size: 1.25rem;
+   color: var(--text);
+}
+
+.about-text {
+   color: var(--soft-text);
+   margin-bottom: 1.5rem;
+}
+
+.about-points {
+   display: grid;
+   gap: 1rem;
+}
+
+.about-point {
+   display: grid;
+   gap: 0.25rem;
+   padding-top: 0.75rem;
+   border-top: 1px solid var(--border);
+}
+
+.about-label {
+   color: var(--muted);
+   font-size: 0.9rem;
+}
+
+.about-value {
+   color: var(--soft-text);
+}
+
+.about-wide {
+   margin-top: 2.5rem;
+}
+
+.about-wide-card {
+   background: var(--card);
+   border: 1px solid var(--border);
+   border-radius: 18px;
+   padding: 2rem;
+   text-align: center;
+}
+
+/* IMPORTANT: override generic section h3 styling */
+.about-wide-card h3 {
+   margin: 0 0 1rem;
+   text-align: center;
+   letter-spacing: normal;
+   font-size: 1.25rem;
+   color: var(--text);
+}
+
+.about-values {
+   display: flex;
+   flex-wrap: wrap;
+   gap: 0.75rem;
+   justify-content: center;
+   margin: 1.25rem 0 2rem;
+}
+
+.value-chip {
+   border: 1px solid var(--border);
+   background: rgba(255, 255, 255, 0.04);
+   color: var(--soft-text);
+   padding: 0.5rem 0.9rem;
+   border-radius: 999px;
+   font-weight: 600;
+   font-size: 0.95rem;
+}
+
+/* =========================
+   JOIN PAGE (FORM)
+========================= */
+.join-section {
+   margin-top: 2.5rem;
+}
+
+.join-card {
+   background: var(--card);
+   border: 1px solid var(--border);
+   border-radius: 18px;
+   padding: 2rem;
+   max-width: 520px;
+   margin: 0 auto;
+}
+
+/* IMPORTANT: override generic section h3 styling */
+.join-card h3 {
+   margin: 0;
+   text-align: center;
+   letter-spacing: normal;
+   font-size: 1.25rem;
+   color: var(--text);
+}
+
+.join-form {
+   display: grid;
+   gap: 1.25rem;
+   margin-top: 1.5rem;
+}
+
+.form-group {
+   display: grid;
+   gap: 0.35rem;
+}
+
+.form-group span {
+   color: var(--muted);
+   font-size: 0.9rem;
+}
+
+.form-group input {
+   background: rgba(255, 255, 255, 0.04);
+   border: 1px solid var(--border);
+   border-radius: 12px;
+   padding: 0.75rem 0.9rem;
+   color: var(--text);
+}
+
+.form-group input:focus {
+   outline: none;
+   border-color: var(--primary);
+}
+
+.join-note {
+   margin-top: 1rem;
+   color: var(--muted);
+   font-size: 0.9rem;
+   text-align: center;
 }
 
 /* =========================
    FOOTER
 ========================= */
 .site-footer {
-  margin-top: 4rem;
-  border-top: 1px solid var(--border);
-  padding: 3rem 1.5rem 2rem;
+   margin-top: 4rem;
+   border-top: 1px solid var(--border);
+   padding: 3rem 1.5rem 2rem;
 }
 
 .footer-inner {
-  max-width: 1100px;
-  margin: 0 auto;
-  display: grid;
-  gap: 2.5rem;
+   max-width: 1100px;
+   margin: 0 auto;
+   display: grid;
+   gap: 2.5rem;
 }
 
 .footer-brand {
-  display: grid;
-  gap: 1rem;
+   display: grid;
+   gap: 1rem;
 }
 
 .footer-logo img {
-  display: block;
-  max-width: 160px;
-  height: auto;
+   display: block;
+   max-width: 160px;
+   height: auto;
 }
 
 .footer-desc {
-  color: var(--soft-text);
-  max-width: 520px;
+   color: var(--soft-text);
+   max-width: 520px;
 }
 
 .footer-cols {
-  display: grid;
-  gap: 2rem;
+   display: grid;
+   gap: 2rem;
 }
 
 .footer-col h4 {
-  font-size: 1rem;
-  margin-bottom: 0.75rem;
+   font-size: 1rem;
+   margin-bottom: 0.75rem;
 }
 
 .footer-col ul {
-  list-style: none;
-  display: grid;
-  gap: 0.5rem;
+   list-style: none;
+   display: grid;
+   gap: 0.5rem;
 }
 
 .footer-col a {
-  text-decoration: none;
-  color: var(--muted);
+   color: var(--muted);
+   text-decoration: none;
 }
 
 .footer-col a:hover {
-  color: var(--primary);
+   color: var(--primary);
 }
 
 .footer-bottom {
-  border-top: 1px solid var(--border);
-  padding-top: 1.5rem;
-  display: grid;
-  gap: 1rem;
-  color: var(--muted);
-}
-
-.footer-legal {
-  display: flex;
-  gap: 1rem;
-  justify-content: center;
-}
-
-.footer-legal a {
-  color: var(--muted);
-  text-decoration: none;
-}
-
-.footer-legal a:hover {
-  color: var(--primary);
+   border-top: 1px solid var(--border);
+   padding-top: 1.5rem;
+   display: grid;
+   gap: 1rem;
+   color: var(--muted);
 }
 
 /* =========================
    RESPONSIVE
 ========================= */
 @media (min-width: 768px) {
-  .photo-grid {
-    grid-template-columns: repeat(3, 1fr);
-  }
+   .photo-grid {
+      grid-template-columns: repeat(3, 1fr);
+   }
 
-  .calendar-embed-head {
-    grid-template-columns: 1fr 420px;
-  }
+   .about-grid {
+      grid-template-columns: 1fr 1fr;
+   }
 
-  .footer-inner {
-    grid-template-columns: 1.2fr 1.8fr;
-    align-items: start;
-  }
+   .footer-inner {
+      grid-template-columns: 1.2fr 1.8fr;
+      align-items: start;
+   }
 
-  .footer-cols {
-    grid-template-columns: repeat(3, 1fr);
-  }
+   .footer-cols {
+      grid-template-columns: repeat(3, 1fr);
+   }
 
-  .footer-bottom {
-    grid-column: 1 / -1;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-  }
+   .footer-bottom {
+      grid-column: 1 / -1;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+   }
+}
+.form-group textarea {
+   background: rgba(255, 255, 255, 0.04);
+   border: 1px solid var(--border);
+   border-radius: 12px;
+   padding: 0.75rem 0.9rem;
+   color: var(--text);
+   resize: vertical;
+   min-height: 110px;
+}
 
-  .footer-legal {
-    justify-content: flex-end;
-  }
+.form-group textarea:focus {
+   outline: none;
+   border-color: var(--primary);
 }

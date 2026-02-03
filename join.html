@@ -1,0 +1,163 @@
+<!doctype html>
+<html lang="en">
+   <head>
+      <meta charset="UTF-8" />
+      <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+      <title>Join Us | Canoeing Club</title>
+      <link rel="stylesheet" href="styles.css" />
+   </head>
+   <body>
+      <!-- HEADER -->
+      <header class="top-header">
+         <h1>3. Vodácký oddíl mládeže</h1>
+         <nav class="top-nav">
+            <a href="index.html">Hlavní stránka</a>
+            <a href="activities.html">Aktivity</a>
+            <a href="gallery.html">Galerie</a>
+            <a href="about.html">O nás</a>
+            <a href="contact.html">Kontakty</a>
+         </nav>
+      </header>
+
+      <main class="container">
+         <!-- PAGE INTRO -->
+         <section class="page-hero">
+            <h2>Join the Club</h2>
+            <p class="page-hero-text">
+               Interested in joining Canoeing Club? Please fill out the form
+               below. Parents can include any important information about the
+               child (allergies, medical notes, etc.).
+            </p>
+         </section>
+
+         <!-- JOIN FORM -->
+         <section class="join-section">
+            <div class="join-card">
+               <h3>Interest Form</h3>
+
+               <form
+                  action="https://formspree.io/f/XXXXYYYY"
+                  method="POST"
+                  class="join-form"
+               >
+                  <!-- Child name -->
+                  <label class="form-group">
+                     <span>Child Name</span>
+                     <input type="text" name="child_name" required />
+                  </label>
+
+                  <!-- Child surname -->
+                  <label class="form-group">
+                     <span>Child Surname</span>
+                     <input type="text" name="child_surname" required />
+                  </label>
+
+                  <!-- Child age -->
+                  <label class="form-group">
+                     <span>Child Age</span>
+                     <input
+                        type="number"
+                        name="child_age"
+                        min="3"
+                        max="18"
+                        required
+                     />
+                  </label>
+
+                  <!-- Child email -->
+                  <label class="form-group">
+                     <span>Child Email</span>
+                     <input type="email" name="child_email" required />
+                  </label>
+
+                  <!-- Parent phone -->
+                  <label class="form-group">
+                     <span>Parent Phone Number</span>
+                     <input type="tel" name="parent_phone" required />
+                  </label>
+
+                  <!-- IMPORTANT INFO -->
+                  <label class="form-group">
+                     <span
+                        >Important Information (allergies, health notes,
+                        etc.)</span
+                     >
+                     <textarea
+                        name="important_info"
+                        rows="4"
+                        placeholder="Please let us know about allergies, medical conditions, or anything else we should be aware of."
+                     ></textarea>
+                  </label>
+
+                  <!-- subject for Formspree -->
+                  <input
+                     type="hidden"
+                     name="_subject"
+                     value="New Join Interest Submission"
+                  />
+
+                  <button type="submit" class="btn primary">
+                     Send Interest
+                  </button>
+               </form>
+
+               <p class="join-note">
+                  Submitting this form does not automatically enroll your child.
+                  We will contact you with further steps.
+               </p>
+            </div>
+         </section>
+      </main>
+
+      <!-- FOOTER -->
+      <footer class="site-footer">
+         <div class="footer-inner">
+            <div class="footer-brand">
+               <div class="footer-logo">
+                  <img
+                     src="https://placehold.co/140x44?text=LOGO"
+                     alt="Canoeing Club logo"
+                  />
+               </div>
+               <p class="footer-desc">
+                  Canoeing Club is a beginner-friendly community built around
+                  safety, nature, and unforgettable paddling adventures.
+               </p>
+            </div>
+
+            <div class="footer-cols">
+               <div class="footer-col">
+                  <h4>Oddíl</h4>
+                  <ul>
+                     <li><a href="about.html">O nás</a></li>
+                     <li><a href="activities.html">Aktivity</a></li>
+                     <li><a href="gallery.html">Galerie</a></li>
+                     <li><a href="contact.html">Kontakt</a></li>
+                  </ul>
+               </div>
+
+               <div class="footer-col">
+                  <h4>Zdroje</h4>
+                  <ul>
+                     <li><a href="#">FAQ</a></li>
+                     <li><a href="#">Podpora</a></li>
+                     <li><a href="#">Bezpečnost</a></li>
+                  </ul>
+               </div>
+
+               <div class="footer-col">
+                  <h4>Právní</h4>
+                  <ul>
+                     <li><a href="#">Ochrana osobních údajů</a></li>
+                     <li><a href="#">Podmínky</a></li>
+                  </ul>
+               </div>
+            </div>
+
+            <div class="footer-bottom">
+               <p>© 2026 Canoeing Club. All rights reserved.</p>
+            </div>
+         </div>
+      </footer>
+   </body>
+</html>
