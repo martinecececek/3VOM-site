@@ -1,4 +1,5 @@
 3vom.usti@seznam.cz na ucasti
+
 |-----------------------------------------|
 |Feedback email:        | Password:       |
 |-----------------------------------------|
@@ -7,5 +8,6 @@
 
 do galerie pridat link na rajce
 
-
 prcnou do zahlavi/zapati loko KCT, ATOM
+
+!TODO: zkusit automaticky napsat mejl na mobilu
