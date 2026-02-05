@@ -78,6 +78,108 @@ a {
 }
 
 /* =========================
+   HEADER (LOGO + CENTERED NAV + FULL DIVIDER)
+========================= */
+
+.top-header {
+   position: relative;
+   padding: 0;
+}
+
+/* full-width divider */
+.top-header::after {
+   content: "";
+   position: absolute;
+   left: 0;
+   right: 0;
+   bottom: 0;
+   height: 1px;
+   background: var(--border);
+}
+
+/* inner layout */
+.header-inner {
+   max-width: 1100px;
+   margin: 0 auto;
+   padding: 1.25rem 1rem 0.75rem;
+
+   display: grid;
+   grid-template-columns: auto 1fr;
+   align-items: center;
+   column-gap: 1.25rem;
+}
+
+/* logo */
+.header-logo img {
+   width: 120px;
+   height: auto;
+   display: block;
+}
+
+/* title + nav wrapper */
+.header-content {
+   width: 100%;
+   display: grid;
+   justify-items: center; /* keeps nav centered regardless of logo width */
+   margin-left: -64px;
+}
+
+/* title */
+.header-content h1 {
+   font-size: 1.5rem;
+   font-weight: 700;
+   margin-bottom: 0.5rem;
+   text-align: center;
+}
+
+/* navbar */
+.header-content .top-nav {
+   display: flex;
+   justify-content: center;
+   gap: 1.25rem;
+   flex-wrap: wrap;
+
+   /* IMPORTANT: no divider under navbar */
+   border-bottom: none;
+   padding-bottom: 0;
+}
+
+/* nav links */
+.header-content .top-nav a {
+   text-decoration: none;
+   font-weight: 500;
+   color: var(--muted);
+   padding: 0.15rem 0.25rem;
+}
+
+/* active link */
+.header-content .top-nav a.active {
+   color: var(--primary);
+   border-bottom: 2px solid var(--primary);
+}
+
+/* =========================
+   MOBILE
+========================= */
+@media (max-width: 767px) {
+   .header-inner {
+      grid-template-columns: 1fr;
+      justify-items: center;
+      row-gap: 0.75rem;
+   }
+
+   .header-content {
+      width: 100%;
+      display: grid;
+      justify-items: center; /* keeps nav centered regardless of logo width */
+      margin-left: 0;
+   }
+   .header-logo {
+      order: -1;
+   }
+}
+
+/* =========================
    BUTTONS
 ========================= */
 .btn {
@@ -93,6 +195,10 @@ a {
    text-align: center;
    border: none;
    cursor: pointer;
+}
+
+.btn.primary.bring-btn {
+   margin-top: 2rem;
 }
 
 .btn.primary {
@@ -261,10 +367,12 @@ section > h3 {
    letter-spacing: normal;
    color: var(--text);
    font-size: 1.35rem;
+   text-align: center;
 }
 
 .experience-card p {
    color: var(--soft-text);
+   text-align: center;
 }
 
 /* =========================
@@ -734,5 +842,144 @@ section > h3 {
 @media (min-width: 1100px) {
    .gallery-grid {
       grid-template-columns: repeat(4, 1fr);
+   }
+}
+/* =========================
+   BRING PAGE
+========================= */
+.bring-grid {
+   display: grid;
+   gap: 1.5rem;
+   margin-top: 2rem;
+}
+
+.bring-card {
+   background: var(--card);
+   border: 1px solid var(--border);
+   border-radius: 18px;
+   padding: 1.75rem;
+}
+
+.bring-card h3 {
+   text-align: left;
+   letter-spacing: normal;
+   margin-bottom: 1rem;
+}
+
+.bring-list {
+   list-style: none;
+   display: grid;
+   gap: 0.7rem;
+}
+
+.bring-check,
+.bring-x {
+   display: inline-flex;
+   width: 28px;
+   height: 28px;
+   border-radius: 999px;
+   align-items: center;
+   justify-content: center;
+   margin-right: 0.65rem;
+   font-weight: 900;
+   flex: 0 0 auto;
+}
+
+.bring-check {
+   background: rgba(56, 189, 248, 0.15);
+   color: var(--primary);
+}
+
+.bring-x {
+   background: rgba(255, 255, 255, 0.1);
+   color: var(--muted);
+}
+
+.bring-note {
+   margin-top: 1rem;
+   padding-top: 1rem;
+   border-top: 1px solid var(--border);
+   color: var(--muted);
+   font-size: 0.95rem;
+}
+
+.bring-bottom {
+   margin-top: 2rem;
+}
+
+.bring-wide .btn {
+   margin-top: 1.25rem;
+}
+
+.bring-text {
+   color: var(--soft-text);
+}
+
+@media (min-width: 768px) {
+   .bring-grid {
+      grid-template-columns: repeat(2, 1fr);
+   }
+
+   .bring-wide {
+      padding: 2rem;
+   }
+}
+
+/* =========================
+   SAFETY – STACKED BIG CARDS
+========================= */
+.safety-big-grid {
+   display: grid;
+   gap: 2.5rem;
+   margin-top: 2.5rem;
+}
+
+/* always one column */
+.safety-big-card {
+   background: var(--card);
+   border: 1px solid var(--border);
+   border-radius: 22px;
+   padding: 2.75rem;
+}
+
+.safety-big-card h3 {
+   margin-bottom: 0.75rem;
+   letter-spacing: normal;
+   font-size: 1.45rem;
+}
+
+.safety-big-card p {
+   color: var(--soft-text);
+   margin-bottom: 1.1rem;
+}
+
+.safety-big-card ul {
+   list-style: none;
+   display: grid;
+   gap: 0.5rem;
+   color: var(--soft-text);
+}
+
+/* =========================
+   CONTACTS – ALL CARDS NEXT TO EACH OTHER
+========================= */
+
+/* desktop: 3 cards in one row */
+@media (min-width: 768px) {
+   .contact-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 2.5rem;
+   }
+
+   .contact-card {
+      width: 100%;
+   }
+}
+
+/* mobile: stacked */
+@media (max-width: 767px) {
+   .contact-grid {
+      grid-template-columns: 1fr;
    }
 }

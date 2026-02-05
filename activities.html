@@ -1,50 +1,63 @@
 <!doctype html>
-<html lang="en">
+<html lang="cs">
    <head>
       <meta charset="UTF-8" />
       <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-      <title>Activities | Canoeing Club</title>
+      <title>Události | 3.VOM</title>
       <link rel="stylesheet" href="styles.css" />
    </head>
 
    <body>
-      <!-- HEADER -->
+      <!-- HLAVIČKA -->
       <header class="top-header">
-         <h1>3. Vodácký oddíl mládeže</h1>
-         <nav class="top-nav">
-            <a href="index.html">Hlavní stránka</a>
-            <a class="active" href="activities.html">Aktivity</a>
-            <a href="gallery.html">Galerie</a>
-            <a href="about.html">O nás</a>
-            <a href="contacts.html">Kontakty</a>
-         </nav>
+         <div class="header-inner">
+            <div class="header-logo">
+               <a href="index.html">
+                  <img
+                     src="./images/Logo_3VOM (1).png"
+                     alt="Logo oddílu 3VOM"
+                  />
+               </a>
+            </div>
+
+            <div class="header-content">
+               <h1>3. Vodácký oddíl mládeže</h1>
+               <nav class="top-nav">
+                  <a href="index.html">Hlavní stránka</a>
+                  <a class="active" href="activities.html">Aktivity</a>
+                  <a href="gallery.html">Galerie</a>
+                  <a href="about.html">O nás</a>
+                  <a href="contacts.html">Kontakty</a>
+               </nav>
+            </div>
+         </div>
       </header>
 
       <main class="container">
-         <!-- PAGE INTRO -->
+         <!-- ÚVOD STRÁNKY -->
          <section class="page-hero">
-            <h2>Activities</h2>
+            <h2>Aktivity</h2>
             <p class="page-hero-text">
-               Check out our featured activities and view the live club schedule
-               below.
+               Prohlédněte si naše hlavní aktivity a podívejte se na aktuální
+               rozpis oddílu níže.
             </p>
          </section>
 
-         <!-- PHOTO SECTIONS -->
+         <!-- FOTO SEKCE -->
          <section class="photo-section">
-            <h3>FEATURED ACTIVITIES</h3>
+            <h3>VYBRANÉ AKTIVITY</h3>
 
             <div class="photo-grid">
                <article class="photo-card">
                   <img
                      src="https://placehold.co/900x540"
-                     alt="Beginner Courses"
+                     alt="Kurzy pro začátečníky"
                   />
                   <div class="photo-card-body">
-                     <h4>Beginner Courses</h4>
+                     <h4>Kurzy pro začátečníky</h4>
                      <p>
-                        Weekly sessions covering safety, stroke technique, and
-                        confidence on water.
+                        Týdenní setkání zaměřená na bezpečnost, techniku záběru
+                        a jistotu na vodě.
                      </p>
                   </div>
                </article>
@@ -52,41 +65,48 @@
                <article class="photo-card">
                   <img
                      src="https://placehold.co/900x540"
-                     alt="Sunset Paddles"
+                     alt="Pádlování při západu slunce"
                   />
                   <div class="photo-card-body">
-                     <h4>Sunset Paddles</h4>
+                     <h4>Pádlování při západu slunce</h4>
                      <p>
-                        Relaxed evening tours designed for calm vibes and great
-                        photography.
+                        Pohodové večerní vyjížďky plné klidu a skvělých
+                        fotografických momentů.
                      </p>
                   </div>
                </article>
 
                <article class="photo-card">
-                  <img src="https://placehold.co/900x540" alt="River Touring" />
+                  <img
+                     src="https://placehold.co/900x540"
+                     alt="Říční turistika"
+                  />
                   <div class="photo-card-body">
-                     <h4>River Touring</h4>
+                     <h4>Říční turistika</h4>
                      <p>
-                        Scenic routes suitable for beginners with expert
-                        guidance and premium gear.
+                        Malebné trasy vhodné pro začátečníky s odborným vedením
+                        a kvalitním vybavením.
                      </p>
                   </div>
                </article>
             </div>
          </section>
 
-         <!-- LIVE GOOGLE CALENDAR EMBED -->
+         <a href="bring.html" class="btn primary bring-btn">
+            Nevíš, co s sebou? Více informací zde
+         </a>
+
+         <!-- VLOŽENÝ GOOGLE KALENDÁŘ -->
          <section class="calendar-embed">
-            <h3>Live Google Calendar</h3>
+            <h3>Kalendář akcí</h3>
 
             <div
                class="gcal-frame"
                role="region"
-               aria-label="Embedded Google Calendar"
+               aria-label="Vložený Google Kalendář"
             >
                <iframe
-                  title="Canoeing Club Google Calendar"
+                  title="Google Kalendář vodáckého oddílu"
                   src="https://calendar.google.com/calendar/embed?src=89f7b3f7de02c85a3e60c91cc7a0324d49f572e3645d9c3fd160ceed955cac1a%40group.calendar.google.com&ctz=Europe%2FPrague"
                   frameborder="0"
                   scrolling="no"
@@ -96,19 +116,20 @@
          </section>
       </main>
 
-      <!-- FOOTER -->
+      <!-- PATIČKA -->
       <footer class="site-footer">
          <div class="footer-inner">
             <div class="footer-brand">
                <div class="footer-logo">
                   <img
-                     src="https://placehold.co/140x44?text=LOGO"
-                     alt="Canoeing Club logo"
+                     src="./images/Logo_3VOM (1).png"
+                     alt="Oddílové logo 3VOM"
                   />
                </div>
                <p class="footer-desc">
-                  Canoeing Club is a beginner-friendly community built around
-                  safety, nature, and unforgettable paddling adventures.
+                  Vodácký oddíl je komunita přátelská k začátečníkům, postavená
+                  na bezpečnosti, přírodě a nezapomenutelných vodáckých
+                  dobrodružstvích.
                </p>
             </div>
 
@@ -119,22 +140,22 @@
                      <li><a href="about.html">O nás</a></li>
                      <li><a href="activities.html">Aktivity</a></li>
                      <li><a href="gallery.html">Galerie</a></li>
-                     <li><a href="contacts.html">Kontakt</a></li>
+                     <li><a href="join.html">Přidej se</a></li>
                   </ul>
                </div>
 
                <div class="footer-col">
-                  <h4>Resources</h4>
+                  <h4>Zdroje</h4>
                   <ul>
-                     <li><a href="#">Safety Tips</a></li>
-                     <li><a href="#">Equipment Guide</a></li>
-                     <li><a href="#">FAQ</a></li>
-                     <li><a href="#">Support</a></li>
+                     <li><a href="#">Bezpečnostní tipy</a></li>
+                     <li><a href="#">Průvodce vybavením</a></li>
+                     <li><a href="#">Často kladené dotazy</a></li>
+                     <li><a href="#">Podpora</a></li>
                   </ul>
                </div>
 
                <div class="footer-col">
-                  <h4>Follow</h4>
+                  <h4>Sledujte nás</h4>
                   <ul class="footer-social">
                      <li><a href="#" aria-label="Instagram">Instagram</a></li>
                      <li><a href="#" aria-label="Facebook">Facebook</a></li>
@@ -145,11 +166,7 @@
             </div>
 
             <div class="footer-bottom">
-               <p>© 2026 Canoeing Club. All rights reserved.</p>
-               <div class="footer-legal">
-                  <a href="#">Privacy</a>
-                  <a href="#">Terms</a>
-               </div>
+               <p>© 2026 Vodácký oddíl. Všechna práva vyhrazena.</p>
             </div>
          </div>
       </footer>

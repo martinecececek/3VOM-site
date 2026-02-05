@@ -1,179 +1,214 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
+   <head>
+      <meta charset="UTF-8" />
+      <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+      <title>Join | Canoeing Club</title>
+      <link rel="stylesheet" href="styles.css" />
+   </head>
 
-<head>
-   <meta charset="UTF-8" />
-   <meta name="viewport"
-      content="width=device-width, initial-scale=1.0" />
-   <title>Join | Canoeing Club</title>
-   <link rel="stylesheet" href="styles.css" />
-</head>
+   <body>
+      <header class="top-header">
+         <div class="header-inner">
+            <div class="header-logo">
+               <a href="index.html"
+                  ><img src="./images/Logo.png" alt="Logo oddilu 3VOM"
+               /></a>
+            </div>
 
-<body>
-
-   <header class="top-header">
-      <h1>Canoeing Club</h1>
-      <nav class="top-nav">
-         <a href="index.html">Home</a>
-         <a href="activities.html">Activities</a>
-         <a href="gallery.html">Gallery</a>
-         <a href="about.html">About</a>
-         <a href="contact.html">Contact</a>
-      </nav>
-   </header>
-
-   <main class="container">
-
-      <section class="page-hero">
-         <h2>Interest Form</h2>
-         <p class="page-hero-text">
-            Send your details and we will contact you with
-            the next steps.
-            (Static page — no scripts.)
-         </p>
-      </section>
-
-      <section class="join-layout">
-
-         <div class="join-card">
-            <h3>How it works</h3>
-            <p class="join-text">
-               Submitting this form does not automatically
-               enroll your child.
-               We will contact you with further steps and
-               available dates.
-            </p>
-
-            <div class="join-list">
-               <div class="join-list-item"><span
-                     class="join-bullet">1</span><span>Send
-                     interest details</span></div>
-               <div class="join-list-item"><span
-                     class="join-bullet">2</span><span>We
-                     confirm availability</span></div>
-               <div class="join-list-item"><span
-                     class="join-bullet">3</span><span>You
-                     get the final instructions</span></div>
+            <div class="header-content">
+               <h1>3. Vodácký oddíl mládeže</h1>
+               <nav class="top-nav">
+                  <a class="active" href="index.html">Hlavní stránka</a>
+                  <a href="activities.html">Události</a>
+                  <a href="gallery.html">Galerie</a>
+                  <a href="about.html">O nás</a>
+                  <a href="contacts.html">Kontakty</a>
+               </nav>
             </div>
          </div>
+      </header>
 
-         <div class="join-card">
-            <h3>Interest Form</h3>
+      <main class="container">
+         <section class="page-hero">
+            <h2>Interest Form</h2>
+            <p class="page-hero-text">
+               Send your details and we will contact you with the next steps.
+            </p>
+         </section>
 
-            <form class="join-form" action="#"
-               method="post">
-
-               <div class="field">
-                  <label for="childName">Child Name</label>
-                  <input id="childName" name="childName"
-                     type="text" placeholder="e.g. Alex"
-                     required>
-               </div>
-
-               <div class="field">
-                  <label for="childSurname">Child
-                     Surname</label>
-                  <input id="childSurname"
-                     name="childSurname" type="text"
-                     placeholder="e.g. Novak" required>
-               </div>
-
-               <div class="field">
-                  <label for="childAge">Datum narození</label>
-                  <input id="childAge" name="childAge"
-                     type="number" min="1" max="99"
-                     placeholder="e.g. 12" required>
-               </div>
-
-               <div class="field">
-                  <label for="childEmail">
-                     Email</label>
-                  <input id="childEmail" name="childEmail"
-                     type="email"
-                     placeholder="e.g. child@example.com">
-               </div>
-
-               <div class="field">
-                  <label for="parentPhone">Parent Phone
-                     Number</label>
-                  <input id="parentPhone" name="parentPhone"
-                     type="tel"
-                     placeholder="+420 123 456 789"
-                     required>
-               </div>
-
-               <div class="field">
-                  <label for="notes">Important Information
-                     (allergies, health notes, etc.)</label>
-                  <textarea id="notes" name="notes" rows="5"
-                     placeholder="Please let us know about allergies, medical conditions, or anything else we should know."></textarea>
-               </div>
-
-               <button type="submit"
-                  class="btn primary">Send Interest</button>
-
-               <p class="form-note">
-                  Submitting this form does not
-                  automatically enroll your child. We will
-                  contact you with further steps.
+         <section class="join-layout">
+            <div class="join-card">
+               <h3>How it works</h3>
+               <p class="join-text">
+                  Submitting this form does not automatically enroll your child.
+                  We will contact you with further steps and available dates.
                </p>
 
-            </form>
-         </div>
-
-      </section>
-
-   </main>
-
-   <footer class="site-footer">
-      <div class="footer-inner">
-
-         <div class="footer-brand">
-            <div class="footer-logo">
-               <img
-                  src="https://placehold.co/140x44?text=LOGO"
-                  alt="Canoeing Club logo" />
-            </div>
-            <p class="footer-desc">
-               Canoeing Club is a beginner-friendly
-               community built around safety,
-               nature, and unforgettable paddling
-               adventures.
-            </p>
-         </div>
-
-         <div class="footer-cols">
-            <div class="footer-col">
-               <h4>Club</h4>
-               <ul>
-                  <li><a href="about.html">About</a></li>
-                  <li><a
-                        href="activities.html">Activities</a>
-                  </li>
-                  <li><a href="gallery.html">Gallery</a>
-                  </li>
-                  <li><a href="contact.html">Contact</a>
-                  </li>
-               </ul>
+               <div class="join-list">
+                  <div class="join-list-item">
+                     <span class="join-bullet">1</span
+                     ><span>Send interest details</span>
+                  </div>
+                  <div class="join-list-item">
+                     <span class="join-bullet">2</span
+                     ><span>We confirm availability</span>
+                  </div>
+                  <div class="join-list-item">
+                     <span class="join-bullet">3</span
+                     ><span>You get the final instructions</span>
+                  </div>
+               </div>
             </div>
 
-            <div class="footer-col">
-               <h4>Legal</h4>
-               <ul>
-                  <li><a href="#">Privacy</a></li>
-                  <li><a href="#">Terms</a></li>
-               </ul>
+            <div class="join-card">
+               <h3>Interest Form</h3>
+
+               <form class="join-form" action="#" method="post">
+                  <div class="field">
+                     <label for="childName">Child Name</label>
+                     <input
+                        id="childName"
+                        name="childName"
+                        type="text"
+                        placeholder="e.g. Alex"
+                        required
+                     />
+                  </div>
+
+                  <div class="field">
+                     <label for="childSurname">Child Surname</label>
+                     <input
+                        id="childSurname"
+                        name="childSurname"
+                        type="text"
+                        placeholder="e.g. Novak"
+                        required
+                     />
+                  </div>
+
+                  <div class="field">
+                     <label for="childAge">Datum narození</label>
+                     <input
+                        id="childAge"
+                        name="childAge"
+                        type="number"
+                        min="1"
+                        max="99"
+                        placeholder="e.g. 12"
+                        required
+                     />
+                  </div>
+
+                  <div class="field">
+                     <label for="childEmail"> Email</label>
+                     <input
+                        id="childEmail"
+                        name="childEmail"
+                        type="email"
+                        placeholder="e.g. child@example.com"
+                     />
+                  </div>
+
+                  <div class="field">
+                     <label for="parentPhone">Parent Phone Number</label>
+                     <input
+                        id="parentPhone"
+                        name="parentPhone"
+                        type="tel"
+                        placeholder="+420 123 456 789"
+                        required
+                     />
+                  </div>
+
+                  <div class="field">
+                     <label for="notes"
+                        >Important Information (allergies, health notes,
+                        etc.)</label
+                     >
+                     <textarea
+                        id="notes"
+                        name="notes"
+                        rows="5"
+                        placeholder="Please let us know about allergies, medical conditions, or anything else we should know."
+                     ></textarea>
+                  </div>
+
+                  <button type="submit" class="btn primary">
+                     Send Interest
+                  </button>
+
+                  <p class="form-note">
+                     Submitting this form does not automatically enroll your
+                     child. We will contact you with further steps.
+                  </p>
+               </form>
+            </div>
+         </section>
+      </main>
+
+      <footer class="site-footer">
+         <div class="footer-inner">
+            <div class="footer-brand">
+               <div class="footer-logo">
+                  <img src="./images/Logo.png" alt="3VOM oddilove logo" />
+               </div>
+               <p class="footer-desc">
+                  3.VOM je komunita přátelská k začátečníkům, postavená na
+                  bezpečnosti, blízkosti k přírodě a nezapomenutelných
+                  dobrodružstvích.
+               </p>
+            </div>
+
+            <div class="footer-cols">
+               <div class="footer-col">
+                  <h4>Oddíl</h4>
+                  <ul>
+                     <li><a href="about.html">About</a></li>
+                     <li><a href="activities.html">Události</a></li>
+                     <li><a href="gallery.html">Gallery</a></li>
+                     <li><a href="join.html">Join</a></li>
+                  </ul>
+               </div>
+
+               <div class="footer-col">
+                  <h4>Informace</h4>
+                  <ul>
+                     <li><a href="safety.html">Bezpečnost</a></li>
+                     <li><a href="bring.html">Co s sebou</a></li>
+                  </ul>
+               </div>
+
+               <div class="footer-col">
+                  <h4>Sleduj nás</h4>
+                  <ul class="footer-social">
+                     <li>
+                        <a
+                           href="https://www.instagram.com/3.vom_usti/"
+                           aria-label="Instagram"
+                           >Instagram</a
+                        >
+                     </li>
+                     <li>
+                        <a
+                           href="https://www.facebook.com/profile.php?id=100043338507100"
+                           aria-label="Facebook"
+                           >Facebook</a
+                        >
+                     </li>
+                     <li>
+                        <a href="https://www.ddmul.cz/" aria-label="DDM"
+                           >DDM UNL</a
+                        >
+                     </li>
+                  </ul>
+               </div>
+            </div>
+
+            <div class="footer-bottom">
+               <p>© 2026 Canoeing Club. All rights reserved.</p>
             </div>
          </div>
-
-         <div class="footer-bottom">
-            <p>© 2026 Canoeing Club. All rights reserved.
-            </p>
-         </div>
-
-      </div>
-   </footer>
-
-</body>
-
+      </footer>
+   </body>
 </html>
