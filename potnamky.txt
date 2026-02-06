@@ -11,3 +11,7 @@ do galerie pridat link na rajce
 prcnou do zahlavi/zapati loko KCT, ATOM
 
 !TODO: zkusit automaticky napsat mejl na mobilu
+
+footed -> dat tam loga ATOM a KCT
+
+Kde jsme někam nacpat (asi o nas nebo kontakty a tam proklik na mapu)
