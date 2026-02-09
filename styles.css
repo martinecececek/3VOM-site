@@ -723,197 +723,193 @@ section > h3 {
    FOOTER
 ========================= */
 
-.site-footer{
-  margin-top:4rem;
-  border-top:1px solid var(--border);
-  padding:3rem 1.5rem 2rem;
-  background: transparent;
+.site-footer {
+   margin-top: 4rem;
+   border-top: 1px solid var(--border);
+   padding: 3rem 1.5rem 2rem;
+   background: transparent;
 }
 
-.footer-inner{
-  max-width:1100px;
-  margin:0 auto;
-  display:grid;
-  gap:2.5rem;
+.footer-inner {
+   max-width: 1100px;
+   margin: 0 auto;
+   display: grid;
+   gap: 2.5rem;
 }
 
 /* =========================
    BRAND SECTION
 ========================= */
-.footer-brand{
-  display:grid;
-  gap:1rem;
+.footer-brand {
+   display: grid;
+   gap: 1rem;
 }
 
-.footer-logo img{
-  display:block;
-  max-width:170px;
-  height:auto;
+.footer-logo img {
+   display: block;
+   max-width: 170px;
+   height: auto;
 }
 
-.footer-desc{
-  color:var(--soft-text);
-  max-width:520px;
-  line-height:1.5;
+.footer-desc {
+   color: var(--soft-text);
+   max-width: 520px;
+   line-height: 1.5;
 }
 
 /* =========================
    RIGHT SIDE WRAPPER
 ========================= */
-.footer-right{
-  display:grid;
-  gap:1.5rem;
+.footer-right {
+   display: grid;
+   gap: 1.5rem;
 }
 
 /* =========================
    LINK COLUMNS
 ========================= */
-.footer-cols{
-  display:grid;
-  gap:2rem;
+.footer-cols {
+   display: grid;
+   gap: 2rem;
 }
 
-.footer-col h4{
-  margin-bottom:0.75rem;
-  font-size:1rem;
-  color:var(--text);
+.footer-col h4 {
+   margin-bottom: 0.75rem;
+   font-size: 1rem;
+   color: var(--text);
 }
 
-.footer-col ul{
-  list-style:none;
-  padding:0;
-  margin:0;
-  display:grid;
-  gap:0.5rem;
+.footer-col ul {
+   list-style: none;
+   padding: 0;
+   margin: 0;
+   display: grid;
+   gap: 0.5rem;
 }
 
-.footer-col a{
-  text-decoration:none;
-  color:var(--muted);
-  transition:color .2s ease;
+.footer-col a {
+   text-decoration: none;
+   color: var(--muted);
+   transition: color 0.2s ease;
 }
 
-.footer-col a:hover{
-  color:var(--primary);
+.footer-col a:hover {
+   color: var(--primary);
 }
 
 /* =========================
    DIVIDER (links / logos)
 ========================= */
-.footer-sep{
-  width:100%;
-  height:1px;
-  background:var(--border);
+.footer-sep {
+   width: 100%;
+   height: 1px;
+   background: var(--border);
 }
 
 /* =========================
    PARTNER LOGOS ROW
 ========================= */
-.footer-logos{
-  display:grid;
-  grid-template-columns:repeat(3,1fr);
-  gap:1.5rem;
-  align-items:center;
+.footer-logos {
+   display: grid;
+   grid-template-columns: repeat(3, 1fr);
+   gap: 1.5rem;
+   align-items: center;
 }
 
-.footer-logo-item{
-  display:flex;
-  justify-content:center;
-  align-items:center;
-  padding:1.6rem;
-  border-radius:18px;
-  border:1px solid var(--border);
-  background:rgba(255,255,255,0.03);
-  min-height:130px;
+.footer-logo-item {
+   display: flex;
+   justify-content: center;
+   align-items: center;
+   padding: 1.6rem;
+   border-radius: 18px;
+   border: 1px solid var(--border);
+   background: rgba(255, 255, 255, 0.03);
+   min-height: 130px;
 }
 
-.footer-logo-item img{
-  max-width:200px;
-  max-height:80px;
-  width:auto;
-  height:auto;
-  display:block;
-  opacity:0.95;
+.footer-logo-item img {
+   max-width: 200px;
+   max-height: 80px;
+   width: auto;
+   height: auto;
+   display: block;
+   opacity: 0.95;
 }
 
 /* =========================
    BOTTOM COPYRIGHT
 ========================= */
-.footer-bottom{
-  grid-column:1 / -1;
-  border-top:1px solid var(--border);
-  padding-top:1.5rem;
-  text-align:center;
-  color:var(--muted);
-  font-size:0.95rem;
+.footer-bottom {
+   grid-column: 1 / -1;
+   border-top: 1px solid var(--border);
+   padding-top: 1.5rem;
+   text-align: center;
+   color: var(--muted);
+   font-size: 0.95rem;
 }
 
 /* =========================
    DESKTOP LAYOUT
 ========================= */
-@media (min-width:768px){
+@media (min-width: 768px) {
+   .footer-inner {
+      grid-template-columns: 1.2fr 1.8fr;
+      column-gap: 3rem;
+      align-items: start;
+   }
 
-  .footer-inner{
-    grid-template-columns:1.2fr 1.8fr;
-    column-gap:3rem;
-    align-items:start;
-  }
-
-  .footer-cols{
-    grid-template-columns:repeat(3,1fr);
-    gap:3rem;
-  }
+   .footer-cols {
+      grid-template-columns: repeat(3, 1fr);
+      gap: 3rem;
+   }
 }
 
 /* =========================
    MOBILE
 ========================= */
-@media (max-width:767px){
+@media (max-width: 767px) {
+   .footer-cols {
+      grid-template-columns: 1fr;
+   }
 
-  .footer-cols{
-    grid-template-columns:1fr;
-  }
+   .footer-logos {
+      grid-template-columns: 1fr;
+   }
 
-  .footer-logos{
-    grid-template-columns:1fr;
-  }
-
-  .footer-logo-item img{
-    max-width:220px;
-    max-height:100px;
-  }
+   .footer-logo-item img {
+      max-width: 220px;
+      max-height: 100px;
+   }
 }
-
 
 /* =========================
    DESKTOP LAYOUT
 ========================= */
-@media (min-width: 768px){
-  .footer-inner{
-    grid-template-columns: 1.2fr 1.8fr; /* brand | right side */
-    align-items: start;
-    column-gap: 3rem;
-  }
+@media (min-width: 768px) {
+   .footer-inner {
+      grid-template-columns: 1.2fr 1.8fr; /* brand | right side */
+      align-items: start;
+      column-gap: 3rem;
+   }
 
-  .footer-cols{
-    grid-template-columns: repeat(3, 1fr); /* Oddíl | Informace | Odkazy */
-    gap: 3rem;
-  }
+   .footer-cols {
+      grid-template-columns: repeat(3, 1fr); /* Oddíl | Informace | Odkazy */
+      gap: 3rem;
+   }
 }
 
 /* =========================
    MOBILE
 ========================= */
-@media (max-width: 767px){
-  .footer-logos{
-    grid-template-columns: 1fr;
-  }
+@media (max-width: 767px) {
+   .footer-logos {
+      grid-template-columns: 1fr;
+   }
 
-  .footer-logo-item img{
-    max-height: 64px;
-  }
+   .footer-logo-item img {
+      max-height: 64px;
+   }
 }
-
 
 /* =========================
    RESPONSIVE
@@ -1175,4 +1171,46 @@ section > h3 {
    .equip-grid {
       grid-template-columns: repeat(3, 1fr);
    }
+}
+
+/* =========================
+   POPUP MODAL
+========================= */
+
+#popup {
+   position: fixed;
+   inset: 0;
+   display: grid;
+   place-items: center;
+   background: rgba(5, 10, 20, 0.65);
+   backdrop-filter: blur(4px);
+   z-index: 9999;
+}
+
+#popup[hidden] {
+   display: none;
+}
+
+/* popup card */
+.popup-box {
+   background: var(--card);
+   border: 1px solid var(--border);
+   border-radius: 22px;
+   padding: 2.5rem 2.25rem;
+   text-align: center;
+   max-width: 420px;
+   width: 90%;
+   box-shadow: 0 20px 60px rgba(0, 0, 0, 0.45);
+}
+
+.popup-box p {
+   margin-bottom: 1.5rem;
+   color: var(--text);
+   font-size: 1.05rem;
+}
+
+/* button spacing */
+.popup-box .btn {
+   max-width: 220px;
+   margin: 0 auto;
 }
