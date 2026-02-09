@@ -28,5 +28,8 @@ document.addEventListener("DOMContentLoaded", function () {
 
    closeBtn.addEventListener("click", function () {
       popup.hidden = true;
+
+      // redirect to index.html
+      window.location.href = "index.html";
    });
 });
