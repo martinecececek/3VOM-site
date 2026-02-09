@@ -248,7 +248,7 @@ section > h3 {
    height: 70vh;
    border-radius: 20px;
    overflow: hidden;
-   background-image: url("https://placehold.co/800x1200");
+   background-image: url("./images/imgs/index-pokus.png");
    background-size: cover;
    background-position: center;
    margin: 2rem 0 3rem;
