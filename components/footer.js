@@ -40,7 +40,6 @@ function renderFooter() {
           <ul>
             <li><a href="https://www.instagram.com/3.vom_usti/">Instagram</a></li>
             <li><a href="https://www.facebook.com/profile.php?id=100043338507100">Facebook</a></li>
-            <li><a href="https://www.ddmul.cz/">DDM UNL</a></li>
           </ul>
         </div>
       </div>
@@ -54,6 +53,10 @@ function renderFooter() {
 
         <a class="footer-logo-item" href="https://kct.cz/">
           <img src="./images/logo/KCT-logo.png" alt="KCT logo" />
+        </a>
+
+        <a class="footer-logo-item" href="https://www.ddmul.cz/">
+          <img src="./images/logo/DDM-logo.png" alt="DDM logo" />
         </a>
       </div>
 

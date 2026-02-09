@@ -1,6 +1,5 @@
 function renderHeader(activePage = "home") {
-
-  const headerHTML = `
+   const headerHTML = `
     <header class="top-header">
       <div class="header-inner">
 
@@ -26,14 +25,14 @@ function renderHeader(activePage = "home") {
     </header>
   `;
 
-  document.getElementById("header").innerHTML = headerHTML;
+   document.getElementById("header").innerHTML = headerHTML;
 
-  /* set active class */
-  const links = document.querySelectorAll(".top-nav a");
+   /* set active class */
+   const links = document.querySelectorAll(".top-nav a");
 
-  links.forEach(link => {
-    if (link.dataset.page === activePage) {
-      link.classList.add("active");
-    }
-  });
+   links.forEach((link) => {
+      if (link.dataset.page === activePage) {
+         link.classList.add("active");
+      }
+   });
 }
