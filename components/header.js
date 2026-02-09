@@ -12,6 +12,8 @@ function renderHeader(activePage = "home") {
         <div class="header-content">
           <h1>3. Vodácký oddíl mládeže</h1>
 
+          <h3 class="tom-num">TOM 7104</h3>
+
           <nav class="top-nav">
             <a href="index.html" data-page="home">Hlavní stránka</a>
             <a href="activities.html" data-page="activities">Události</a>

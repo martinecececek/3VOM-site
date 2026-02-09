@@ -1,4 +1,4 @@
-3vom.usti@seznam.cz na ucasti
+Sem pak nastavit posilani mejlu: 3vom.usti@seznam.cz na ucasti
 
 |-----------------------------------------|
 |Feedback email:        | Password:       |
@@ -6,15 +6,16 @@
 |feedback3vom@seznam.cz | FeeDback2026_8  |
 |-----------------------------------------|
 
+zkusit opravit aby ti Ig link otevrel profil na telefonu
+
 Kde jsme někam nacpat (asi o nas nebo kontakty a tam proklik na mapu)
 
-proklik na IG na telefonu nefacha
-
 do vybaveni napsat co poskytuje oddil
-
 
 zkusit aby se neexportovaly všechny akce - google app script (exlude Vodou Portou) + nastavit tvurce 
 
 prehodit google kalendar na 3VOM ucet
 
 add admin page to load photo
+
+poslat auto odpověď že děkujeme za zájem a ze je kontaktuje vedouci

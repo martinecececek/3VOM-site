@@ -21,6 +21,12 @@
    --focus: rgba(56, 189, 248, 0.55);
 }
 
+.tom-num {
+   color: var(--muted);
+   font-size: 0.90rem;
+   margin-bottom: 0.75rem;
+}
+
 /* =========================
    BASE
 ========================= */
