@@ -18,6 +18,6 @@ prehodit google kalendar na 3VOM ucet
 
 add admin page to load photo
 
-poslat auto odpověď že děkujeme za zájem a ze je kontaktuje vedouci
+poslat auto odpověď že děkujeme za zájem a ze je kontaktuje vedouci 
 
 add light box
