@@ -1,11 +1,94 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-</head>
-<body>
-    <p>test </p>
-</body>
+<!doctype html>
+<html lang="cs">
+   <head>
+      <meta charset="UTF-8" />
+      <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+      <title>Admin | 3. Vodácký oddíl mládeže</title>
+      <link rel="stylesheet" href="../styles.css" />
+   </head>
+   <body>
+
+      <main class="container">
+         <section class="page-hero">
+            <h2>Admin</h2>
+            <p class="page-hero-text">
+               Nahrání fotky a souboru pro web.
+            </p>
+         </section>
+
+         <section class="admin-grid">
+            <!-- PHOTO UPLOAD -->
+            <div class="admin-card">
+               <h3>Nahrát fotku</h3>
+               <p class="admin-help">Podporované formáty: JPG, PNG, WebP.</p>
+
+               <form
+                  class="admin-form"
+                  action="#"
+                  method="post"
+                  enctype="multipart/form-data"
+               >
+                  <div class="field">
+                     <label for="photoTitle">Název / popisek</label>
+                     <input
+                        id="photoTitle"
+                        name="photoTitle"
+                        type="text"
+                        placeholder="Např. Trénink – květen 2026"
+                     />
+                  </div>
+
+                  <div class="upload-box">
+                     <label class="upload-label" for="photoFile">
+                        Vybrat fotku
+                        <span class="upload-sub">Klikni pro výběr souboru</span>
+                     </label>
+                     <input
+                        id="photoFile"
+                        name="photoFile"
+                        type="file"
+                        accept="image/*"
+                     />
+                  </div>
+
+                  <button class="btn primary" type="submit">Uložit</button>
+                  <p class="admin-note">
+                     Pozn.: V čistě statickém webu se soubor reálně neuloží na
+                     server bez backendu.
+                  </p>
+               </form>
+            </div>
+
+            <!-- FILE UPLOAD -->
+            <div class="admin-card">
+               <h3>Nahrát soubor</h3>
+               <p class="admin-help">
+                  Např. PDF nebo jiný dokument.
+               </p>
+
+               <form
+                  class="admin-form"
+                  action="#"
+                  method="post"
+                  enctype="multipart/form-data"
+               >
+
+                  <div class="upload-box">
+                     <label class="upload-label" for="anyFile">
+                        Vybrat soubor
+                        <span class="upload-sub">Klikni pro výběr souboru</span>
+                     </label>
+                     <input id="anyFile" name="anyFile" type="file" />
+                  </div>
+
+                  <button class="btn primary" type="submit">Uložit</button>
+                  <p class="admin-note">
+                     Pokud chceš skutečné nahrávání bez JS, řeší se to přes
+                     server (např. PHP) a klasický POST formulář.
+                  </p>
+               </form>
+            </div>
+         </section>
+      </main>
+   </body>
 </html>
