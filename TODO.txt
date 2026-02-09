@@ -12,8 +12,9 @@ proklik na IG na telefonu nefacha
 
 do vybaveni napsat co poskytuje oddil
 
-neexportovat muj kalendar ale jen 3.VOM
 
-zkusit aby se neexportovaly všechny akce - google app script (exlude Vodou Portou)
+zkusit aby se neexportovaly všechny akce - google app script (exlude Vodou Portou) + nastavit tvurce 
 
 prehodit google kalendar na 3VOM ucet
+
+add admin page to load photo
