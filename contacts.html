@@ -5,7 +5,11 @@
       <meta name="viewport" content="width=device-width, initial-scale=1.0" />
       <title>Kontakty | 3.VOM</title>
       <link rel="stylesheet" href="styles.css" />
-       <link rel="icon" type="image/png" href="./images/logo/3VOM-logo.png" />
+      <link rel="icon" type="image/png" href="./images/logo/3VOM-logo.png" />
+      <link
+         rel="stylesheet"
+         href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
+      />
    </head>
 
    <body>
@@ -94,6 +98,16 @@
                </div>
             </div>
          </section>
+
+         <div class="footer-sep-map"></div>
+         <a href="https://mapy.com/s/cutokalulo">
+            <div class="map-card">
+               <div id="clubMap" class="map" aria-label="Location map"></div>
+            </div>
+         </a>
+
+         <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+         <script src="./JS/map.js"></script>
       </main>
 
       <!-- FOOTER -->
@@ -104,3 +118,4 @@
       </script>
    </body>
 </html>
+0

@@ -21,3 +21,5 @@ add admin page to load photo
 poslat auto odpověď že děkujeme za zájem a ze je kontaktuje vedouci 
 
 add light box
+
+Přidat mapu do kontaku (Jako na AGC stránkách)
