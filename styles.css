@@ -1293,6 +1293,12 @@ section > h3 {
       align-items: start;
    }
 }
+.footer-sep-map {
+   width: 100%;
+   height: 1px;
+   background: var(--border);
+   margin: 2.5rem 0;
+}
 
 /* Card wrapper (matches your UI vibe) */
 .map-card {
@@ -1413,13 +1419,116 @@ section > h3 {
    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.35);
 }
 
-.footer-sep-map {
-   width: 100%;
-   height: 1px;
-   background: var(--border);
-   margin-top: 30px;
-
-   max-width: 1200px;
-   height: 1px;
-   background: var(--border);
+.leaflet-tooltip {
+   background: rgba(7, 13, 31, 0.9);
+   border: 1px solid rgba(255, 255, 255, 0.12);
+   color: #e5e7eb;
+   border-radius: 10px;
+   padding: 6px 10px;
+   font-weight: 600;
+   backdrop-filter: blur(6px);
 }
+.leaflet-tooltip::before {
+   border-top-color: rgba(7, 13, 31, 0.9);
+}
+
+/* whole box hover overlay */
+.map-link {
+  position: relative;
+  cursor: pointer;
+}
+
+/* overlay */
+.map-hover {
+  position: absolute;
+  inset: 0;
+  display: grid;
+  place-items: center;
+
+  background: rgba(7,13,31,0.55);
+  backdrop-filter: blur(3px);
+
+  color: #e5e7eb;
+  font-weight: 700;
+  font-size: 1.1rem;
+  letter-spacing: 0.02em;
+
+  opacity: 0;
+  transition: opacity 0.25s ease;
+}
+
+/* show on hover */
+.map-link:hover .map-hover {
+  opacity: 1;
+}
+
+.map-card {
+  background: rgba(255, 255, 255, 0.06);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 18px;
+  overflow: hidden;
+
+  /* IMPORTANT */
+  position: relative;
+}
+
+.map-link {
+  cursor: pointer;
+}
+
+.map {
+  height: 220px;
+  width: 100%;
+  position: relative;
+}
+
+/* your existing tint overlay on the map */
+.map::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  background: linear-gradient(0deg, rgba(56, 189, 248, 0.2), rgba(56, 189, 248, 0.2)),
+    radial-gradient(circle at 30% 20%, rgba(203, 213, 245, 0.12), transparent 55%);
+  mix-blend-mode: multiply;
+
+  /* keep it above tiles but below hover */
+  z-index: 5;
+}
+
+/* Leaflet container sits below hover */
+.map .leaflet-container,
+.map .leaflet-pane,
+.map .leaflet-tile-pane,
+.map .leaflet-overlay-pane,
+.map .leaflet-marker-pane,
+.map .leaflet-popup-pane {
+  z-index: 1;
+}
+
+/* WHOLE BOX HOVER OVERLAY */
+.map-hover {
+  position: absolute;
+  inset: 0;
+  display: grid;
+  place-items: center;
+
+  background: rgba(7, 13, 31, 0.55);
+  backdrop-filter: blur(3px);
+
+  color: #e5e7eb;
+  font-weight: 800;
+  font-size: 1.1rem;
+  letter-spacing: 0.02em;
+
+  opacity: 0;
+  transition: opacity 0.25s ease;
+
+  /* IMPORTANT: must be higher than Leaflet panes */
+  z-index: 9999;
+}
+
+.map-link:hover .map-hover {
+  opacity: 1;
+}
+
