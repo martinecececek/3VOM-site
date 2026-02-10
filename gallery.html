@@ -3,19 +3,25 @@
    <head>
       <meta charset="UTF-8" />
       <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
       <title>Galerie | 3.VOM</title>
+
+      <!-- MAIN STYLES -->
       <link rel="stylesheet" href="styles.css" />
+      <link rel="stylesheet" href="./lightbox.css" />
+
       <link rel="icon" type="image/png" href="./images/logo/3VOM-logo.png" />
    </head>
 
    <body>
+      <!-- HEADER -->
       <div id="header"></div>
-
       <script src="./components/header.js"></script>
       <script>
          renderHeader("gallery");
       </script>
 
+      <!-- MAIN -->
       <main class="container">
          <!-- PAGE INTRO -->
          <section class="page-hero">
@@ -57,9 +63,8 @@
          <section class="gallery-grid-wrap">
             <h3>VŠECHNY FOTOGRAFIE</h3>
 
-            <!-- JS will render figures here -->
+            <!-- JS renders figures here -->
             <div id="galleryGrid" class="gallery-grid"></div>
-            <script src="./JS/gallery.js"></script>
          </section>
 
          <a href="https://wodacy.rajce.idnes.cz/" class="btn primary bring-btn">
@@ -74,7 +79,76 @@
          renderFooter();
       </script>
 
-      <!-- GALLERY JSON LOADER -->
-      <script src="./components/gallery.js"></script>
+      <!-- LIGHTBOX HTML (must exist BEFORE lightbox.js) -->
+      <div id="lightbox" class="lightbox" aria-hidden="true">
+         <div class="lightbox__backdrop" data-lb-close></div>
+
+         <figure class="lightbox__content" role="dialog" aria-modal="true">
+            <button
+               class="lightbox__close"
+               type="button"
+               aria-label="Zavřít"
+               data-lb-close
+            >
+               ×
+            </button>
+
+            <button
+               class="lightbox__nav lightbox__nav--prev"
+               type="button"
+               aria-label="Předchozí"
+               data-lb-prev
+            >
+               <svg
+                  class="lightbox__icon"
+                  viewBox="0 0 24 24"
+                  aria-hidden="true"
+               >
+                  <path
+                     d="M15 18l-6-6 6-6"
+                     fill="none"
+                     stroke="currentColor"
+                     stroke-width="2.5"
+                     stroke-linecap="round"
+                     stroke-linejoin="round"
+                  />
+               </svg>
+            </button>
+            
+            <div class="lightbox__image-frame">
+               <img id="lightboxImg" class="lightbox__img" alt="" />
+            </div>
+            <figcaption
+               id="lightboxCaption"
+               class="lightbox__caption"
+            ></figcaption>
+
+            <button
+               class="lightbox__nav lightbox__nav--next"
+               type="button"
+               aria-label="Další"
+               data-lb-next
+            >
+               <svg
+                  class="lightbox__icon"
+                  viewBox="0 0 24 24"
+                  aria-hidden="true"
+               >
+                  <path
+                     d="M9 6l6 6-6 6"
+                     fill="none"
+                     stroke="currentColor"
+                     stroke-width="2.5"
+                     stroke-linecap="round"
+                     stroke-linejoin="round"
+                  />
+               </svg>
+            </button>
+         </figure>
+      </div>
+
+      <!-- SCRIPTS (ORDER MATTERS) -->
+      <script src="./JS/gallery.js"></script>
+      <script src="./JS/lightbox.js"></script>
    </body>
 </html>

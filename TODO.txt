@@ -6,7 +6,6 @@ Sem pak nastavit posilani mejlu: 3vom.usti@seznam.cz na ucasti
 |feedback3vom@seznam.cz | FeeDback2026_8  |
 |-----------------------------------------|
 
-zkusit opravit aby ti Ig link otevrel profil na telefonu
 
 do vybaveni napsat co poskytuje oddil
 
@@ -14,10 +13,6 @@ zkusit aby se neexportovaly všechny akce - google app script (exlude Vodou Port
 
 prehodit google kalendar na 3VOM ucet
 
-add admin page to load photo - priority
-
 poslat auto odpověď že děkujeme za zájem a ze je kontaktuje vedouci
-
-add light box
 
 projednat jeslti by mělo smysl mít nějaky zapujcky na webu, jen náhled (hodit export na web aby to viděli všichni + interně mít ready na export) - long term

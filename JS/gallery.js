@@ -13,7 +13,7 @@ async function loadGallery() {
       if (!Array.isArray(images))
          throw new Error("gallery.json must be an array");
 
-      // sort newest first (expects date like "2026-07-10")
+      // newest first
       images.sort((a, b) => new Date(b.date) - new Date(a.date));
 
       // take only 12 newest
@@ -24,7 +24,6 @@ async function loadGallery() {
       newest12.forEach((img) => {
          const file = (img.file || "").trim();
          const captionText = (img.caption || "").trim() || "Fotografie";
-
          if (!file) return;
 
          const figure = document.createElement("figure");
@@ -34,7 +33,10 @@ async function loadGallery() {
          imageEl.src = `./images/gallery-12-pics/${encodeURIComponent(file)}`;
          imageEl.alt = captionText;
 
-         // debug missing images
+         // ⭐ optional UX / perf
+         imageEl.loading = "lazy";
+         imageEl.decoding = "async";
+
          imageEl.addEventListener("error", () => {
             console.error("IMAGE NOT FOUND:", imageEl.src, "JSON file:", file);
          });
@@ -48,7 +50,11 @@ async function loadGallery() {
       });
    } catch (error) {
       console.error("Gallery load error:", error);
-      container.innerHTML = `<p style="color: var(--muted);">Galerii se nepodařilo načíst. Zkontroluj <strong>./images/gallery.json</strong>.</p>`;
+      container.innerHTML = `
+      <p style="color: var(--muted);">
+        Galerii se nepodařilo načíst. Zkontroluj <strong>./images/gallery.json</strong>.
+      </p>
+    `;
    }
 }
 

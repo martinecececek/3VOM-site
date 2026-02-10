@@ -1,0 +1,203 @@
+/* =========================
+   LIGHTBOX – FULL, HARD-CENTERED
+========================= */
+
+.lightbox {
+   position: fixed;
+   inset: 0;
+   display: none;
+   z-index: 99999;
+}
+
+.lightbox.is-open {
+   display: block;
+}
+
+/* =========================
+   BACKDROP
+========================= */
+.lightbox__backdrop {
+   position: absolute;
+   inset: 0;
+   background: rgba(5, 10, 20, 0.65);
+   backdrop-filter: blur(4px);
+}
+
+/* =========================
+   CONTENT LAYOUT
+========================= */
+.lightbox__content {
+   position: relative;
+   height: 100%;
+   margin: 0;
+   padding: 1.5rem;
+
+   display: grid;
+   grid-template-rows: 1fr auto;
+   align-items: center;
+}
+
+/* =========================
+   IMAGE FRAME (THE KEY PART)
+========================= */
+.lightbox__image-frame {
+   width: 100%;
+   height: 78vh; /* fixed visual center */
+   display: grid;
+   place-items: center; /* HARD CENTER */
+   pointer-events: none;
+}
+
+/* =========================
+   IMAGE
+========================= */
+.lightbox__img {
+   width: auto;
+   height: auto;
+   max-width: min(92vw, 1100px);
+   max-height: 100%;
+
+   border-radius: 22px;
+   background: rgba(0, 0, 0, 0.35);
+   border: 1px solid var(--border);
+   box-shadow: 0 20px 60px rgba(0, 0, 0, 0.45);
+}
+
+/* =========================
+   CAPTION – CENTERED TO IMAGE
+========================= */
+.lightbox__caption {
+   margin: 0.9rem auto 0;
+   padding: 0 0.5rem;
+
+   /* 🔑 match image max width */
+   max-width: min(92vw, 1100px);
+
+   text-align: center;
+
+   color: var(--soft-text);
+   font-weight: 700;
+   font-size: 0.95rem;
+}
+
+/* =========================
+   CLOSE BUTTON
+========================= */
+.lightbox__close {
+   position: absolute;
+   top: 16px;
+   right: 18px;
+
+   width: 48px;
+   height: 48px;
+
+   display: grid;
+   place-items: center;
+
+   border-radius: 14px;
+   border: 1px solid var(--border);
+   background: var(--card);
+   color: var(--text);
+
+   font-size: 28px;
+   line-height: 1;
+   cursor: pointer;
+
+   user-select: none;
+   -webkit-tap-highlight-color: transparent;
+}
+
+/* =========================
+   NAV BUTTONS
+========================= */
+.lightbox__nav {
+   position: absolute;
+   top: 50%;
+   transform: translateY(-50%);
+
+   width: 54px;
+   height: 54px;
+
+   display: grid;
+   place-items: center;
+
+   border-radius: 999px;
+   border: 1px solid var(--border);
+   background: rgba(255, 255, 255, 0.06);
+   color: var(--text);
+
+   cursor: pointer;
+   user-select: none;
+   -webkit-tap-highlight-color: transparent;
+}
+
+.lightbox__nav--prev {
+   left: 18px;
+}
+.lightbox__nav--next {
+   right: 18px;
+}
+
+/* SVG icon inside nav */
+.lightbox__icon {
+   width: 22px;
+   height: 22px;
+   display: block;
+}
+
+/* =========================
+   HOVER / FOCUS
+========================= */
+.lightbox__close:hover,
+.lightbox__nav:hover {
+   border-color: var(--focus);
+}
+
+.lightbox__close:focus-visible,
+.lightbox__nav:focus-visible {
+   outline: 2px solid var(--focus);
+   outline-offset: 2px;
+}
+
+/* =========================
+   MOBILE IMPROVEMENTS
+========================= */
+
+/* iOS safe area support */
+.lightbox__content {
+   padding: calc(14px + env(safe-area-inset-top))
+      calc(14px + env(safe-area-inset-right))
+      calc(14px + env(safe-area-inset-bottom))
+      calc(14px + env(safe-area-inset-left));
+}
+
+/* Better sizing on phones */
+@media (max-width: 600px) {
+   .lightbox__image-frame {
+      height: 70vh; /* less tall than desktop */
+   }
+
+   .lightbox__img {
+      max-width: 94vw;
+      border-radius: 18px;
+   }
+
+   .lightbox__caption {
+      max-width: 94vw;
+      font-size: 0.95rem;
+      padding: 0 0.75rem;
+   }
+
+   /* Close button easier to tap */
+   .lightbox__close {
+      width: 52px;
+      height: 52px;
+      top: 12px;
+      right: 12px;
+   }
+
+   /* Optional: keep arrows hidden on mobile */
+   .lightbox__nav {
+      display: none;
+   }
+}

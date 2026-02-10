@@ -34,17 +34,6 @@
                      />
                   </div>
 
-                  <div class="field">
-                     <label for="adminKey">Admin key</label>
-                     <input
-                        id="adminKey"
-                        name="adminKey"
-                        type="password"
-                        placeholder="Zadej ADMIN_KEY"
-                        autocomplete="off"
-                     />
-                  </div>
-
                   <div class="upload-box">
                      <label class="upload-label" for="photoFile">
                         Vybrat fotku
@@ -78,25 +67,40 @@
 
                <form
                   class="admin-form"
-                  action="#"
-                  method="post"
+                  id="pdfForm"
                   enctype="multipart/form-data"
                >
-                  <div class="upload-box">
-                     <label class="upload-label" for="anyFile">
-                        Vybrat soubor
-                        <span class="upload-sub">Klikni pro výběr souboru</span>
-                     </label>
-                     <input id="anyFile" name="anyFile" type="file" />
+                  <div class="field">
+                     <label for="pdfAdminKey">Admin key</label>
+                     <input
+                        id="pdfAdminKey"
+                        type="password"
+                        placeholder="ADMIN_KEY"
+                        autocomplete="off"
+                     />
                   </div>
 
-                  <button class="btn primary" type="submit">Uložit</button>
-                  <p class="admin-note">
-                     Pokud chceš skutečné nahrávání bez JS, řeší se to přes
-                     server (např. PHP) a klasický POST formulář.
-                  </p>
+                  <div class="upload-box">
+                     <label class="upload-label" for="anyFile">
+                        Vybrat soubor (program.pdf)
+                        <span class="upload-sub">Klikni pro výběr PDF</span>
+                     </label>
+                     <input
+                        id="anyFile"
+                        name="anyFile"
+                        type="file"
+                        accept="application/pdf"
+                     />
+                  </div>
+
+                  <button class="btn primary" type="submit" id="pdfBtn">
+                     Uložit
+                  </button>
+                  <p class="admin-note" id="pdfStatus" aria-live="polite"></p>
                </form>
             </div>
+
+            <script src="./JS/send-file.js"></script>
          </section>
       </main>
    </body>
