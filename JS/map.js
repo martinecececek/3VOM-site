@@ -78,7 +78,4 @@ marker.on("click", () => {
 // Keep it centered and properly rendered on resize
 window.addEventListener("resize", () => map.invalidateSize());
 
-document.querySelector(".map-link").addEventListener("click", () => {
-   const url = `https://mapy.cz/zakladni?x=${PLACE.lng}&y=${PLACE.lat}&z=17`;
-   window.open(url, "_blank", "noopener,noreferrer");
-});
+
