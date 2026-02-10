@@ -1,0 +1,12 @@
+current: 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
+
+Where to create a new one: https://github.com/settings/personal-access-tokens
+Set:  - expire in 1 year
+      - only select 3VOM repo
+      - Premisson -> content
+            - contents -> read-and-write
+
+
+ADMIN_KEY - bHKJKHJKJHG6Jadpiadasd14a6s5d15691ASDADASD541a5sd1a651d3a1sd65198451ASDASASDASDASDDa16jh5gk4h665161K
+
+

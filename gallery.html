@@ -53,107 +53,13 @@
             </div>
          </section>
 
-         <!-- MAIN GRID -->
+         <!-- MAIN GRID (DYNAMIC FROM JSON) -->
          <section class="gallery-grid-wrap">
             <h3>VŠECHNY FOTOGRAFIE</h3>
 
-            <div class="gallery-grid">
-               <figure class="gallery-item">
-                  <img
-                     src="https://placehold.co/800x650"
-                     alt="Fotka z galerie 1"
-                  />
-                  <figcaption>Kurz pro začátečníky</figcaption>
-               </figure>
-
-               <figure class="gallery-item">
-                  <img
-                     src="https://placehold.co/800x650"
-                     alt="Fotka z galerie 2"
-                  />
-                  <figcaption>Pádlování při západu slunce</figcaption>
-               </figure>
-
-               <figure class="gallery-item">
-                  <img
-                     src="https://placehold.co/800x650"
-                     alt="Fotka z galerie 3"
-                  />
-                  <figcaption>Říční turistika</figcaption>
-               </figure>
-
-               <figure class="gallery-item">
-                  <img
-                     src="https://placehold.co/800x650"
-                     alt="Fotka z galerie 4"
-                  />
-                  <figcaption>Týmový trénink</figcaption>
-               </figure>
-
-               <figure class="gallery-item">
-                  <img
-                     src="https://placehold.co/800x650"
-                     alt="Fotka z galerie 5"
-                  />
-                  <figcaption>Den vybavení</figcaption>
-               </figure>
-
-               <figure class="gallery-item">
-                  <img
-                     src="https://placehold.co/800x650"
-                     alt="Fotka z galerie 6"
-                  />
-                  <figcaption>Komunitní setkání</figcaption>
-               </figure>
-
-               <figure class="gallery-item">
-                  <img
-                     src="https://placehold.co/800x650"
-                     alt="Fotka z galerie 7"
-                  />
-                  <figcaption>Ráno u jezera</figcaption>
-               </figure>
-
-               <figure class="gallery-item">
-                  <img
-                     src="https://placehold.co/800x650"
-                     alt="Fotka z galerie 8"
-                  />
-                  <figcaption>Highlights z výletu</figcaption>
-               </figure>
-
-               <figure class="gallery-item">
-                  <img
-                     src="https://placehold.co/800x650"
-                     alt="Fotka z galerie 9"
-                  />
-                  <figcaption>Příprava na závod</figcaption>
-               </figure>
-
-               <figure class="gallery-item">
-                  <img
-                     src="https://placehold.co/800x650"
-                     alt="Fotka z galerie 10"
-                  />
-                  <figcaption>Na vodě</figcaption>
-               </figure>
-
-               <figure class="gallery-item">
-                  <img
-                     src="https://placehold.co/800x650"
-                     alt="Fotka z galerie 11"
-                  />
-                  <figcaption>Výhled do přírody</figcaption>
-               </figure>
-
-               <figure class="gallery-item">
-                  <img
-                     src="https://placehold.co/800x650"
-                     alt="Fotka z galerie 12"
-                  />
-                  <figcaption>Víkendový výlet</figcaption>
-               </figure>
-            </div>
+            <!-- JS will render figures here -->
+            <div id="galleryGrid" class="gallery-grid"></div>
+            <script src="./JS/gallery.js"></script>
          </section>
 
          <a href="https://wodacy.rajce.idnes.cz/" class="btn primary bring-btn">
@@ -167,5 +73,8 @@
       <script>
          renderFooter();
       </script>
+
+      <!-- GALLERY JSON LOADER -->
+      <script src="./components/gallery.js"></script>
    </body>
 </html>
