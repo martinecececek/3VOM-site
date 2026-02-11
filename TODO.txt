@@ -16,3 +16,5 @@ prehodit google kalendar na 3VOM ucet
 poslat auto odpověď že děkujeme za zájem a ze je kontaktuje vedouci
 
 projednat jeslti by mělo smysl mít nějaky zapujcky na webu, jen náhled (hodit export na web aby to viděli všichni + interně mít ready na export) - long term
+
+!! export akci i s popskem

@@ -15,11 +15,13 @@ document.addEventListener("DOMContentLoaded", function () {
             headers: { Accept: "application/json" },
          });
 
+         const result = await response.json().catch(() => ({}));
+
          if (response.ok) {
             form.reset();
             popup.hidden = false;
          } else {
-            alert("Došlo k chybě při odesílání.");
+            alert(result.error || "Došlo k chybě při odesílání.");
          }
       } catch {
          alert("Chyba připojení.");
@@ -28,8 +30,6 @@ document.addEventListener("DOMContentLoaded", function () {
 
    closeBtn.addEventListener("click", function () {
       popup.hidden = true;
-
-      // redirect to index.html
       window.location.href = "index.html";
    });
 });

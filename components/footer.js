@@ -32,6 +32,7 @@ function renderFooter() {
             <li><a href="safety.html">Bezpečnost</a></li>
             <li><a href="bring.html">Co s sebou</a></li>
             <li><a href="vybaveni.html">Vybavení</a></li>
+            <li><a href="login.html">Zápůjčky</a></li>
           </ul>
         </div>
 
