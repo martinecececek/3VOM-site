@@ -1546,3 +1546,131 @@ section > h3 {
 .map-link:hover .map-hover {
    opacity: 1;
 }
+
+/* =========================
+   BORROW TABLE (matches your UI)
+========================= */
+.borrow-card {
+   background: var(--card);
+   border: 1px solid var(--border);
+   border-radius: 22px;
+   padding: 2rem;
+   margin-top: 2rem;
+}
+
+.borrow-card h3 {
+   margin-bottom: 0.5rem;
+   letter-spacing: normal;
+}
+
+.borrow-help {
+   color: var(--soft-text);
+   margin-bottom: 1.25rem;
+}
+
+.borrow-table-wrap {
+   border: 1px solid var(--border);
+   border-radius: 18px;
+   overflow: hidden;
+   background: rgba(255, 255, 255, 0.03);
+}
+
+.borrow-table {
+   width: 100%;
+   border-collapse: collapse;
+}
+
+.borrow-table thead th {
+   text-align: left;
+   font-size: 0.95rem;
+   color: var(--text);
+   background: rgba(255, 255, 255, 0.06);
+   border-bottom: 1px solid var(--border);
+   padding: 0.95rem 1rem;
+}
+
+.borrow-table tbody td {
+   padding: 0.95rem 1rem;
+   border-bottom: 1px solid var(--border);
+   color: var(--soft-text);
+   vertical-align: top;
+}
+
+.borrow-table tbody tr:hover {
+   background: rgba(56, 189, 248, 0.06);
+}
+
+.borrow-table tbody tr:last-child td {
+   border-bottom: none;
+}
+
+/* borrowed items pills */
+.borrow-items {
+   display: flex;
+   flex-wrap: wrap;
+   gap: 0.5rem;
+}
+
+.borrow-pill {
+   display: inline-flex;
+   align-items: center;
+   gap: 0.45rem;
+   padding: 0.35rem 0.6rem;
+   border-radius: 999px;
+   background: rgba(56, 189, 248, 0.12);
+   border: 1px solid rgba(56, 189, 248, 0.22);
+   color: var(--text);
+   font-weight: 700;
+   font-size: 0.9rem;
+}
+
+.borrow-pill .dot {
+   width: 8px;
+   height: 8px;
+   border-radius: 999px;
+   background: var(--primary);
+   box-shadow: 0 0 0 4px rgba(56, 189, 248, 0.18);
+}
+
+.borrow-empty {
+   color: var(--muted);
+   font-weight: 700;
+}
+
+/* responsive: table scroll on mobile */
+@media (max-width: 767px) {
+   .borrow-table-wrap {
+      overflow-x: auto;
+   }
+   .borrow-table {
+      min-width: 720px;
+   }
+}
+
+/* person header row inside the table */
+.person-row td {
+   background: rgba(255, 255, 255, 0.06);
+   border-bottom: 1px solid var(--border);
+   padding: 1rem;
+}
+
+.person-name {
+   display: flex;
+   align-items: center;
+   gap: 0.75rem;
+   font-weight: 800;
+   color: var(--text);
+}
+
+.person-badge {
+   display: inline-flex;
+   align-items: center;
+   justify-content: center;
+   width: 32px;
+   height: 32px;
+   border-radius: 12px;
+   background: rgba(56, 189, 248, 0.15);
+   border: 1px solid rgba(56, 189, 248, 0.25);
+   color: var(--primary);
+   font-weight: 900;
+}
