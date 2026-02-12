@@ -1,10 +1,6 @@
 /* JS/login.js
-   Always require password.
-   No remembering login.
-   Folder structure:
-   - login.html (root)
-   - pujceni.html (root)
-   - JS/login.js
+   Always require password (no remembering)
+   Works even if URL is mistakenly opened like: login.html/
 */
 
 (() => {
@@ -12,8 +8,28 @@
    // CONFIG
    // =========================
    const CORRECT_PASSWORD = "1234"; // <-- change this
-   const LOGIN_PAGE = "../login.html";
-   const REDIRECT_AFTER_LOGIN = "../pujceni.html"; // <-- change target page
+   const LOGIN_FILE = "login.html";
+   const AFTER_LOGIN_FILE = "pujceni.html";
+
+   // Build a proper base directory (folder), not based on full URL
+   const getBaseDir = () => {
+      const url = new URL(window.location.href);
+
+      // If someone opened /login.html/ (trailing slash), fix it to /
+      if (url.pathname.endsWith(".html/")) {
+         url.pathname = url.pathname.replace(/\.html\/$/, "/");
+      }
+
+      // Always return directory path (ends with /)
+      const dirPath = url.pathname.replace(/[^/]*$/, "");
+      return url.origin + dirPath;
+   };
+
+   const BASE_DIR = getBaseDir();
+
+   const goTo = (file) => {
+      window.location.href = BASE_DIR + file;
+   };
 
    document.addEventListener("DOMContentLoaded", () => {
       // =========================
@@ -27,10 +43,8 @@
          form.addEventListener("submit", (e) => {
             e.preventDefault();
 
-            const entered = passInput.value.trim();
-
-            if (entered === CORRECT_PASSWORD) {
-               window.location.href = REDIRECT_AFTER_LOGIN;
+            if (passInput.value.trim() === CORRECT_PASSWORD) {
+               goTo(AFTER_LOGIN_FILE);
             } else {
                errorBox.style.display = "block";
                passInput.value = "";
@@ -42,20 +56,15 @@
             errorBox.style.display = "none";
          });
 
-         return; // stop here if we are on login page
+         return;
       }
 
       // =========================
       // PROTECTED PAGE GUARD
       // =========================
-      // Add this to protected pages:
-      // <body data-protected="true">
-
-      const isProtected = document.body.dataset.protected === "true";
-
+      const isProtected = document.body?.dataset?.protected === "true";
       if (isProtected) {
-         // If someone opens protected page directly → send to login
-         window.location.href = LOGIN_PAGE;
+         goTo(LOGIN_FILE);
       }
    });
 })();
