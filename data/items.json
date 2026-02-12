@@ -1,0 +1,243 @@
+{
+   "people": [
+      {
+         "id": 1,
+         "name": "Vojtěch",
+         "surname": "Balda",
+         "borrowed_items": [
+            {
+               "id": 101,
+               "category": "Pádlo",
+               "description": "Clean Code",
+               "itemNumber": "#B-001",
+               "date": "2026-02-01"
+            },
+            {
+               "id": 102,
+               "category": "Book",
+               "description": "Intro to Algorithms",
+               "itemNumber": "#B-002",
+               "date": "2026-02-05"
+            }
+         ]
+      },
+      {
+         "id": 2,
+         "name": "Ondřej",
+         "surname": "Balda",
+         "borrowed_items": [
+            {
+               "id": 102,
+               "category": "Pádlo",
+               "description": "Profiplast - modrá",
+               "itemNumber": "#P-001",
+               "date": "2026-02-05"
+            }
+         ]
+      },
+      {
+         "id": 3,
+         "name": "Petr",
+         "surname": "Balda",
+         "borrowed_items": []
+      },
+      {
+         "id": 4,
+         "name": "Karel",
+         "surname": "Benda",
+         "borrowed_items": []
+      },
+      {
+         "id": 5,
+         "name": "Renata",
+         "surname": "Brodská",
+         "borrowed_items": []
+      },
+      {
+         "id": 6,
+         "name": "Vladimír",
+         "surname": "Brodský",
+         "borrowed_items": []
+      },
+      {
+         "id": 7,
+         "name": "Vojta",
+         "surname": "Brož",
+         "borrowed_items": []
+      },
+      {
+         "id": 8,
+         "name": "Václav",
+         "surname": "Brož",
+         "borrowed_items": []
+      },
+      {
+         "id": 9,
+         "name": "Vít",
+         "surname": "Brož",
+         "borrowed_items": []
+      },
+      {
+         "id": 10,
+         "name": "Filip",
+         "surname": "Busta",
+         "borrowed_items": []
+      },
+      {
+         "id": 11,
+         "name": "Eliška",
+         "surname": "Bustová",
+         "borrowed_items": []
+      },
+      {
+         "id": 12,
+         "name": "Adam",
+         "surname": "Buzo",
+         "borrowed_items": []
+      },
+      {
+         "id": 13,
+         "name": "Matěj",
+         "surname": "Gajdoš",
+         "borrowed_items": []
+      },
+      {
+         "id": 14,
+         "name": "Monika",
+         "surname": "Hemzova",
+         "borrowed_items": []
+      },
+      {
+         "id": 15,
+         "name": "Petr",
+         "surname": "Honzátko",
+         "borrowed_items": []
+      },
+      {
+         "id": 16,
+         "name": "Bará",
+         "surname": "Hovorková",
+         "borrowed_items": []
+      },
+      {
+         "id": 17,
+         "name": "Martin",
+         "surname": "Jakubův",
+         "borrowed_items": []
+      },
+      {
+         "id": 18,
+         "name": "Ondřej",
+         "surname": "Kaváš",
+         "borrowed_items": []
+      },
+      {
+         "id": 19,
+         "name": "Lukáš",
+         "surname": "Král",
+         "borrowed_items": []
+      },
+      {
+         "id": 20,
+         "name": "Vašek",
+         "surname": "Kraus",
+         "borrowed_items": []
+      },
+      {
+         "id": 21,
+         "name": "Tomáš",
+         "surname": "Kuncl",
+         "borrowed_items": []
+      },
+      {
+         "id": 22,
+         "name": "Veronika",
+         "surname": "Kunclová",
+         "borrowed_items": []
+      },
+      {
+         "id": 23,
+         "name": "Libuše",
+         "surname": "Macounová",
+         "borrowed_items": []
+      },
+      {
+         "id": 24,
+         "name": "Jiří",
+         "surname": "Magasanik",
+         "borrowed_items": []
+      },
+      {
+         "id": 25,
+         "name": "Lucie",
+         "surname": "Magasaniková",
+         "borrowed_items": []
+      },
+      {
+         "id": 26,
+         "name": "Majda",
+         "surname": "Mátlová",
+         "borrowed_items": []
+      },
+      {
+         "id": 27,
+         "name": "Jan",
+         "surname": "Netík",
+         "borrowed_items": []
+      },
+      {
+         "id": 28,
+         "name": "Honza",
+         "surname": "Neumann",
+         "borrowed_items": []
+      },
+      {
+         "id": 29,
+         "name": "Vojtěch",
+         "surname": "Říha",
+         "borrowed_items": []
+      },
+      {
+         "id": 30,
+         "name": "Josef",
+         "surname": "Švec",
+         "borrowed_items": []
+      },
+      {
+         "id": 31,
+         "name": "Jiřina",
+         "surname": "Švecová",
+         "borrowed_items": []
+      },
+      {
+         "id": 32,
+         "name": "Jan",
+         "surname": "Švehla",
+         "borrowed_items": []
+      },
+      {
+         "id": 33,
+         "name": "Karel",
+         "surname": "Tipmann",
+         "borrowed_items": []
+      },
+      {
+         "id": 34,
+         "name": "Jarda mladší",
+         "surname": "Tožička",
+         "borrowed_items": []
+      },
+      {
+         "id": 35,
+         "name": "Jarda",
+         "surname": "Tožička",
+         "borrowed_items": []
+      },
+      {
+         "id": 36,
+         "name": "Hanka",
+         "surname": "Tožičková",
+         "borrowed_items": []
+      }
+   ]
+}

@@ -13,10 +13,24 @@ zkusit aby se neexportovaly všechny akce - google app script (exlude Vodou Port
 
 prehodit google kalendar na 3VOM ucet
 
-poslat auto odpověď že děkujeme za zájem a ze je kontaktuje vedouci
+poslat auto odpověď že děkujeme za zájem a ze je kontaktuje vedouci - at s domenou
 
-projednat jeslti by mělo smysl mít nějaky zapujcky na webu, jen náhled (hodit export na web aby to viděli všichni + interně mít ready na export) - long term
+!! update gallery performance !!
 
-!! export akci i s popskem
+Pozdeji udělat separe profily na zapujcky
 
-!! update gallery performance
+!!create a new file system - urgently (tomorow)!! - create new branch to test the structure
+
+translate text (27.2.)!!
+
+from admin page remove ADMIN_KEY - neni potreba a vim ho jen ja
+
+------
+recreate from scrach admin borrow panel. need 2 cloudflare workers (1 adding to JSON and deleting deleting from it)
+    - start from the cloudflare workers (from the end and then create a the code for form)
+    - keep the same CSS (maybe create CSS for the date popup)
+    - keep the same table layout and "UI"
+    - load all the admin stuff to one table - separate by profile to users (username + pass) 
+        [all dinamycli loaded on user site (create JSON for logging in - after login load only a part of the JSON 
+        => the user part selected by id after login)] 
+    - keep the same JSON structure!

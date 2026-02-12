@@ -1,0 +1,35 @@
+<!doctype html>
+<html lang="en">
+   <head>
+      <meta charset="UTF-8" />
+      <title>Půjčené položky (Admin)</title>
+      <link rel="stylesheet" href="../styles.css" />
+   </head>
+   <body>
+      <div class="borrow-card">
+         <h3>Borrowed Items (Admin)</h3>
+         <p class="borrow-help">Admin view – manage borrowed items.</p>
+
+         <div class="borrow-table-wrap">
+            <table class="borrow-table">
+               <thead>
+                  <tr>
+                     <th>Category</th>
+                     <th>Description</th>
+                     <th>Item Number</th>
+                     <th style="width: 180px">Borrowed Date</th>
+                     <th style="width: 140px">Admin</th>
+                     <!-- NEW COLUMN -->
+                  </tr>
+               </thead>
+
+               <tbody id="borrowAdminBody">
+                  <!-- JS WILL INSERT CONTENT -->
+               </tbody>
+            </table>
+         </div>
+      </div>
+
+      <script src="./JS/borrow-admin.js"></script>
+   </body>
+</html>
