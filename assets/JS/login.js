@@ -1,9 +1,9 @@
 /* JS/login.js
    Testing-stage login:
-   - Compares username + password against users.json
+   - Compares username + password against user.json
    - On success, saves personId for use on another page
    - Redirects to the protected page
-   - Still works if URL is mistakenly opened like: login.html/
+   - Works on localhost + GitHub Pages
 */
 
 (() => {
@@ -13,38 +13,18 @@
    const LOGIN_FILE = "login.html";
    const AFTER_LOGIN_FILE = "pujceni.html";
 
-   // Path to your separate login JSON (adjust if your folder differs)
-   // Example assumes: /assets/data/users.json relative to current folder
-   const USERS_JSON_PATH = "./../../src/data/user.json";
-
-   // Storage key for the logged-in personId
+   // Storage key for logged user
    const PERSON_ID_KEY = "personId";
 
-   // Build a proper base directory (folder), not based on full URL
-   const getBaseDir = () => {
-      const url = new URL(window.location.href);
-
-      // If someone opened /login.html/ (trailing slash), fix it to /
-      if (url.pathname.endsWith(".html/")) {
-         url.pathname = url.pathname.replace(/\.html\/$/, "/");
-      }
-
-      // Always return directory path (ends with /)
-      const dirPath = url.pathname.replace(/[^/]*$/, "");
-      return url.origin + dirPath;
-   };
-
-   const BASE_DIR = getBaseDir();
-
-   const goTo = (file) => {
-      window.location.href = BASE_DIR + file;
-   };
+   // =========================
+   // HELPERS
+   // =========================
+   const normalize = (s) => (s ?? "").toString().trim().toLowerCase();
 
    const setPersonId = (personId) => {
       try {
          localStorage.setItem(PERSON_ID_KEY, String(personId));
       } catch {
-         // If localStorage is blocked, fallback to sessionStorage
          sessionStorage.setItem(PERSON_ID_KEY, String(personId));
       }
    };
@@ -68,29 +48,60 @@
       }
    };
 
-   const fetchUsers = async () => {
-      const res = await fetch(USERS_JSON_PATH, { cache: "no-store" });
-      if (!res.ok) {
-         throw new Error(`Failed to load users.json (${res.status})`);
+   // =========================
+   // REDIRECT BASE DIR
+   // =========================
+   const getBaseDir = () => {
+      const url = new URL(window.location.href);
+
+      // Fix accidental login.html/
+      if (url.pathname.endsWith(".html/")) {
+         url.pathname = url.pathname.replace(/\.html\/$/, ".html");
       }
+
+      const dirPath = url.pathname.replace(/[^/]*$/, "");
+      return url.origin + dirPath;
+   };
+
+   const BASE_DIR = getBaseDir();
+
+   const goTo = (file) => {
+      window.location.href = BASE_DIR + file;
+   };
+
+   // =========================
+   // FETCH USERS (YOUR VERSION)
+   // =========================
+   const fetchUsers = async () => {
+      // Build URL relative to the current page URL (keeps /3VOM-site/)
+      const usersUrl = new URL("../src/data/user.json", window.location.href);
+
+      const res = await fetch(usersUrl.href, { cache: "no-store" });
+      if (!res.ok) {
+         throw new Error(
+            `Failed to load user.json (HTTP ${res.status}) from ${usersUrl.href}`,
+         );
+      }
+
       const data = await res.json();
       if (!data || !Array.isArray(data.users)) {
-         throw new Error("Invalid users.json format: expected { users: [] }");
+         throw new Error("Invalid user.json format: expected { users: [] }");
       }
       return data.users;
    };
 
-   const normalize = (s) => (s ?? "").toString().trim().toLowerCase();
-
+   // =========================
+   // MAIN
+   // =========================
    document.addEventListener("DOMContentLoaded", () => {
-      // =========================
-      // LOGIN PAGE LOGIC
-      // =========================
       const form = document.getElementById("loginForm");
       const userInput = document.getElementById("username");
       const passInput = document.getElementById("password");
       const errorBox = document.getElementById("errorBox");
 
+      // =========================
+      // LOGIN PAGE
+      // =========================
       if (form && userInput && passInput && errorBox) {
          form.addEventListener("submit", async (e) => {
             e.preventDefault();
@@ -98,7 +109,6 @@
             const username = normalize(userInput.value);
             const password = passInput.value.trim();
 
-            // Basic validation
             if (!username || !password) {
                errorBox.style.display = "block";
                return;
@@ -107,7 +117,6 @@
             try {
                const users = await fetchUsers();
 
-               // Find matching user
                const match = users.find(
                   (u) =>
                      normalize(u.username) === username &&
@@ -124,7 +133,6 @@
                   passInput.focus();
                }
             } catch (err) {
-               // Treat loading issues as login failure for now
                console.error(err);
                clearPersonId();
                errorBox.style.display = "block";
@@ -142,14 +150,11 @@
       }
 
       // =========================
-      // PROTECTED PAGE GUARD (testing-stage)
+      // PROTECTED PAGE GUARD
       // =========================
       const isProtected = document.body?.dataset?.protected === "true";
-      if (isProtected) {
-         // If no saved personId, force login
-         if (!getPersonId()) {
-            goTo(LOGIN_FILE);
-         }
+      if (isProtected && !getPersonId()) {
+         goTo(LOGIN_FILE);
       }
    });
 })();
