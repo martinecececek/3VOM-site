@@ -1,0 +1,32 @@
+/* docs/assets/css/base/layout.css */
+.container {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 1.5rem;
+}
+
+/* Page hero (all pages) */
+.page-hero {
+  padding: 1.5rem 0 1rem;
+  text-align: center;
+}
+
+.page-hero h2 {
+  font-size: 2rem;
+  margin-bottom: 0.5rem;
+}
+
+.page-hero-text {
+  color: var(--soft-text);
+  max-width: 780px;
+  margin: 0 auto;
+}
+
+/* Section titles (home sections, etc.) */
+section > h3 {
+  text-align: center;
+  letter-spacing: 0.08em;
+  font-size: 0.85rem;
+  color: var(--muted);
+  margin: 2.5rem 0 1.75rem;
+}

@@ -1,0 +1,258 @@
+/* docs/assets/css/features/borrow.css */
+/* Borrow table + admin editor */
+.borrow-card {
+   background: var(--card);
+   border: 1px solid var(--border);
+   border-radius: 22px;
+   padding: 2rem;
+   margin-top: 2rem;
+}
+
+.borrow-card h3 {
+   margin-bottom: 0.5rem;
+   letter-spacing: normal;
+}
+
+.borrow-help {
+   color: var(--soft-text);
+   margin-bottom: 1.25rem;
+}
+
+.borrow-table-wrap {
+   border: 1px solid var(--border);
+   border-radius: 18px;
+   overflow: hidden;
+   background: rgba(255, 255, 255, 0.03);
+}
+
+.borrow-table {
+   width: 100%;
+   border-collapse: collapse;
+}
+
+.borrow-table thead th {
+   text-align: left;
+   font-size: 0.95rem;
+   color: var(--text);
+   background: rgba(255, 255, 255, 0.06);
+   border-bottom: 1px solid var(--border);
+   padding: 0.95rem 1rem;
+}
+
+.borrow-table tbody td {
+   padding: 0.95rem 1rem;
+   border-bottom: 1px solid var(--border);
+   color: var(--soft-text);
+   vertical-align: top;
+}
+
+.borrow-table tbody tr:hover {
+   background: rgba(56, 189, 248, 0.06);
+}
+
+.borrow-table tbody tr:last-child td {
+   border-bottom: none;
+}
+
+/* pills */
+.borrow-items {
+   display: flex;
+   flex-wrap: wrap;
+   gap: 0.5rem;
+}
+
+.borrow-pill {
+   display: inline-flex;
+   align-items: center;
+   gap: 0.45rem;
+   padding: 0.35rem 0.6rem;
+   border-radius: 999px;
+   background: rgba(56, 189, 248, 0.12);
+   border: 1px solid rgba(56, 189, 248, 0.22);
+   color: var(--text);
+   font-weight: 700;
+   font-size: 0.9rem;
+}
+
+.borrow-pill .dot {
+   width: 8px;
+   height: 8px;
+   border-radius: 999px;
+   background: var(--primary);
+   box-shadow: 0 0 0 4px rgba(56, 189, 248, 0.18);
+}
+
+.borrow-empty {
+   color: var(--muted);
+   font-weight: 700;
+}
+
+/* responsive scroll */
+@media (max-width: 767px) {
+   .borrow-table-wrap {
+      overflow-x: auto;
+   }
+   .borrow-table {
+      min-width: 720px;
+   }
+}
+
+/* person header row */
+.person-row td {
+   background: rgba(255, 255, 255, 0.06);
+   border-bottom: 1px solid var(--border);
+   padding: 1rem;
+}
+
+.person-name {
+   display: flex;
+   align-items: center;
+   gap: 0.75rem;
+   font-weight: 800;
+   color: var(--text);
+   width: 100%;
+}
+
+.person-badge {
+   display: inline-flex;
+   align-items: center;
+   justify-content: center;
+   width: 32px;
+   height: 32px;
+   border-radius: 12px;
+   background: rgba(56, 189, 248, 0.15);
+   border: 1px solid rgba(56, 189, 248, 0.25);
+   color: var(--primary);
+   font-weight: 900;
+}
+
+/* Admin buttons */
+.admin-btn {
+   margin-left: auto;
+   padding: 0.45rem 0.8rem;
+   border-radius: 12px;
+   border: 1px solid rgba(56, 189, 248, 0.25);
+   background: rgba(56, 189, 248, 0.12);
+   color: var(--text);
+   font-weight: 800;
+   cursor: pointer;
+}
+
+.admin-btn:hover {
+   background: rgba(56, 189, 248, 0.18);
+}
+
+.admin-btn.danger {
+   border: 1px solid rgba(248, 113, 113, 0.25);
+   background: rgba(248, 113, 113, 0.12);
+}
+
+.admin-btn.danger:hover {
+   background: rgba(248, 113, 113, 0.18);
+}
+
+/* button on right */
+.person-name .add-item-btn {
+   margin-left: auto;
+}
+
+/* inline editor row */
+.editor-row td {
+   background: rgba(255, 255, 255, 0.04);
+   border-top: 1px solid var(--border);
+   color: var(--text);
+}
+
+.editor-grid {
+   display: grid;
+   grid-template-columns: 1fr 1fr 1fr 180px 140px;
+   gap: 0.75rem;
+   align-items: center;
+}
+
+/* inputs + selects */
+.editor-grid input,
+.editor-grid select {
+   width: 100%;
+   padding: 0.65rem 0.85rem;
+   border-radius: 14px;
+   border: 1px solid rgba(255, 255, 255, 0.12);
+   background: rgba(255, 255, 255, 0.05);
+   color: var(--text);
+   font-weight: 600;
+   outline: none;
+   transition: all 0.2s ease;
+   min-height: 42px;
+}
+
+.editor-grid input::placeholder {
+   color: rgba(203, 213, 245, 0.6);
+   font-weight: 600;
+}
+
+.editor-grid input:focus,
+.editor-grid select:focus {
+   border-color: var(--primary);
+   box-shadow: 0 0 0 4px rgba(56, 189, 248, 0.12);
+}
+
+/* custom select arrow */
+.editor-grid select {
+   appearance: none;
+   -webkit-appearance: none;
+   -moz-appearance: none;
+   cursor: pointer;
+
+   background-image:
+      linear-gradient(45deg, transparent 50%, rgba(229, 231, 235, 0.85) 50%),
+      linear-gradient(135deg, rgba(229, 231, 235, 0.85) 50%, transparent 50%);
+   background-position:
+      calc(100% - 18px) 50%,
+      calc(100% - 12px) 50%;
+   background-size:
+      6px 6px,
+      6px 6px;
+   background-repeat: no-repeat;
+   padding-right: 2rem;
+}
+
+/* actions */
+.editor-actions {
+   display: flex;
+   justify-content: flex-end;
+   gap: 0.6rem;
+}
+
+.editor-actions .admin-btn {
+   min-width: 70px;
+}
+
+/* last col right */
+.borrow-table td:last-child,
+.borrow-table th:last-child {
+   text-align: right;
+}
+
+/* responsive editor grid */
+@media (max-width: 900px) {
+   .editor-grid {
+      grid-template-columns: 1fr 1fr;
+   }
+}
+
+@media (max-width: 600px) {
+   .editor-grid {
+      grid-template-columns: 1fr;
+   }
+
+   .editor-actions {
+      justify-content: flex-start;
+   }
+}
+
+/* your “fixed width” override (kept as-is) */
+.borrow-card {
+   margin: 2rem auto;
+   width: 1500px;
+   max-width: 100%;
+}

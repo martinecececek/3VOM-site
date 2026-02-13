@@ -1,0 +1,68 @@
+/* docs/assets/css/pages/join.css */
+/* JOIN (layout + cards; inputs are in components/forms.css) */
+.join-layout {
+   display: grid;
+   gap: 2rem;
+   margin-top: 2rem;
+}
+
+.join-card {
+   background: var(--card);
+   border: 1px solid var(--border);
+   border-radius: 18px;
+   padding: 2rem;
+}
+
+.join-card h3 {
+   text-align: left;
+   letter-spacing: normal;
+   margin: 0 0 1rem;
+}
+
+.join-text {
+   color: var(--soft-text);
+   margin-bottom: 1.25rem;
+}
+
+.join-list {
+   display: grid;
+   gap: 0.75rem;
+}
+
+.join-list-item {
+   display: flex;
+   gap: 0.75rem;
+   align-items: center;
+   color: var(--soft-text);
+   font-weight: 600;
+}
+
+.join-bullet {
+   display: inline-flex;
+   align-items: center;
+   justify-content: center;
+   width: 28px;
+   height: 28px;
+   border-radius: 999px;
+   background: rgba(56, 189, 248, 0.15);
+   color: var(--primary);
+   font-weight: 900;
+   flex: 0 0 auto;
+}
+
+.join-form {
+   display: grid;
+   gap: 1rem;
+}
+
+.join-form .btn {
+   max-width: 100%;
+}
+
+/* responsive desktop */
+@media (min-width: 768px) {
+   .join-layout {
+      grid-template-columns: 1fr 1fr;
+      align-items: start;
+   }
+}

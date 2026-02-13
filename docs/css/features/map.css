@@ -1,0 +1,176 @@
+/* docs/assets/css/features/map.css */
+.footer-sep-map {
+   width: 100%;
+   height: 1px;
+   background: var(--border);
+   margin: 2.5rem 0;
+}
+
+.map-card {
+   margin-top: 30px;
+   background: rgba(255, 255, 255, 0.06);
+   border: 1px solid rgba(255, 255, 255, 0.08);
+   border-radius: 18px;
+   overflow: hidden;
+   position: relative;
+}
+
+.map-link {
+   position: relative;
+   cursor: pointer;
+}
+
+.map {
+   height: 220px;
+   width: 100%;
+   position: relative;
+}
+
+/* desaturate tiles */
+.map .leaflet-tile {
+   filter: grayscale(1) contrast(1.15) brightness(0.95);
+   opacity: 0.9;
+}
+
+/* blue overlay tint */
+.map::after {
+   content: "";
+   position: absolute;
+   inset: 0;
+   pointer-events: none;
+   background:
+      linear-gradient(0deg, rgba(56, 189, 248, 0.2), rgba(56, 189, 248, 0.2)),
+      radial-gradient(
+         circle at 30% 20%,
+         rgba(203, 213, 245, 0.12),
+         transparent 55%
+      );
+   mix-blend-mode: multiply;
+   z-index: 5;
+}
+
+/* hide controls */
+.map .leaflet-control-container {
+   display: none;
+}
+
+/* panes below hover */
+.map .leaflet-container,
+.map .leaflet-pane,
+.map .leaflet-tile-pane,
+.map .leaflet-overlay-pane,
+.map .leaflet-marker-pane,
+.map .leaflet-popup-pane {
+   z-index: 1;
+}
+
+/* hover overlay */
+.map-hover {
+   position: absolute;
+   inset: 0;
+   display: grid;
+   place-items: center;
+
+   background: rgba(7, 13, 31, 0.55);
+   backdrop-filter: blur(3px);
+
+   color: #e5e7eb;
+   font-weight: 800;
+   font-size: 1.1rem;
+   letter-spacing: 0.02em;
+
+   opacity: 0;
+   transition: opacity 0.25s ease;
+   z-index: 9999;
+}
+
+.map-link:hover .map-hover {
+   opacity: 1;
+}
+
+/* pin */
+.pin-wrap {
+   background: transparent;
+   border: none;
+}
+
+.pin {
+   position: relative;
+   width: 46px;
+   height: 46px;
+   transform: translateY(-2px);
+}
+
+.pin-head {
+   width: 46px;
+   height: 46px;
+   border-radius: 999px;
+   background: rgba(229, 231, 235, 0.12);
+   border: 2px solid rgba(229, 231, 235, 0.28);
+   backdrop-filter: blur(6px);
+   display: grid;
+   place-items: center;
+}
+
+.pin-icon {
+   display: grid;
+   place-items: center;
+   width: 28px;
+   height: 28px;
+   border-radius: 10px;
+   background: rgba(56, 189, 248, 0.22);
+   border: 1px solid rgba(56, 189, 248, 0.35);
+   color: #e5e7eb;
+   font-weight: 900;
+   font-size: 14px;
+   line-height: 1;
+}
+
+.pin-tip {
+   position: absolute;
+   left: 50%;
+   bottom: -10px;
+   width: 16px;
+   height: 16px;
+   transform: translateX(-50%) rotate(45deg);
+   background: rgba(229, 231, 235, 0.12);
+   border-right: 2px solid rgba(229, 231, 235, 0.22);
+   border-bottom: 2px solid rgba(229, 231, 235, 0.22);
+   border-bottom-right-radius: 4px;
+}
+
+/* label */
+.label-wrap {
+   background: transparent;
+   border: none;
+}
+
+.map-label {
+   display: inline-flex;
+   align-items: center;
+   padding: 0.55rem 0.75rem;
+   border-radius: 999px;
+
+   background: rgba(7, 13, 31, 0.72);
+   border: 1px solid rgba(255, 255, 255, 0.12);
+   backdrop-filter: blur(8px);
+
+   color: #e5e7eb;
+   font-size: 0.95rem;
+   white-space: nowrap;
+   box-shadow: 0 10px 30px rgba(0, 0, 0, 0.35);
+}
+
+.leaflet-tooltip {
+   background: rgba(7, 13, 31, 0.9);
+   border: 1px solid rgba(255, 255, 255, 0.12);
+   color: #e5e7eb;
+   border-radius: 10px;
+   padding: 6px 10px;
+   font-weight: 600;
+   backdrop-filter: blur(6px);
+}
+
+.leaflet-tooltip::before {
+   border-top-color: rgba(7, 13, 31, 0.9);
+}

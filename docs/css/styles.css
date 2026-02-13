@@ -1,0 +1,31 @@
+/* docs/assets/css/styles.css */
+/* Master stylesheet (ONLY this one is linked in HTML) */
+/* IMPORTANT: @import must be at the very top */
+
+@import url("./base/reset.css");
+@import url("./base/variables.css");
+@import url("./base/typography.css");
+@import url("./base/layout.css");
+
+@import url("./components/header.css");
+@import url("./components/buttons.css");
+@import url("./components/forms.css");
+@import url("./components/popup.css");
+@import url("./components/ui-select.css");
+@import url("./components/footer.css");
+
+@import url("./features/map.css");
+@import url("./features/borrow.css");
+@import url("./features/lightbox.css");
+
+@import url("./pages/home.css");
+@import url("./pages/activities.css");
+@import url("./pages/gallery.css");
+@import url("./pages/about.css");
+@import url("./pages/join.css");
+@import url("./pages/contact.css");
+@import url("./pages/bring.css");
+@import url("./pages/safety.css");
+@import url("./pages/equipment.css");
+@import url("./pages/login.css");
+@import url("./pages/admin.css");
