@@ -21,7 +21,7 @@ function renderFooter() {
 
     <div class="footer-brand">
       <div class="footer-logo">
-        <img src="../../docs/assets/image/logo/3VOM-logo.png" alt="3VOM oddílové logo" />
+        <img src="../../assets/image/logo/3VOM-logo.png" alt="3VOM oddílové logo" />
       </div>
       <p class="footer-desc">
         3.VOM je komunita přátelská k začátečníkům, postavená na
@@ -66,15 +66,15 @@ function renderFooter() {
 
       <div class="footer-logos">
         <a class="footer-logo-item" href="https://www.a-tom.cz/" target="_blank" rel="noopener">
-          <img src="../assets/image/logo/ATOM-logo.png" alt="ATOM logo" />
+          <img src="../../assets/image/logo/ATOM-logo.png" alt="ATOM logo" />
         </a>
 
         <a class="footer-logo-item" href="https://kct.cz/" target="_blank" rel="noopener">
-          <img src="../assets/image/logo/KCT-logo.png" alt="KCT logo" />
+          <img src="../../assets/image/logo/KCT-logo.png" alt="KCT logo" />
         </a>
 
         <a class="footer-logo-item" href="https://www.ddmul.cz/" target="_blank" rel="noopener">
-          <img src="../assets/image/logo/DDM-logo.png" alt="DDM logo" />
+          <img src="../../assets/image/logo/DDM-logo.png" alt="DDM logo" />
         </a>
       </div>
     </div>
