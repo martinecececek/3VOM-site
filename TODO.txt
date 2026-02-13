@@ -19,8 +19,6 @@ poslat auto odpověď že děkujeme za zájem a ze je kontaktuje vedouci - at s 
 
 Pozdeji udělat separe profily na zapujcky
 
-!!create a new file system - urgently (tomorow)!! - create new branch to test the structure
-
 translate text (27.2.)!!
 
 from admin page remove ADMIN_KEY - neni potreba a vim ho jen ja
@@ -34,3 +32,6 @@ recreate from scrach admin borrow panel. need 2 cloudflare workers (1 adding to 
         [all dinamycli loaded on user site (create JSON for logging in - after login load only a part of the JSON 
         => the user part selected by id after login)] 
     - keep the same JSON structure!
+    ¨
+------
+need to remove a save ID after login
