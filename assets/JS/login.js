@@ -15,7 +15,7 @@
 
    // Path to your separate login JSON (adjust if your folder differs)
    // Example assumes: /assets/data/users.json relative to current folder
-   const USERS_JSON_PATH = "../../src/data/user.json";
+   const USERS_JSON_PATH = "./../../src/data/user.json";
 
    // Storage key for the logged-in personId
    const PERSON_ID_KEY = "personId";
