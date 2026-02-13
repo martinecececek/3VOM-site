@@ -3,7 +3,7 @@ async function loadGallery() {
    if (!container) return;
 
    try {
-      const response = await fetch("../src/data/gallery.json", {
+      const response = await fetch("../../src/data/gallery.json", {
          cache: "no-store",
       });
       if (!response.ok)
