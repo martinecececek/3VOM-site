@@ -22,7 +22,7 @@ if (!tableBody) {
       // Optional: redirect to login page instead of showing message
       // window.location.href = "login.html";
    } else {
-      const jsonUrl = new URL("../../src/data/items.json", import.meta.url);
+      const jsonUrl = new URL("./../../src/data/items.json", import.meta.url);
 
       console.log("borrow.js:", import.meta.url);
       console.log("Fetching JSON:", jsonUrl.href);
