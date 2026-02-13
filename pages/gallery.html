@@ -9,19 +9,16 @@
       <!-- MAIN STYLES -->
       <link rel="stylesheet" href="../css/styles.css" />
 
-      <!-- ✅ correct icon path from /pages/gallery.html -->
+      <!-- ✅ FIXED: correct favicon path (you are already in /pages) -->
       <link rel="icon" type="image/png" href="../assets/image/logo/3VOM-logo.png" />
    </head>
 
    <body>
       <!-- HEADER -->
       <div id="header"></div>
-
-      <!-- ✅ Load header and call renderHeader -->
-      <script type="module">
-         import "../src/components/header.js";
-         // If header.js attaches renderHeader to window, this will work:
-         window.renderHeader?.("gallery");
+      <script src="../src/components/header.js"></script>
+      <script>
+         renderHeader("gallery");
       </script>
 
       <!-- MAIN -->
@@ -77,11 +74,9 @@
 
       <!-- FOOTER -->
       <div id="footer"></div>
-
-      <!-- ✅ Load footer and call renderFooter -->
-      <script type="module">
-         import "../src/components/footer.js";
-         window.renderFooter?.();
+      <script src="../src/components/footer.js"></script>
+      <script>
+         renderFooter();
       </script>
 
       <!-- LIGHTBOX HTML (must exist BEFORE lightbox.js) -->
@@ -141,8 +136,11 @@
          </figure>
       </div>
 
-      <!-- ✅ SCRIPTS (module required if gallery.js uses import.meta.url) -->
+      <!-- ✅ SCRIPTS -->
+      <!-- gallery.js MUST be module if it uses import.meta.url -->
       <script type="module" src="../assets/JS/gallery.js"></script>
-      <script type="module" src="../assets/JS/lightbox.js"></script>
+
+      <!-- lightbox.js can stay normal (unless it uses import/export) -->
+      <script src="../assets/JS/lightbox.js"></script>
    </body>
 </html>
