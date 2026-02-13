@@ -3,15 +3,22 @@ async function loadGallery() {
    if (!container) return;
 
    try {
-      const response = await fetch("../../test/data/gallery.json", {
+      // ✅ Resolve JSON relative to this file: assets/JS/gallery.js
+      // assets/JS/gallery.js -> src/data/gallery.json
+      const jsonUrl = new URL("../../src/data/gallery.json", import.meta.url);
+
+      const response = await fetch(jsonUrl, {
          cache: "no-store",
       });
-      if (!response.ok)
+
+      if (!response.ok) {
          throw new Error(`Cannot load gallery.json (HTTP ${response.status})`);
+      }
 
       const images = await response.json();
-      if (!Array.isArray(images))
+      if (!Array.isArray(images)) {
          throw new Error("gallery.json must be an array");
+      }
 
       // newest first
       images.sort((a, b) => new Date(b.date) - new Date(a.date));
@@ -30,10 +37,18 @@ async function loadGallery() {
          figure.className = "gallery-item";
 
          const imageEl = document.createElement("img");
-         imageEl.src = `../assets/image/gallery-12-pics/${encodeURIComponent(file)}`;
+
+         // ✅ Resolve images relative to this JS file too:
+         // assets/JS/gallery.js -> assets/image/gallery-12-pics/<file>
+         const imgUrl = new URL(
+            `../image/gallery-12-pics/${encodeURIComponent(file)}`,
+            import.meta.url,
+         );
+
+         imageEl.src = imgUrl.href;
          imageEl.alt = captionText;
 
-         // ⭐ optional UX / perf
+         // optional UX / perf
          imageEl.loading = "lazy";
          imageEl.decoding = "async";
 
@@ -52,7 +67,7 @@ async function loadGallery() {
       console.error("Gallery load error:", error);
       container.innerHTML = `
       <p style="color: var(--muted);">
-        Galerii se nepodařilo načíst. Zkontroluj <strong>./images/gallery.json</strong>.
+        Galerii se nepodařilo načíst.
       </p>
     `;
    }
