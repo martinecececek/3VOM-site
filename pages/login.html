@@ -6,8 +6,7 @@
     <meta name="viewport"
         content="width=device-width, initial-scale=1.0" />
     <title>Přihlášení | 3.VOM</title>
-     <link rel="icon" type="image/png" href="../assets/image/logo/3VOM-logo.png" />
-
+    <link rel="icon" type="image/png" href="../assets/image/logo/3VOM-logo.png" />
 
     <!-- Your main CSS file -->
     <link rel="stylesheet" href="../css/styles.css" />
@@ -27,14 +26,21 @@
     <main class="login-wrap">
         <div class="login-card">
 
-            <h2>Enter Password</h2>
+            <h2>Enter Login</h2>
             <p class="login-desc">
-                This page is protected. Please enter the
-                password to continue.
+                This page is protected. Please enter your
+                username and password to continue.
             </p>
 
             <form class="join-form" id="loginForm"
                 autocomplete="off">
+
+                <div class="field">
+                    <label for="username">Username</label>
+                    <input id="username" name="username"
+                        type="text"
+                        placeholder="username" required />
+                </div>
 
                 <div class="field">
                     <label for="password">Password</label>
@@ -48,7 +54,7 @@
                 </button>
 
                 <div id="errorBox" class="login-error">
-                    Wrong password. Try again.
+                    Wrong username or password. Try again.
                 </div>
 
                 <div class="login-hint">
