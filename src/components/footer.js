@@ -1,6 +1,10 @@
 function renderFooter() {
-   // If current URL contains "/pages/", we are inside the pages folder
    const isInPages = window.location.pathname.includes("/pages/");
+
+   // ✅ Works on GitHub project pages (/3VOM-site/) and locally (/)
+   const siteBase = window.location.pathname.includes("/3VOM-site/")
+      ? "/3VOM-site/"
+      : "/";
 
    // Links to pages:
    // - from index: "pages/about.html"
@@ -8,20 +12,13 @@ function renderFooter() {
    const pageHref = (file) =>
       isInPages ? `${file}.html` : `pages/${file}.html`;
 
-   // Assets:
-   // - from index: "docs/..."
-   // - from /pages/*: "../docs/..."
-   const assetBase = isInPages
-      ? "../docs/assets/image/logo/"
-      : "docs/assets/image/logo/";
-
    const footerHTML = `
 <footer class="site-footer">
   <div class="footer-inner">
 
     <div class="footer-brand">
       <div class="footer-logo">
-        <img src="../../assets/image/logo/3VOM-logo.png" alt="3VOM oddílové logo" />
+        <img src="${siteBase}assets/image/logo/3VOM-logo.png" alt="3VOM oddílové logo" />
       </div>
       <p class="footer-desc">
         3.VOM je komunita přátelská k začátečníkům, postavená na
@@ -66,15 +63,15 @@ function renderFooter() {
 
       <div class="footer-logos">
         <a class="footer-logo-item" href="https://www.a-tom.cz/" target="_blank" rel="noopener">
-          <img src="../../assets/image/logo/ATOM-logo.png" alt="ATOM logo" />
+          <img src="${siteBase}assets/image/logo/ATOM-logo.png" alt="ATOM logo" />
         </a>
 
         <a class="footer-logo-item" href="https://kct.cz/" target="_blank" rel="noopener">
-          <img src="../../assets/image/logo/KCT-logo.png" alt="KCT logo" />
+          <img src="${siteBase}assets/image/logo/KCT-logo.png" alt="KCT logo" />
         </a>
 
         <a class="footer-logo-item" href="https://www.ddmul.cz/" target="_blank" rel="noopener">
-          <img src="../../assets/image/logo/DDM-logo.png" alt="DDM logo" />
+          <img src="${siteBase}assets/image/logo/DDM-logo.png" alt="DDM logo" />
         </a>
       </div>
     </div>
@@ -85,7 +82,7 @@ function renderFooter() {
 
   </div>
 </footer>
-  `;
+`;
 
    const mount = document.getElementById("footer");
    if (!mount) {
