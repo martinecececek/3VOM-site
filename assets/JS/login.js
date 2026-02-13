@@ -1,9 +1,12 @@
 /* JS/login.js
    Testing-stage login:
-   - Compares username + password against user.json
+   - Compares username + password against src/data/user.json
    - On success, saves personId for use on another page
    - Redirects to the protected page
    - Works on localhost + GitHub Pages
+
+   IMPORTANT:
+   This version uses the repo name explicitly to avoid GitHub Pages base-path issues.
 */
 
 (() => {
@@ -12,6 +15,12 @@
    // =========================
    const LOGIN_FILE = "login.html";
    const AFTER_LOGIN_FILE = "pujceni.html";
+
+   // Your GitHub Pages repo name (the folder after your domain)
+   const REPO_NAME = "3VOM-site";
+
+   // JSON location inside the repo
+   const USERS_JSON_ABS_PATH = `/${REPO_NAME}/src/data/user.json`;
 
    // Storage key for logged user
    const PERSON_ID_KEY = "personId";
@@ -48,17 +57,16 @@
       }
    };
 
-   // =========================
-   // REDIRECT BASE DIR
-   // =========================
+   // Build a proper base directory (folder) for redirects (login.html -> pujceni.html)
    const getBaseDir = () => {
       const url = new URL(window.location.href);
 
-      // Fix accidental login.html/
+      // Fix accidental /login.html/ => /login.html
       if (url.pathname.endsWith(".html/")) {
          url.pathname = url.pathname.replace(/\.html\/$/, ".html");
       }
 
+      // Directory path (ends with /)
       const dirPath = url.pathname.replace(/[^/]*$/, "");
       return url.origin + dirPath;
    };
@@ -70,11 +78,14 @@
    };
 
    // =========================
-   // FETCH USERS (YOUR VERSION)
+   // FETCH USERS (GitHub Pages-safe)
    // =========================
    const fetchUsers = async () => {
-      // Build URL relative to the current page URL (keeps /3VOM-site/)
-      const usersUrl = new URL("../src/data/user.json", window.location.href);
+      // Absolute path that keeps /3VOM-site/ (repo) on GitHub Pages
+      const usersUrl = new URL(USERS_JSON_ABS_PATH, window.location.origin);
+
+      console.log("Login page:", window.location.href);
+      console.log("Fetching users JSON:", usersUrl.href);
 
       const res = await fetch(usersUrl.href, { cache: "no-store" });
       if (!res.ok) {
