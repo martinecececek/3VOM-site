@@ -1,0 +1,44 @@
+/* docs/assets/css/components/forms.css */
+/* JOIN (FORM) – inputs and common form UI */
+.field {
+   display: grid;
+   gap: 0.45rem;
+}
+
+.field label {
+   color: var(--muted);
+   font-weight: 700;
+   font-size: 0.95rem;
+}
+
+.field input,
+.field textarea {
+   width: 100%;
+   display: block;
+   padding: 0.95rem 1rem;
+   border-radius: 14px;
+   border: 1px solid var(--border);
+   background: var(--input-bg);
+   color: var(--text);
+   outline: none;
+}
+
+.field textarea {
+   resize: vertical;
+   min-height: 140px;
+}
+
+.field input::placeholder,
+.field textarea::placeholder {
+   color: rgba(203, 213, 245, 0.6);
+}
+
+.field input:focus,
+.field textarea:focus {
+   border-color: var(--focus);
+}
+
+.form-note {
+   color: var(--muted);
+   font-size: 0.95rem;
+}

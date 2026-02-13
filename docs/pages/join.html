@@ -1,0 +1,167 @@
+<!doctype html>
+<html lang="cs">
+
+<head>
+   <meta charset="UTF-8" />
+   <meta name="viewport"
+      content="width=device-width, initial-scale=1.0" />
+   <title>3.VOM | Přidej se</title>
+   <link rel="stylesheet" href="../css/styles.css" />
+   <link rel="icon" type="image/png"
+      href="../assets/image/logo/3VOM-logo.png" />
+</head>
+
+<body>
+   <div id="header"></div>
+
+   <script src="../../src/components/header.js"></script>
+   <script>
+      renderHeader("null");
+   </script>
+
+   <main class="container">
+      <section class="page-hero">
+         <h2>Formulář zájmu</h2>
+         <p class="page-hero-text">
+            Pošlete své údaje a ozveme se s dalšími kroky.
+         </p>
+      </section>
+
+      <section class="join-layout">
+         <div class="join-card">
+            <h3>Jak to funguje</h3>
+            <p class="join-text">
+               Odeslání tohoto formuláře neznamená
+               automatické přijetí vašeho
+               dítěte. Ozveme se s dalšími kroky a
+               informacemi.
+            </p>
+
+            <div class="join-list">
+               <div class="join-list-item">
+                  <span
+                     class="join-bullet">1</span><span>Pošlete
+                     údaje o zájmu</span>
+               </div>
+               <div class="join-list-item">
+                  <span
+                     class="join-bullet">2</span><span>Potvrdíme
+                     dostupnost</span>
+               </div>
+               <div class="join-list-item">
+                  <span
+                     class="join-bullet">3</span><span>Dostanete
+                     finální pokyny</span>
+               </div>
+            </div>
+         </div>
+
+         <div class="join-card">
+            <h3>Formulář zájmu</h3>
+
+            <!-- ===== FORM (unchanged structure/classes) ===== -->
+            <form class="join-form"
+               action="PASTE_YOUR_WORKER_URL_HERE"
+               method="POST">
+               <!-- extras -->
+               <input type="hidden" name="_subject"
+                  value="Nové odeslání formuláře přihlášky" />
+               <input type="text" name="_gotcha"
+                  style="display: none" />
+
+               <div class="field">
+                  <label for="childName">Jméno
+                     dítěte</label>
+                  <input id="childName" name="Jméno:"
+                     type="text" placeholder="Honza"
+                     required />
+               </div>
+
+               <div class="field">
+                  <label for="childSurname">Příjmení
+                     dítěte</label>
+                  <input id="childSurname" name="Příjmení:"
+                     type="text" placeholder="Omáčka"
+                     required />
+               </div>
+
+               <div class="field">
+                  <label for="childBirthDate">Rok narození
+                     dítěte</label>
+                  <input id="childBirthDate"
+                     name="Rok narození dítěte:"
+                     type="number" placeholder="2006"
+                     required />
+               </div>
+
+               <div class="field">
+                  <label for="childEmail">Email
+                     rodiče</label>
+                  <input id="childEmail" name="email"
+                     type="email"
+                     placeholder="rodic@priklad.cz"
+                     required />
+               </div>
+
+               <div class="field">
+                  <label for="parentPhone">Telefon
+                     rodiče</label>
+                  <input id="parentPhone"
+                     name="Telefon rodiče:" type="tel"
+                     placeholder="+420 123 456 789"
+                     required />
+               </div>
+
+               <div class="field">
+                  <label for="notes">
+                     Důležité informace (alergie, zdravotní
+                     poznámky,
+                     atd.)
+                  </label>
+                  <textarea id="notes"
+                     name="Důležité informace:" rows="5"
+                     placeholder="Prosím, dejte nám vědět o alergiích, zdravotních komplikacích nebo čemkoli jiném, co bychom měli vědět. Pokud nemáte alergie a komplikace, napište 'Žádné'."
+                     required></textarea>
+               </div>
+
+               <button type="submit"
+                  class="btn primary">Odeslat</button>
+
+               <p class="form-note">
+                  Odesláním tohoto formuláře nedochází k
+                  automatickému
+                  zápisu vašeho dítěte
+               </p>
+            </form>
+
+
+            <!-- ===== POPUP ===== -->
+            <div id="popup" hidden>
+               <div class="popup-box">
+                  <p>Formulář byl úspěšně odeslán.</p>
+                  <button id="closePopup"
+                     class="btn primary">Zavřít</button>
+               </div>
+            </div>
+
+            <script src="../assets/JS/email-send.js"></script>
+         </div>
+      </section>
+
+      <div id="success-popup" class="popup"
+         style="display: none">
+         <div class="popup-content">
+            <p>Formulář byl úspěšně odeslán.</p>
+            <button id="close-popup">Zavřít</button>
+         </div>
+      </div>
+   </main>
+
+   <div id="footer"></div>
+   <script src="../../src/components/footer.js"></script>
+   <script>
+      renderFooter();
+   </script>
+</body>
+
+</html>

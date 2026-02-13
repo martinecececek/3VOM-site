@@ -1,0 +1,136 @@
+/* docs/assets/css/pages/home.css */
+/* HOME: HERO */
+.hero-card {
+   position: relative;
+   height: 70vh;
+   border-radius: 20px;
+   overflow: hidden;
+
+   /* IMPORTANT PATH:
+     home.css is in assets/css/pages/
+     images are assumed in assets/images/
+     so go up two levels -> assets/ -> images/
+  */
+   background-image: url("../../assets/image/index-pokus.png");
+   background-size: cover;
+   background-position: center;
+   margin: 2rem 0 3rem;
+}
+
+.hero-overlay {
+   position: absolute;
+   inset: 0;
+   padding: 2rem 2rem 12.75rem;
+   background: linear-gradient(to top, rgba(0, 0, 0, 0.75), rgba(0, 0, 0, 0.2));
+   display: flex;
+   flex-direction: column;
+   justify-content: flex-end;
+   text-align: center;
+}
+
+.hero-overlay h2 {
+   font-size: 2.3rem;
+   margin-bottom: 0.75rem;
+}
+
+.hero-overlay p {
+   color: var(--soft-text);
+   max-width: 520px;
+   margin: 0 auto;
+}
+
+.hero-buttons {
+   position: absolute;
+   bottom: 2rem;
+   left: 50%;
+   transform: translateX(-50%);
+   width: 100%;
+   max-width: 420px;
+   display: grid;
+   gap: 1rem;
+   padding: 0 1.25rem;
+}
+
+/* HOME: WHY JOIN */
+.why-list {
+   display: grid;
+   gap: 1.5rem;
+}
+
+.why-card {
+   background: var(--card);
+   border: 1px solid var(--border);
+   border-radius: 18px;
+   padding: 1.5rem;
+   display: flex;
+   gap: 1rem;
+}
+
+.why-card h4 {
+   margin-bottom: 0.2rem;
+}
+
+.why-card p {
+   color: var(--soft-text);
+}
+
+.why-icon {
+   background: rgba(56, 189, 248, 0.15);
+   color: var(--primary);
+   font-size: 1.4rem;
+   padding: 0.6rem;
+   border-radius: 12px;
+   flex: 0 0 auto;
+}
+
+/* HOME: EXPERIENCE NATURE */
+.experience-wrap {
+   padding: 5rem 1.5rem 2rem;
+}
+
+.experience-inner {
+   max-width: 900px;
+   margin: 0 auto;
+   text-align: center;
+}
+
+.experience-inner h2 {
+   font-size: 2rem;
+   margin-bottom: 1rem;
+}
+
+.experience-text {
+   color: var(--soft-text);
+   max-width: 520px;
+   margin: 0 auto 2rem;
+}
+
+.experience-btn {
+   margin: 0 auto 3.5rem;
+}
+
+.experience-stack {
+   display: grid;
+   gap: 3rem;
+   text-align: left;
+}
+
+.experience-card img {
+   width: 100%;
+   border-radius: 22px;
+   margin-bottom: 1.25rem;
+   display: block;
+}
+
+.experience-card h3 {
+   margin: 0 0 0.35rem;
+   letter-spacing: normal;
+   color: var(--text);
+   font-size: 1.35rem;
+   text-align: center;
+}
+
+.experience-card p {
+   color: var(--soft-text);
+   text-align: center;
+}

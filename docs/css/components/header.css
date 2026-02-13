@@ -1,0 +1,130 @@
+/* docs/assets/css/components/header.css */
+/* Header & Nav */
+.top-header {
+  text-align: center;
+  padding: 1.25rem 1rem 0.75rem;
+}
+
+.top-header h1 {
+  font-size: 1.5rem;
+  font-weight: 700;
+  margin-bottom: 0.75rem;
+}
+
+.top-nav {
+  display: flex;
+  justify-content: center;
+  gap: 1.25rem;
+  flex-wrap: wrap;
+  border-bottom: 1px solid var(--border);
+  padding-bottom: 0.75rem;
+}
+
+.top-nav a {
+  text-decoration: none;
+  font-weight: 500;
+  color: var(--muted);
+  padding: 0.15rem 0.25rem;
+}
+
+.top-nav a.active {
+  color: var(--primary);
+  border-bottom: 2px solid var(--primary);
+}
+
+/* Header (logo + centered nav + full divider) */
+.top-header {
+  position: relative;
+  padding: 0;
+}
+
+/* full-width divider */
+.top-header::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  height: 1px;
+  background: var(--border);
+}
+
+/* inner layout */
+.header-inner {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 1.25rem 1rem 0.75rem;
+
+  display: grid;
+  grid-template-columns: auto 1fr;
+  align-items: center;
+  column-gap: 1.25rem;
+}
+
+/* logo */
+.header-logo img {
+  width: 120px;
+  height: auto;
+  display: block;
+}
+
+/* title + nav wrapper */
+.header-content {
+  width: 100%;
+  display: grid;
+  justify-items: center;
+  margin-left: -64px;
+}
+
+/* title */
+.header-content h1 {
+  font-size: 1.5rem;
+  font-weight: 700;
+  margin-bottom: 0.5rem;
+  text-align: center;
+}
+
+/* navbar */
+.header-content .top-nav {
+  display: flex;
+  justify-content: center;
+  gap: 1.25rem;
+  flex-wrap: wrap;
+
+  border-bottom: none;
+  padding-bottom: 0;
+}
+
+/* nav links */
+.header-content .top-nav a {
+  text-decoration: none;
+  font-weight: 500;
+  color: var(--muted);
+  padding: 0.15rem 0.25rem;
+}
+
+/* active link */
+.header-content .top-nav a.active {
+  color: var(--primary);
+  border-bottom: 2px solid var(--primary);
+}
+
+/* mobile */
+@media (max-width: 767px) {
+  .header-inner {
+    grid-template-columns: 1fr;
+    justify-items: center;
+    row-gap: 0.75rem;
+  }
+
+  .header-content {
+    width: 100%;
+    display: grid;
+    justify-items: center;
+    margin-left: 0;
+  }
+
+  .header-logo {
+    order: -1;
+  }
+}

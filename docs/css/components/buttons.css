@@ -1,0 +1,30 @@
+/* docs/assets/css/components/buttons.css */
+.btn {
+  display: block;
+  width: 100%;
+  max-width: 420px;
+  margin: 0 auto;
+  padding: 1.35rem;
+  border-radius: 16px;
+  font-weight: 700;
+  font-size: 1.1rem;
+  text-decoration: none;
+  text-align: center;
+  border: none;
+  cursor: pointer;
+}
+
+.btn.primary.bring-btn {
+  margin-top: 2rem;
+}
+
+.btn.primary {
+  background: var(--primary);
+  color: #021018;
+}
+
+.btn.secondary {
+  background: rgba(255, 255, 255, 0.18);
+  color: #fff;
+  border: 1px solid rgba(255, 255, 255, 0.35);
+}

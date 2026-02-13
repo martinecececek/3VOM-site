@@ -1,0 +1,14 @@
+/* docs/assets/css/base/variables.css */
+:root {
+  --bg-dark: radial-gradient(circle at top, #0f1b38, #070d1f);
+  --text: #e5e7eb;
+  --muted: #9ca3af;
+  --soft-text: #cbd5f5;
+  --primary: #38bdf8;
+
+  --card: rgba(255, 255, 255, 0.06);
+  --border: rgba(255, 255, 255, 0.08);
+
+  --input-bg: rgba(255, 255, 255, 0.04);
+  --focus: rgba(56, 189, 248, 0.55);
+}

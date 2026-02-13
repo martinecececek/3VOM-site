@@ -1,0 +1,32 @@
+/* docs/assets/css/pages/safety.css */
+/* SAFETY */
+.safety-big-grid {
+  display: grid;
+  gap: 2.5rem;
+  margin-top: 2.5rem;
+}
+
+.safety-big-card {
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: 22px;
+  padding: 2.75rem;
+}
+
+.safety-big-card h3 {
+  margin-bottom: 0.75rem;
+  letter-spacing: normal;
+  font-size: 1.45rem;
+}
+
+.safety-big-card p {
+  color: var(--soft-text);
+  margin-bottom: 1.1rem;
+}
+
+.safety-big-card ul {
+  list-style: none;
+  display: grid;
+  gap: 0.5rem;
+  color: var(--soft-text);
+}
