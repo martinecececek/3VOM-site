@@ -2,6 +2,9 @@ async function loadGallery() {
    const container = document.getElementById("galleryGrid");
    if (!container) return;
 
+   // Show skeleton loaders immediately
+   showSkeletons(container);
+
    try {
       // ✅ Resolve JSON relative to this file: assets/JS/gallery.js
       // assets/JS/gallery.js -> src/data/gallery.json
@@ -50,12 +53,12 @@ async function loadGallery() {
          imageEl.src = imgUrl.href;
          imageEl.alt = captionText;
 
-         // Eager load first 3 images (above the fold), lazy load the rest
-         imageEl.loading = index < 3 ? "eager" : "lazy";
+         // Eager load first 4 images (increased from 3), lazy load the rest
+         imageEl.loading = index < 4 ? "eager" : "lazy";
          imageEl.decoding = "async";
 
-         // Add fetchpriority for first image
-         if (index === 0) {
+         // Add fetchpriority for first 2 images (increased from 1)
+         if (index < 2) {
             imageEl.fetchPriority = "high";
          }
 
@@ -64,6 +67,9 @@ async function loadGallery() {
          imageEl.style.objectFit = "cover";
          imageEl.style.width = "100%";
          imageEl.style.height = "auto";
+
+         // Add CSS containment for better performance
+         figure.style.contain = "layout style paint";
 
          imageEl.addEventListener("error", () => {
             console.error("IMAGE NOT FOUND:", imageEl.src, "JSON file:", file);
@@ -88,6 +94,24 @@ async function loadGallery() {
       </p>
     `;
    }
+}
+
+// Show skeleton loaders while images are loading
+function showSkeletons(container) {
+   const fragment = document.createDocumentFragment();
+
+   for (let i = 0; i < 12; i++) {
+      const skeleton = document.createElement("div");
+      skeleton.className = "gallery-item skeleton";
+      skeleton.innerHTML = `
+         <div class="skeleton-img"></div>
+         <div class="skeleton-text"></div>
+      `;
+      fragment.appendChild(skeleton);
+   }
+
+   container.innerHTML = "";
+   container.appendChild(fragment);
 }
 
 loadGallery();

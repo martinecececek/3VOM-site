@@ -54,6 +54,9 @@
    border-radius: 18px;
    overflow: hidden;
    grid-template-rows: clamp(160px, 22vw, 240px) auto;
+   /* Performance optimizations */
+   contain: layout style paint;
+   content-visibility: auto;
 }
 
 .gallery-item img {
@@ -70,6 +73,51 @@
    color: var(--soft-text);
    font-weight: 600;
    font-size: 0.95rem;
+}
+
+/* Skeleton loaders for better perceived performance */
+.skeleton {
+   background: var(--card);
+   border: 1px solid var(--border);
+   border-radius: 18px;
+   overflow: hidden;
+   padding: 0;
+}
+
+.skeleton-img {
+   width: 100%;
+   height: clamp(160px, 22vw, 240px);
+   background: linear-gradient(90deg,
+      rgba(240, 240, 240, 0.3) 25%,
+      rgba(224, 224, 224, 0.5) 50%,
+      rgba(240, 240, 240, 0.3) 75%
+   );
+   background-size: 200% 100%;
+   animation: shimmer 1.5s infinite ease-in-out;
+   border-radius: 0;
+}
+
+.skeleton-text {
+   height: 20px;
+   margin: 0.85rem 1rem;
+   background: linear-gradient(90deg,
+      rgba(240, 240, 240, 0.3) 25%,
+      rgba(224, 224, 224, 0.5) 50%,
+      rgba(240, 240, 240, 0.3) 75%
+   );
+   background-size: 200% 100%;
+   animation: shimmer 1.5s infinite ease-in-out;
+   border-radius: 4px;
+   width: 80%;
+}
+
+@keyframes shimmer {
+   0% {
+      background-position: 200% 0;
+   }
+   100% {
+      background-position: -200% 0;
+   }
 }
 
 /* responsive desktop */

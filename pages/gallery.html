@@ -6,6 +6,10 @@
 
       <title>Galerie | 3.VOM</title>
 
+      <!-- Performance optimizations: preload critical resources -->
+      <link rel="preload" href="../src/data/gallery.json" as="fetch" crossorigin />
+      <link rel="dns-prefetch" href="https://martinecececek.github.io" />
+
       <!-- MAIN STYLES -->
       <link rel="stylesheet" href="../css/styles.css" />
 
@@ -138,9 +142,20 @@
 
       <!-- ✅ SCRIPTS -->
       <!-- gallery.js MUST be module if it uses import.meta.url -->
-      <script type="module" src="../assets/JS/gallery.js"></script>
+      <script type="module" src="../assets/JS/gallery.js" defer></script>
 
       <!-- lightbox.js can stay normal (unless it uses import/export) -->
-      <script src="../assets/JS/lightbox.js"></script>
+      <script src="../assets/JS/lightbox.js" defer></script>
+
+      <!-- Service Worker registration for offline support and caching -->
+      <script>
+         if ('serviceWorker' in navigator) {
+            window.addEventListener('load', () => {
+               navigator.serviceWorker.register('../sw.js')
+                  .then(reg => console.log('Service Worker registered'))
+                  .catch(err => console.log('Service Worker registration failed:', err));
+            });
+         }
+      </script>
    </body>
 </html>
