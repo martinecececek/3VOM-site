@@ -32,20 +32,20 @@ function renderFooter() {
         <div class="footer-col">
           <h4>Oddíl</h4>
           <ul>
-            <li><a href="${pageHref("about")}">O nás</a></li>
-            <li><a href="${pageHref("activities")}">Události</a></li>
-            <li><a href="${pageHref("gallery")}">Galerie</a></li>
-            <li><a href="${pageHref("join")}">Přidej se</a></li>
+            <li><a href="${pageHref("about")}">${getPageTitle("about")}</a></li>
+            <li><a href="${pageHref("activities")}">${getPageTitle("activities")}</a></li>
+            <li><a href="${pageHref("gallery")}">${getPageTitle("gallery")}</a></li>
+            <li><a href="${pageHref("join")}">${getPageTitle("join")}</a></li>
           </ul>
         </div>
 
         <div class="footer-col">
           <h4>Informace</h4>
           <ul>
-            <li><a href="${pageHref("safety")}">Bezpečnost</a></li>
-            <li><a href="${pageHref("bring")}">Co s sebou</a></li>
-            <li><a href="${pageHref("vybaveni")}">Vybavení</a></li>
-            <li><a href="${pageHref("login")}">Zápůjčky</a></li>
+            <li><a href="${pageHref("safety")}">${getPageTitle("safety")}</a></li>
+            <li><a href="${pageHref("bring")}">${getPageTitle("bring")}</a></li>
+            <li><a href="${pageHref("vybaveni")}">${getPageTitle("vybaveni")}</a></li>
+            <li><a href="${pageHref("login")}">${getPageTitle("login")}</a></li>
           </ul>
         </div>
 

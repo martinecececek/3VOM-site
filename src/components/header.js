@@ -3,6 +3,22 @@ function renderHeader(activePage = "home") {
    // If we are on /docs/pages/*.html we need to go up one level to reach /docs/
    const base = window.location.pathname.includes("/pages/") ? "../" : "";
 
+   // Use Czech translations from i18n
+   const navItems = [
+      { page: "home", file: "index", text: getPageTitle("home") },
+      { page: "activities", file: "pages/activities", text: getPageTitle("activities") },
+      { page: "gallery", file: "pages/gallery", text: getPageTitle("gallery") },
+      { page: "about", file: "pages/about", text: getPageTitle("about") },
+      { page: "contacts", file: "pages/contacts", text: getPageTitle("contacts") },
+   ];
+
+   const navLinks = navItems
+      .map(
+         (item) =>
+            `<a href="${base}${item.file}.html" data-page="${item.page}">${item.text}</a>`
+      )
+      .join("\n            ");
+
    const headerHTML = `
     <header class="top-header">
       <div class="header-inner">
@@ -18,11 +34,7 @@ function renderHeader(activePage = "home") {
           <h3 class="tom-num">TOM 7104</h3>
 
           <nav class="top-nav">
-            <a href="${base}index.html" data-page="home">Hlavní stránka</a>
-            <a href="${base}pages/activities.html" data-page="activities">Události</a>
-            <a href="${base}pages/gallery.html" data-page="gallery">Galerie</a>
-            <a href="${base}pages/about.html" data-page="about">O nás</a>
-            <a href="${base}pages/contacts.html" data-page="contacts">Kontakty</a>
+            ${navLinks}
           </nav>
         </div>
 
@@ -39,4 +51,9 @@ function renderHeader(activePage = "home") {
    document.querySelectorAll(".top-nav a").forEach((link) => {
       if (link.dataset.page === activePage) link.classList.add("active");
    });
+
+   // Auto-update page title to Czech
+   if (activePage) {
+      updatePageTitle(activePage);
+   }
 }
