@@ -1,0 +1,65 @@
+<!doctype html>
+<html lang="cs">
+   <head>
+      <meta charset="UTF-8" />
+      <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+      <title>Nahrát PDF | 3. Vodácký oddíl mládeže</title>
+      <link rel="stylesheet" href="../css/styles.css" />
+   </head>
+   <body>
+      <main class="container">
+         <section class="page-hero">
+            <h2>Admin - Nahrání PDF</h2>
+            <p class="page-hero-text">Nahrání program.pdf na web.</p>
+         </section>
+
+         <section class="admin-grid">
+            <!-- FILE UPLOAD -->
+            <div class="admin-card">
+               <h3>Nahrát soubor</h3>
+               <p class="admin-help">Např. PDF nebo jiný dokument.</p>
+
+               <form
+                  class="admin-form"
+                  id="pdfForm"
+                  enctype="multipart/form-data"
+               >
+                  <div class="field">
+                     <label for="pdfAdminKey">Admin key</label>
+                     <input
+                        id="pdfAdminKey"
+                        type="password"
+                        placeholder="ADMIN_KEY"
+                        autocomplete="off"
+                     />
+                  </div>
+
+                  <div class="upload-box">
+                     <label class="upload-label" for="anyFile">
+                        Vybrat soubor (program.pdf)
+                        <span class="upload-sub">Klikni pro výběr PDF</span>
+                     </label>
+                     <input
+                        id="anyFile"
+                        name="anyFile"
+                        type="file"
+                        accept="application/pdf"
+                     />
+                  </div>
+
+                  <button class="btn primary" type="submit" id="pdfBtn">
+                     Uložit
+                  </button>
+                  <p class="admin-note" id="pdfStatus" aria-live="polite"></p>
+               </form>
+
+               <div style="margin-top: 2rem; text-align: center;">
+                  <a href="Admin-Photo-Upload.html" class="btn secondary">Přejít na nahrání fotky</a>
+               </div>
+            </div>
+         </section>
+
+         <script src="./JS/send-file.js"></script>
+      </main>
+   </body>
+</html>

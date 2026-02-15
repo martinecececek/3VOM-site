@@ -1,0 +1,69 @@
+<!doctype html>
+<html lang="cs">
+   <head>
+      <meta charset="UTF-8" />
+      <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+      <title>Nahrát fotku | 3. Vodácký oddíl mládeže</title>
+      <link rel="stylesheet" href="../css/styles.css" />
+   </head>
+   <body>
+      <main class="container">
+         <section class="page-hero">
+            <h2>Admin - Nahrání fotky</h2>
+            <p class="page-hero-text">Nahrání fotky do galerie.</p>
+         </section>
+
+         <section class="admin-grid">
+            <!-- PHOTO UPLOAD -->
+            <div class="admin-card">
+               <h3>Nahrát fotku</h3>
+               <p class="admin-help">Podporované formáty: JPG, PNG, WebP.</p>
+
+               <form
+                  class="admin-form"
+                  id="uploadForm"
+                  enctype="multipart/form-data"
+               >
+                  <div class="field">
+                     <label for="photoTitle">Název / popisek</label>
+                     <input
+                        id="photoTitle"
+                        name="photoTitle"
+                        type="text"
+                        placeholder="Např. Trénink – květen 2026"
+                     />
+                  </div>
+
+                  <div class="upload-box">
+                     <label class="upload-label" for="photoFile">
+                        Vybrat fotku
+                        <span class="upload-sub">Klikni pro výběr souboru</span>
+                     </label>
+                     <input
+                        id="photoFile"
+                        name="photoFile"
+                        type="file"
+                        accept="image/*"
+                     />
+                  </div>
+
+                  <button class="btn primary" type="submit" id="uploadBtn">
+                     Uložit
+                  </button>
+                  <p
+                     class="admin-note"
+                     id="uploadStatus"
+                     aria-live="polite"
+                  ></p>
+               </form>
+
+               <div style="margin-top: 2rem; text-align: center;">
+                  <a href="Admin-PDF-Upload.html" class="btn secondary">Přejít na nahrání PDF</a>
+               </div>
+            </div>
+         </section>
+
+         <script src="./JS/send-img.js"></script>
+      </main>
+   </body>
+</html>

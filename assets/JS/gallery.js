@@ -7,8 +7,9 @@ async function loadGallery() {
       // assets/JS/gallery.js -> src/data/gallery.json
       const jsonUrl = new URL("../../src/data/gallery.json", import.meta.url);
 
+      // Enable caching for faster subsequent loads
       const response = await fetch(jsonUrl, {
-         cache: "no-store",
+         cache: "force-cache",
       });
 
       if (!response.ok) {
@@ -26,9 +27,10 @@ async function loadGallery() {
       // take only 12 newest
       const newest12 = images.slice(0, 12);
 
-      container.innerHTML = "";
+      // Use DocumentFragment for batch DOM operations (prevents multiple reflows)
+      const fragment = document.createDocumentFragment();
 
-      newest12.forEach((img) => {
+      newest12.forEach((img, index) => {
          const file = (img.file || "").trim();
          const captionText = (img.caption || "").trim() || "Fotografie";
          if (!file) return;
@@ -48,9 +50,20 @@ async function loadGallery() {
          imageEl.src = imgUrl.href;
          imageEl.alt = captionText;
 
-         // optional UX / perf
-         imageEl.loading = "lazy";
+         // Eager load first 3 images (above the fold), lazy load the rest
+         imageEl.loading = index < 3 ? "eager" : "lazy";
          imageEl.decoding = "async";
+
+         // Add fetchpriority for first image
+         if (index === 0) {
+            imageEl.fetchPriority = "high";
+         }
+
+         // Prevent layout shift by setting aspect ratio
+         imageEl.style.aspectRatio = "1 / 1";
+         imageEl.style.objectFit = "cover";
+         imageEl.style.width = "100%";
+         imageEl.style.height = "auto";
 
          imageEl.addEventListener("error", () => {
             console.error("IMAGE NOT FOUND:", imageEl.src, "JSON file:", file);
@@ -61,8 +74,12 @@ async function loadGallery() {
 
          figure.appendChild(imageEl);
          figure.appendChild(caption);
-         container.appendChild(figure);
+         fragment.appendChild(figure);
       });
+
+      // Single DOM update - much faster than appending one by one
+      container.innerHTML = "";
+      container.appendChild(fragment);
    } catch (error) {
       console.error("Gallery load error:", error);
       container.innerHTML = `
