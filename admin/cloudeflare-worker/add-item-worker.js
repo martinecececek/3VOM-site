@@ -121,6 +121,15 @@ export default {
          });
       }
 
+      // Convert userId to number to match items.json format
+      const userIdNum = parseInt(userId, 10);
+      if (isNaN(userIdNum)) {
+         return new Response("Invalid userId", {
+            status: 400,
+            headers: corsHeaders,
+         });
+      }
+
       if (!item.category || !item.description) {
          return new Response("Missing required fields: category, description", {
             status: 400,
@@ -164,9 +173,9 @@ export default {
          itemsData.people = [];
       }
 
-      const person = itemsData.people.find((p) => p.id === userId);
+      const person = itemsData.people.find((p) => p.id === userIdNum);
       if (!person) {
-         return new Response(`User not found: ${userId}`, {
+         return new Response(`User not found: ${userIdNum}`, {
             status: 404,
             headers: corsHeaders,
          });
@@ -198,7 +207,7 @@ export default {
       const writeResult = await putFile(
          ITEMS_JSON_PATH,
          updatedB64,
-         `Add borrowed item: ${item.category} - ${item.description} (User: ${userId})`,
+         `Add borrowed item: ${item.category} - ${item.description} (User: ${userIdNum})`,
          itemsFile.sha,
       );
 
