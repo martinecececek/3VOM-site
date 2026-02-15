@@ -141,8 +141,8 @@
       </div>
 
       <!-- ✅ SCRIPTS -->
-      <!-- gallery.js MUST be module if it uses import.meta.url -->
-      <script type="module" src="../assets/JS/gallery.js" defer></script>
+      <!-- gallery-img-load.js MUST be module if it uses import.meta.url -->
+      <script type="module" src="../assets/JS/gallery-img-load.js" defer></script>
 
       <!-- lightbox.js can stay normal (unless it uses import/export) -->
       <script src="../assets/JS/lightbox.js" defer></script>
@@ -151,7 +151,7 @@
       <script>
          if ('serviceWorker' in navigator) {
             window.addEventListener('load', () => {
-               navigator.serviceWorker.register('../assets/JS/sw.js')
+               navigator.serviceWorker.register('../assets/JS/service-worker.js')
                   .then(reg => console.log('Service Worker registered'))
                   .catch(err => console.log('Service Worker registration failed:', err));
             });
