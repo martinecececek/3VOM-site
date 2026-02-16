@@ -4,8 +4,14 @@
       <meta charset="UTF-8" />
       <title>Půjčené položky (Admin)</title>
       <link rel="stylesheet" href="../css/styles.css" />
+      <meta name="robots" content="noindex, nofollow" />
    </head>
    <body>
+      <script>
+         if (!sessionStorage.getItem("ADMIN_KEY")) {
+            window.location.replace("login.html");
+         }
+      </script>
       <div class="borrow-card">
          <h3>Borrowed Items (Admin)</h3>
          <p class="borrow-help">Admin view – manage borrowed items.</p>

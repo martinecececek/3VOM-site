@@ -5,12 +5,20 @@
       <meta name="viewport" content="width=device-width, initial-scale=1.0" />
       <title>Admin | 3. Vodácký oddíl mládeže</title>
       <link rel="stylesheet" href="../css/styles.css" />
+      <meta name="robots" content="noindex, nofollow" />
    </head>
    <body>
+      <script>
+         if (!sessionStorage.getItem("ADMIN_KEY")) {
+            window.location.replace("login.html");
+         }
+      </script>
+
       <main class="container">
          <section class="page-hero">
             <h2>Admin Panel</h2>
             <p class="page-hero-text">Správa obsahu webu.</p>
+            <button id="logoutBtn" class="btn secondary" style="margin-top: 1rem;">Odhlásit se</button>
          </section>
 
          <section class="admin-grid">
@@ -54,5 +62,11 @@
             </div>
          </section>
       </main>
+      <script>
+         document.getElementById("logoutBtn").addEventListener("click", () => {
+            sessionStorage.removeItem("ADMIN_KEY");
+            window.location.replace("login.html");
+         });
+      </script>
    </body>
 </html>

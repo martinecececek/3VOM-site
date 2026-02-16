@@ -5,8 +5,14 @@
       <meta name="viewport" content="width=device-width, initial-scale=1.0" />
       <title>Nahrát fotku | 3. Vodácký oddíl mládeže</title>
       <link rel="stylesheet" href="../css/styles.css" />
+      <meta name="robots" content="noindex, nofollow" />
    </head>
    <body>
+      <script>
+         if (!sessionStorage.getItem("ADMIN_KEY")) {
+            window.location.replace("login.html");
+         }
+      </script>
       <main class="container">
          <section class="page-hero">
             <h2>Admin - Nahrání fotky</h2>

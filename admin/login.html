@@ -1,0 +1,132 @@
+<!doctype html>
+<html lang="cs">
+   <head>
+      <meta charset="UTF-8" />
+      <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+      <title>Admin Login | 3. Vodácký oddíl mládeže</title>
+      <link rel="icon" type="image/png" href="../assets/image/logo/3VOM-logo.png" />
+      <link rel="stylesheet" href="../css/styles.css" />
+      <meta name="robots" content="noindex, nofollow" />
+   </head>
+   <body>
+      <main class="login-wrap">
+         <div class="login-card">
+            <h2>Admin Login</h2>
+            <p class="login-desc">
+               Zadejte heslo pro přístup do administrace.
+            </p>
+
+            <form class="join-form" id="adminLoginForm" autocomplete="off">
+               <div class="field">
+                  <label for="adminPassword">Heslo</label>
+                  <input
+                     id="adminPassword"
+                     name="adminPassword"
+                     type="password"
+                     placeholder="••••••••"
+                     required
+                  />
+               </div>
+
+               <button type="submit" class="btn primary">Přihlásit se</button>
+
+               <div id="errorBox" class="login-error">
+                  Nesprávné heslo. Zkuste to znovu.
+               </div>
+            </form>
+         </div>
+      </main>
+
+      <script>
+         (() => {
+            const STORAGE_KEY = "ADMIN_KEY";
+
+            // AES-256-GCM encrypted admin key (encrypted with the login password)
+            // Wrong password → decryption fails (OperationError) → no network call needed
+            // Format: base64( salt[16] + iv[12] + authTag[16] + ciphertext )
+            const ENCRYPTED_ADMIN_KEY = "WagXMI7+4vZwvIDIyfk9voOajn9duh/kU3+CHKT0iejC8JhAtwCc0DLiz+GSeNgJejtmo4dFY9KnXVUh0iKKKLWRgxt2bot6jNhosIOegu5CzhHk+/csHx4DP62s1EsEwBjiQsaXbL4gT69SOQo2huVVKGzu07uhziSsoSwjwyVJA1HqrYKOWCdVOeUpEBBT";
+
+            // If already logged in, go straight to admin
+            if (sessionStorage.getItem(STORAGE_KEY)) {
+               window.location.replace("index.html");
+               return;
+            }
+
+            // Decrypt the admin key using the password (Web Crypto API)
+            async function decryptAdminKey(password) {
+               const combined = Uint8Array.from(atob(ENCRYPTED_ADMIN_KEY), c => c.charCodeAt(0));
+               const salt = combined.slice(0, 16);
+               const iv = combined.slice(16, 28);
+               const authTag = combined.slice(28, 44);
+               const ciphertext = combined.slice(44);
+
+               // Combine ciphertext + authTag (Web Crypto expects them together)
+               const encryptedData = new Uint8Array(ciphertext.length + authTag.length);
+               encryptedData.set(ciphertext);
+               encryptedData.set(authTag, ciphertext.length);
+
+               const keyMaterial = await crypto.subtle.importKey(
+                  "raw",
+                  new TextEncoder().encode(password),
+                  "PBKDF2",
+                  false,
+                  ["deriveKey"]
+               );
+
+               const aesKey = await crypto.subtle.deriveKey(
+                  { name: "PBKDF2", salt, iterations: 100000, hash: "SHA-256" },
+                  keyMaterial,
+                  { name: "AES-GCM", length: 256 },
+                  false,
+                  ["decrypt"]
+               );
+
+               const decrypted = await crypto.subtle.decrypt(
+                  { name: "AES-GCM", iv },
+                  aesKey,
+                  encryptedData
+               );
+
+               return new TextDecoder().decode(decrypted);
+            }
+
+            const form = document.getElementById("adminLoginForm");
+            const passInput = document.getElementById("adminPassword");
+            const errorBox = document.getElementById("errorBox");
+            const submitBtn = form.querySelector("button[type='submit']");
+
+            passInput.addEventListener("input", () => {
+               errorBox.style.display = "none";
+            });
+
+            form.addEventListener("submit", async (e) => {
+               e.preventDefault();
+               const password = passInput.value.trim();
+               if (!password) return;
+
+               submitBtn.disabled = true;
+               submitBtn.textContent = "Ověřuji…";
+               errorBox.style.display = "none";
+
+               try {
+                  // Decrypt admin key — wrong password throws OperationError
+                  const adminKey = await decryptAdminKey(password);
+
+                  // Decryption succeeded → password is correct, store and redirect
+                  sessionStorage.setItem(STORAGE_KEY, adminKey);
+                  window.location.replace("index.html");
+               } catch (err) {
+                  // AES-GCM decryption fails with OperationError on wrong password
+                  errorBox.textContent = "Nesprávné heslo. Zkuste to znovu.";
+                  errorBox.style.display = "block";
+                  passInput.value = "";
+                  passInput.focus();
+               } finally {
+                  submitBtn.disabled = false;
+                  submitBtn.textContent = "Přihlásit se";
+               }
+            });
+         })();
+      </script>
+   </body>
+</html>

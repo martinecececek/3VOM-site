@@ -2,8 +2,7 @@
    // Wrap in IIFE to avoid global scope conflicts
    const REMOVE_ITEM_WORKER_URL =
       "https://remove-borrow.martin-jakubuv.workers.dev";
-   const ADMIN_KEY =
-      "bHKJKHJKJHG6Jadpiadasd14a6s5d15691ASDADASD541a5sd1a651d3a1sd65198451ASDASASDASDASDDa16jh5gk4h665161K";
+   const ADMIN_KEY = sessionStorage.getItem("ADMIN_KEY");
 
    const tbody = document.getElementById("borrowAdminBody");
 
