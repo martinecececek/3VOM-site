@@ -10,11 +10,16 @@
 export default {
    async fetch(request, env) {
       /* ---------------------------
-       CORS (relaxed & reliable)
+       CORS (restricted to allowed origins)
     ---------------------------- */
-      const origin = request.headers.get("Origin") || "*";
+      const ALLOWED_ORIGINS = [
+         "https://martinecececek.github.io",
+         "http://127.0.0.1:5500",
+         "http://localhost:5500",
+      ];
+      const origin = request.headers.get("Origin");
       const corsHeaders = {
-         "Access-Control-Allow-Origin": origin,
+         "Access-Control-Allow-Origin": ALLOWED_ORIGINS.includes(origin) ? origin : ALLOWED_ORIGINS[0],
          "Access-Control-Allow-Methods": "DELETE, OPTIONS",
          "Access-Control-Allow-Headers": "Content-Type, x-admin-key",
       };
@@ -186,7 +191,7 @@ export default {
 
       const initialLength = person.borrowed_items.length;
       person.borrowed_items = person.borrowed_items.filter(
-         (item) => item.id !== borrowId
+         (item) => String(item.id) !== String(borrowId)
       );
 
       if (person.borrowed_items.length === initialLength) {

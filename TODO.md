@@ -1,69 +1,7 @@
 # 3VOM Site - TODO & Issues
 
-## 🔴 CRITICAL SECURITY ISSUES (Fix Immediately!)
-
-
-### 2. Wide-Open CORS Policy
-**Priority:** HIGH
-**Status:** ⚠️ Not Fixed
-**Files:**
-- `admin/cloudeflare-worker/add-item-worker.js` (lines 15-17)
-- `admin/cloudeflare-worker/remove-item-worker.js` (lines 15-17)
-
-**Problem:**
-Workers accept requests from ANY origin, not just your domain.
-
-**Current Code:**
-```javascript
-const origin = request.headers.get("Origin") || "*";
-const corsHeaders = {
-   "Access-Control-Allow-Origin": origin,
-```
-
-**Solution:**
-Restrict CORS to only your domain:
-```javascript
-const ALLOWED_ORIGINS = ["https://yourdomain.com", "http://localhost:5500"];
-const origin = request.headers.get("Origin");
-const corsHeaders = {
-   "Access-Control-Allow-Origin": ALLOWED_ORIGINS.includes(origin) ? origin : ALLOWED_ORIGINS[0],
-```
-
-**Impact:** Medium - Prevents unauthorized cross-site requests
-**Effort:** Low - Simple code change
-
----
-
 ## 🟠 HIGH PRIORITY BUGS
 
-### 3. Duplicate Event Listeners on Remove Button
-**Priority:** HIGH
-**Status:** ⚠️ Not Fixed
-**Files:**
-- `admin/JS/load-borrow-admin.js` (lines 117-119)
-- `admin/JS/remove-item.js` (lines 11-72)
-
-**Problem:**
-BOTH files attach event listeners to `.remove-item-btn`. When clicked:
-1. `load-borrow-admin.js` removes the row from UI immediately (line 118)
-2. `remove-item.js` tries to make the API call
-3. If API call fails, row is already gone and user can't retry
-
-**Current Code in load-borrow-admin.js:**
-```javascript
-// REMOVE row (UI only)
-if (t.classList.contains("remove-item-btn")) {
-   t.closest("tr")?.remove();
-}
-```
-
-**Solution:**
-Remove lines 116-119 from `load-borrow-admin.js`. Let `remove-item.js` handle both the API call and UI update.
-
-**Impact:** Medium - Causes poor UX when API fails
-**Effort:** Low - Delete 4 lines of code
-
----
 
 ### 4. Relative Path in Data Fetch
 **Priority:** MEDIUM

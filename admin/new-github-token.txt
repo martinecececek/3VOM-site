@@ -1,8 +1,7 @@
-current: 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
+current: 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
 ¨
 
-expire - !Mar 12 2026!
-Where to create a new one: https://github.com/settings/personal-access-tokens
+Where to create a new one: github -> settings -> developers -> fine-grained-token
 Set:  - expire in 1 year
       - only select 3VOM repo
       - Premisson -> content

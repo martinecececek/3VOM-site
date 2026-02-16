@@ -10,11 +10,16 @@
 export default {
    async fetch(request, env) {
       /* ---------------------------
-       CORS (relaxed & reliable)
+       CORS (restricted to allowed origins)
     ---------------------------- */
-      const origin = request.headers.get("Origin") || "*";
+      const ALLOWED_ORIGINS = [
+         "https://martinecececek.github.io",
+         "http://127.0.0.1:5500",
+         "http://localhost:5500",
+      ];
+      const origin = request.headers.get("Origin");
       const corsHeaders = {
-         "Access-Control-Allow-Origin": origin,
+         "Access-Control-Allow-Origin": ALLOWED_ORIGINS.includes(origin) ? origin : ALLOWED_ORIGINS[0],
          "Access-Control-Allow-Methods": "POST, OPTIONS",
          "Access-Control-Allow-Headers": "Content-Type, x-admin-key",
       };

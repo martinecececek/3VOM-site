@@ -112,11 +112,6 @@ tbody.addEventListener("click", (e) => {
       t.closest("tr")?.remove();
       return;
    }
-
-   // REMOVE row (UI only)
-   if (t.classList.contains("remove-item-btn")) {
-      t.closest("tr")?.remove();
-   }
 });
 
 // ==============================
@@ -137,10 +132,16 @@ function insertEditorRow(userId, personHeaderRow) {
       <div class="editor-grid">
 
         <select class="edit-category">
-          <option value="">Category</option>
-          <option value="Book">Book</option>
-          <option value="Equipment">Equipment</option>
-          <option value="Other">Other</option>
+          <option value="">Kategorie</option>
+          <option value="Pádlo">Pádlo</option>
+          <option value="Vesta">Vesta</option>
+          <option value="Helma">Helma</option>
+          <option value="Pádlo jiné">Pádlo jiné</option>
+          <option value="Loďák/Batoh">Loďák/Batoh</option>
+          <option value="Běžky">Běžky</option>
+          <option value="Hůlky">Hůlky</option>
+          <option value="Běžecké boty">Běžecké boty</option>
+          <option value="Ostatní">Ostatní</option>
         </select>
 
         <input class="edit-desc" type="text" placeholder="Description" />
