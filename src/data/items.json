@@ -6,13 +6,6 @@
       "surname": "Balda",
       "borrowed_items": [
         {
-          "id": 101,
-          "category": "Pádlo",
-          "description": "Clean Code",
-          "itemNumber": "#B-001",
-          "date": "2026-02-01"
-        },
-        {
           "id": 102,
           "category": "Book",
           "description": "Intro to Algorithms",
