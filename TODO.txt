@@ -19,13 +19,5 @@ translate text (27.2.)!!
 
 need to remove a save ID after login
 
------
-replace the admin-index with admin login page. 
-    The after the password is inserted the admin key will be saved in the sessionStorage (until the web is closed)¨
-    Add a login page that prompts for password
-    On correct password, store the ADMIN_KEY in sessionStorage (not in the code)
-    Load admin functionality only after login
-    This prevents casual access but can still be bypassed by determined users
-
 
 
