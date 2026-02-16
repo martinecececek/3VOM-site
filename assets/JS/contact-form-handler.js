@@ -3,28 +3,30 @@ document.addEventListener("DOMContentLoaded", function () {
    const popup = document.getElementById("popup");
    const closeBtn = document.getElementById("closePopup");
 
+   emailjs.init("zzphlggCEr4fMFcPx");
+
    form.addEventListener("submit", async function (e) {
       e.preventDefault();
 
-      const formData = new FormData(form);
+      const params = {
+         childName: document.getElementById("childName").value,
+         childSurname: document.getElementById("childSurname").value,
+         childBirthDate: document.getElementById("childBirthDate").value,
+         email: document.getElementById("childEmail").value,
+         parentPhone: document.getElementById("parentPhone").value,
+         notes: document.getElementById("notes").value,
+      };
 
       try {
-         const response = await fetch(form.action, {
-            method: "POST",
-            body: formData,
-            headers: { Accept: "application/json" },
-         });
+         await Promise.all([
+            emailjs.send("service_h2xz6tf", "template_6lvrhzx", params),
+            emailjs.send("service_h2xz6tf", "template_1e6z71z", params),
+         ]);
 
-         const result = await response.json().catch(() => ({}));
-
-         if (response.ok) {
-            form.reset();
-            popup.hidden = false;
-         } else {
-            alert(result.error || "Došlo k chybě při odesílání.");
-         }
+         form.reset();
+         popup.hidden = false;
       } catch {
-         alert("Chyba připojení.");
+         alert("Chyba při odesílání. Zkuste to prosím znovu.");
       }
    });
 

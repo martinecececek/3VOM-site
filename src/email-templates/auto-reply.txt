@@ -1,0 +1,16 @@
+Předmět: Potvrzení přijetí formuláře - 3. VOM
+
+Dobrý den,
+
+děkujeme za Váš zájem o vodácký oddíl 3. VOM.
+
+Váš formulář jsme úspěšně přijali. Brzy se Vám ozveme s dalšími informacemi a kroky.
+
+Shrnutí odeslaných údajů:
+- Jméno dítěte: {{childName}} {{childSurname}}
+- Rok narození: {{childBirthDate}}
+
+Pokud máte jakékoli dotazy, neváhejte nás kontaktovat.
+
+S pozdravem,
+3. VOM

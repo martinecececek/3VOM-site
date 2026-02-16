@@ -1,0 +1,18 @@
+Předmět: Nový zájemce o vstup do oddílu
+
+Ahoj,
+
+někdo vyplnil formulář zájmu na webu 3. VOM.
+
+--- Údaje ---
+
+Jméno dítěte: {{childName}}
+Příjmení dítěte: {{childSurname}}
+Rok narození: {{childBirthDate}}
+Email rodiče: {{email}}
+Telefon rodiče: {{parentPhone}}
+Důležité informace: {{notes}}
+
+--- Konec ---
+
+Tento email byl odeslán automaticky z webu 3. VOM.
