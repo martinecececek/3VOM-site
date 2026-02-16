@@ -6,18 +6,25 @@
       "surname": "Balda",
       "borrowed_items": [
         {
-          "id": 101,
-          "category": "Pádlo",
-          "description": "Clean Code",
-          "itemNumber": "#B-001",
-          "date": "2026-02-01"
-        },
-        {
           "id": 102,
           "category": "Book",
           "description": "Intro to Algorithms",
           "itemNumber": "#B-002",
           "date": "2026-02-05"
+        },
+        {
+          "id": "borrow-1771240384439-94ohneh9e",
+          "category": "Equipment",
+          "description": "asdad",
+          "itemNumber": "98541",
+          "date": "2026-02-15"
+        },
+        {
+          "id": "borrow-1771242388687-vjox6wm9i",
+          "category": "Helma",
+          "description": "test",
+          "itemNumber": "666",
+          "date": "2026-02-10"
         }
       ]
     },
