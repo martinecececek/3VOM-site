@@ -6,8 +6,11 @@ const tbody = document.getElementById("borrowAdminBody");
 if (!tbody) {
    console.error('Missing <tbody id="borrowAdminBody">');
 } else {
-   fetch("../src/data/items.json")
-      .then((r) => r.json())
+   fetch("../src/data/items.json", { cache: "no-store" })
+      .then((r) => {
+         if (!r.ok) throw new Error(`HTTP ${r.status}`);
+         return r.json();
+      })
       .then((data) => renderAdmin(data))
       .catch((err) => console.error("Error loading items.json:", err));
 }
