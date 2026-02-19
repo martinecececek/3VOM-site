@@ -17,6 +17,6 @@ poslat auto odpověď že děkujeme za zájem a ze je kontaktuje vedouci - at s 
 
 translate text (27.2.)!!
 
-
 pre-cashe the gallery imps so then they load faster.
 
+create a better UI for date + dropdown menu
