@@ -17,7 +17,6 @@ poslat auto odpověď že děkujeme za zájem a ze je kontaktuje vedouci - at s 
 
 translate text (27.2.)!!
 
-need to remove a save ID after login
 
-
+pre-cashe the gallery imps so then they load faster.
 
