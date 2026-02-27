@@ -1,4 +1,4 @@
-Sem pak nastavit posilani mejlu: 3vom.usti@seznam.cz na ucasti
+5Sem pak nastavit posilani mejlu: 3vom.usti@seznam.cz na ucasti
 
 |-----------------------------------------|
 |Feedback email:        | Password:       |
@@ -20,3 +20,6 @@ translate text (27.2.)!!
 pre-cashe the gallery imps so then they load faster.
 
 create a better UI for date + dropdown menu
+
+---
+don't remove the borrowed just update the show to true and false
