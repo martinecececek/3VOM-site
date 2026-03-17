@@ -1,4 +1,4 @@
-Sem pak nastavit posilani mejlu: 3vom.usti@seznam.cz na ucasti
+5Sem pak nastavit posilani mejlu: 3vom.usti@seznam.cz na ucasti
 
 |-----------------------------------------|
 |Feedback email:        | Password:       |
@@ -17,8 +17,7 @@ poslat auto odpověď že děkujeme za zájem a ze je kontaktuje vedouci - at s 
 
 translate text (27.2.)!!
 
-need to remove a save ID after login
+pre-cashe the gallery imps so then they load faster.
 
----
-rewrite to ASTRO!!!
+
 
