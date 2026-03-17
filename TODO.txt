@@ -19,5 +19,6 @@ translate text (27.2.)!!
 
 need to remove a save ID after login
 
-
+---
+rewrite to ASTRO!!!
 
