@@ -23,3 +23,5 @@ create a better UI for date + dropdown menu
 
 ---
 don't remove the borrowed just update the show to true and false
+---
+spojit dva rajce.cz ucty || nějak provazat
