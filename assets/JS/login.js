@@ -13,7 +13,7 @@
    // =========================
    // CONFIG
    // =========================
-   const LOGIN_FILE = "login.html";
+   const LOGIN_FILE = "prihlaseni.html";
    const AFTER_LOGIN_FILE = "pujceni.html";
 
    // Your GitHub Pages repo name (the folder after your domain)

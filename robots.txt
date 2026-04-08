@@ -1,2 +1,4 @@
 User-agent: *
 Disallow: /admin/
+
+Sitemap: https://martinecececek.github.io/3VOM-site/sitemap.xml

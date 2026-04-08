@@ -6,10 +6,10 @@ function renderHeader(activePage = "home") {
    // Use Czech translations from i18n
    const navItems = [
       { page: "home", file: "index", text: getPageTitle("home") },
-      { page: "activities", file: "pages/activities", text: getPageTitle("activities") },
-      { page: "gallery", file: "pages/gallery", text: getPageTitle("gallery") },
-      { page: "about", file: "pages/about", text: getPageTitle("about") },
-      { page: "contacts", file: "pages/contacts", text: getPageTitle("contacts") },
+      { page: "activities", file: "pages/aktivity", text: getPageTitle("activities") },
+      { page: "gallery", file: "pages/galerie", text: getPageTitle("gallery") },
+      { page: "about", file: "pages/o-nas", text: getPageTitle("about") },
+      { page: "contacts", file: "pages/kontakty", text: getPageTitle("contacts") },
    ];
 
    const navLinks = navItems

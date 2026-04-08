@@ -6,11 +6,13 @@ function renderFooter() {
       ? "/3VOM-site/"
       : "/";
 
-   // Links to pages:
-   // - from index: "pages/about.html"
-   // - from /pages/*: "about.html"
-   const pageHref = (file) =>
-      isInPages ? `${file}.html` : `pages/${file}.html`;
+   const pageFiles = {
+      about: "o-nas", activities: "aktivity", gallery: "galerie",
+      join: "pridej-se", contacts: "kontakty", safety: "bezpecnost",
+      bring: "co-s-sebou", vybaveni: "vybaveni", login: "prihlaseni", pujceni: "pujceni",
+   };
+   const pageHref = (key) =>
+      isInPages ? `${pageFiles[key]}.html` : `pages/${pageFiles[key]}.html`;
 
    const footerHTML = `
 <footer class="site-footer">
@@ -77,7 +79,7 @@ function renderFooter() {
     </div>
 
     <div class="footer-bottom">
-      <p>© 2026 Canoeing Club. All rights reserved.</p>
+      <p>© 2026 3. Vodácký oddíl mládeže. Všechna práva vyhrazena.</p>
     </div>
 
   </div>

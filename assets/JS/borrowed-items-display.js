@@ -94,7 +94,7 @@ function renderPersonById(data, personId) {
       const emptyRow = document.createElement("tr");
       emptyRow.innerHTML = `
       <td colspan="3">
-        <span class="borrow-empty">Nothing borrowed</span>
+        <span class="borrow-empty">Žádné půjčené vybavení</span>
       </td>
       <td class="tom-num">—</td>
     `;
