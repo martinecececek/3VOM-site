@@ -49,7 +49,7 @@ export default {
       const REPO = "3VOM-site";
       const BRANCH = "main";
 
-      const PDF_PATH = "docs/assets/pdf/program.pdf";
+      const PDF_PATH = "docs/assets/pdf/program_jaro_26.pdf";
 
       /* ---------------------------
        GitHub helpers

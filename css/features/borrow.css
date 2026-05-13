@@ -256,3 +256,25 @@
    width: 1500px;
    max-width: 100%;
 }
+
+/* Skeleton rows for loading state */
+.skeleton-cell {
+   height: 16px;
+   border-radius: 6px;
+   background: linear-gradient(90deg,
+      rgba(240, 240, 240, 0.3) 25%,
+      rgba(224, 224, 224, 0.5) 50%,
+      rgba(240, 240, 240, 0.3) 75%
+   );
+   background-size: 200% 100%;
+   animation: shimmerRow 1.5s infinite ease-in-out;
+}
+
+.skeleton-cell-wide  { width: 75%; }
+.skeleton-cell-mid   { width: 55%; }
+.skeleton-cell-narrow{ width: 40%; }
+
+@keyframes shimmerRow {
+   0%   { background-position: 200% 0; }
+   100% { background-position: -200% 0; }
+}

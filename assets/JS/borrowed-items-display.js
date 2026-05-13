@@ -24,8 +24,7 @@ if (!tableBody) {
    } else {
       const jsonUrl = new URL("./../../src/data/items.json", import.meta.url);
 
-      console.log("borrow.js:", import.meta.url);
-      console.log("Fetching JSON:", jsonUrl.href);
+      showTableSkeleton(tableBody);
 
       fetch(jsonUrl, { cache: "no-store" })
          .then((response) => {
@@ -49,6 +48,26 @@ if (!tableBody) {
         `;
          });
    }
+}
+
+function showTableSkeleton(tbody) {
+   const cell = (cls) =>
+      `<td><div class="skeleton-cell ${cls}"></div></td>`;
+
+   // One person-header placeholder + 3 item row placeholders
+   tbody.innerHTML = `
+      <tr class="person-row">
+         <td colspan="4">
+            <div class="person-name">
+               <div class="skeleton-cell skeleton-cell-narrow" style="width:32px;height:32px;border-radius:12px;flex-shrink:0"></div>
+               <div class="skeleton-cell skeleton-cell-mid"></div>
+            </div>
+         </td>
+      </tr>
+      <tr class="item-row">${cell("skeleton-cell-narrow")}${cell("skeleton-cell-wide")}${cell("skeleton-cell-mid")}${cell("skeleton-cell-narrow")}</tr>
+      <tr class="item-row">${cell("skeleton-cell-narrow")}${cell("skeleton-cell-mid")}${cell("skeleton-cell-narrow")}${cell("skeleton-cell-narrow")}</tr>
+      <tr class="item-row">${cell("skeleton-cell-narrow")}${cell("skeleton-cell-wide")}${cell("skeleton-cell-mid")}${cell("skeleton-cell-narrow")}</tr>
+   `;
 }
 
 function renderPersonById(data, personId) {
