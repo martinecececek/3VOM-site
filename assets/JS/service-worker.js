@@ -6,11 +6,11 @@ const STATIC_CACHE = '3vom-static-v1';
 
 // Files to cache on install
 const STATIC_ASSETS = [
-   '/3VOM-site/',
-   '/3VOM-site/css/styles.css',
-   '/3VOM-site/src/data/gallery.json',
-   '/3VOM-site/assets/JS/gallery.js',
-   '/3VOM-site/assets/JS/lightbox.js',
+   '/',
+   '/css/styles.css',
+   '/src/data/gallery.json',
+   '/assets/JS/gallery-img-load.js',
+   '/assets/JS/lightbox.js',
 ];
 
 // Install event - cache static assets

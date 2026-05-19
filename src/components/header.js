@@ -25,7 +25,7 @@ function renderHeader(activePage = "home") {
 
         <div class="header-logo">
           <a href="${base}index.html">
-            <img src="${base}assets/image/logo/3VOM-logo.png" alt="Logo oddilu 3VOM">
+            <img src="${base}assets/image/logo/3VOM-logo.webp" alt="Logo oddilu 3VOM">
           </a>
         </div>
 
@@ -97,11 +97,11 @@ function injectSeoMeta(pageId) {
    if (entry.description) setMeta("property", "og:description", entry.description);
    setMeta("property", "og:locale", "cs_CZ");
    setMeta("property", "og:site_name", "3. Vodácký oddíl mládeže");
-   setMeta("property", "og:image", siteUrl + "assets/image/logo/3VOM-logo.png");
+   setMeta("property", "og:image", siteUrl + "assets/image/logo/3VOM-logo.webp");
 
    // Twitter Card
    setMeta("name", "twitter:card", "summary");
    setMeta("name", "twitter:title", entry.fullTitle || document.title);
    if (entry.description) setMeta("name", "twitter:description", entry.description);
-   setMeta("name", "twitter:image", siteUrl + "assets/image/logo/3VOM-logo.png");
+   setMeta("name", "twitter:image", siteUrl + "assets/image/logo/3VOM-logo.webp");
 }
