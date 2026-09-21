@@ -2,7 +2,7 @@
 
 Website for the 3rd Youth Paddling Club (3. Vodacky oddil mladeze) based in Usti nad Labem. Static site hosted on GitHub Pages with Cloudflare Workers as serverless backend.
 
-**Live site:** https://martinecececek.github.io/3VOM-site/
+**Live site:** https://3vomunl.cz/ (custom domain; GitHub Pages repo formerly at https://martinecececek.github.io/3VOM-site/)
 
 ---
 
@@ -128,6 +128,7 @@ Each worker requires these secrets configured in Cloudflare dashboard:
 ### CORS
 
 All workers restrict CORS to these origins:
+- `https://3vomunl.cz`
 - `https://martinecececek.github.io`
 - `http://127.0.0.1:5500`
 - `http://localhost:5500`

@@ -3,4 +3,4 @@ Disallow: /admin/
 Disallow: /3VOM-site/pages/prihlaseni.html
 Disallow: /3VOM-site/pages/pujceni.html
 
-Sitemap: https://martinecececek.github.io/3VOM-site/sitemap.xml
+Sitemap: https://3vomunl.cz/sitemap.xml

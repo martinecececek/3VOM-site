@@ -44,7 +44,7 @@
             // AES-256-GCM encrypted admin key (encrypted with the login password)
             // Wrong password → decryption fails (OperationError) → no network call needed
             // Format: base64( salt[16] + iv[12] + authTag[16] + ciphertext )
-            const ENCRYPTED_ADMIN_KEY = "WagXMI7+4vZwvIDIyfk9voOajn9duh/kU3+CHKT0iejC8JhAtwCc0DLiz+GSeNgJejtmo4dFY9KnXVUh0iKKKLWRgxt2bot6jNhosIOegu5CzhHk+/csHx4DP62s1EsEwBjiQsaXbL4gT69SOQo2huVVKGzu07uhziSsoSwjwyVJA1HqrYKOWCdVOeUpEBBT";
+            const ENCRYPTED_ADMIN_KEY = "4RXssi2dkhPg7hXrUpZgoCHtinKfOLraAsw+IWxz9dXyzF3U9CeI39RqT6aVwYhUoyCLIlMcqnEIXsif0tw+/aZEmeu9VBvGrXnOiQzBg/ZRxv6UdijIz2eLM8yhPhEsWTww2fSo1yTHxpwH";
 
             // If already logged in, go straight to admin
             if (sessionStorage.getItem(STORAGE_KEY)) {

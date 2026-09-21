@@ -3,7 +3,7 @@
 ## Project Overview
 
 Website for **3. Vodácký oddíl mládeže** (3rd Youth Paddling Club), based in Ústí nad Labem, Czech Republic.  
-Live at: https://martinecececek.github.io/3VOM-site/  
+Live at: https://3vomunl.cz/ (custom domain; hosted via GitHub Pages, repo formerly at https://martinecececek.github.io/3VOM-site/)  
 Repository ID: TOM 7104
 
 **Purpose:** Public-facing club site + lightweight internal tools (member login, equipment borrowing tracker, admin panel).
@@ -109,6 +109,7 @@ Five deployed workers on `*.martin-jakubuv.workers.dev`:
 | `change-password` | Update a user password |
 
 All workers require an `x-admin-key` header. CORS is whitelisted to:
+- `https://3vomunl.cz`
 - `https://martinecececek.github.io`
 - `http://127.0.0.1:5500`
 - `http://localhost:5500`

@@ -63,7 +63,7 @@ function injectSeoMeta(pageId) {
    const entry = i18n[pageId];
    if (!entry) return;
 
-   const siteUrl = "https://martinecececek.github.io/3VOM-site/";
+   const siteUrl = "https://3vomunl.cz/";
    const canonical = window.location.href.split("?")[0].split("#")[0];
 
    const setMeta = (attr, value, content) => {
