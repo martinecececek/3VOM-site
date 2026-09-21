@@ -13,6 +13,7 @@ export default {
        CORS (restricted to allowed origins)
     ---------------------------- */
       const ALLOWED_ORIGINS = [
+         "https://3vomunl.cz",
          "https://martinecececek.github.io",
          "http://127.0.0.1:5500",
          "http://localhost:5500",
@@ -113,7 +114,11 @@ export default {
 
       const fileData = await fileRes.json();
       const sha = fileData.sha;
-      const content = atob((fileData.content || "").replace(/\n/g, ""));
+      // GitHub's base64 content is UTF-8 bytes; atob() alone mangles
+      // multi-byte characters, so decode via TextDecoder for consistency with the write side.
+      const contentBinary = atob((fileData.content || "").replace(/\n/g, ""));
+      const contentBytes = Uint8Array.from(contentBinary, (c) => c.charCodeAt(0));
+      const content = new TextDecoder("utf-8").decode(contentBytes);
 
       let usersData;
       try {

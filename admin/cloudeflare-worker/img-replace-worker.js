@@ -16,6 +16,7 @@ export default {
        CORS (restricted to allowed origins)
     ---------------------------- */
       const ALLOWED_ORIGINS = [
+         "https://3vomunl.cz",
          "https://martinecececek.github.io",
          "http://127.0.0.1:5500",
          "http://localhost:5500",
@@ -53,7 +54,7 @@ export default {
       const REPO = "3VOM-site";
       const BRANCH = "main";
 
-      const IMAGE_DIR = "docs/assets/image/gallery-12-pics";
+      const IMAGE_DIR = "assets/image/gallery-12-pics";
       const GALLERY_JSON_PATH = "src/data/gallery.json";
       const MAX_ITEMS = 12;
 
@@ -74,6 +75,21 @@ export default {
       const contentsUrl = (path) =>
          `https://api.github.com/repos/${OWNER}/${REPO}/contents/${path}`;
 
+      // GitHub's base64 content is UTF-8 bytes; atob() alone mangles
+      // multi-byte characters (e.g. Czech diacritics in captions), so decode via TextDecoder.
+      function b64ToUtf8(b64) {
+         const binary = atob(b64);
+         const bytes = Uint8Array.from(binary, (c) => c.charCodeAt(0));
+         return new TextDecoder("utf-8").decode(bytes);
+      }
+
+      function utf8ToB64(str) {
+         const bytes = new TextEncoder().encode(str);
+         let binary = "";
+         for (let i = 0; i < bytes.length; i++) binary += String.fromCharCode(bytes[i]);
+         return btoa(binary);
+      }
+
       async function getFile(path) {
          const res = await ghFetch(
             `${contentsUrl(path)}?ref=${encodeURIComponent(BRANCH)}`,
@@ -88,7 +104,7 @@ export default {
          return {
             exists: true,
             sha: j.sha,
-            text: b64 ? atob(b64) : "",
+            text: b64 ? b64ToUtf8(b64) : "",
             raw: j,
          };
       }
@@ -290,7 +306,7 @@ export default {
             removedEntries.push(galleryArr.shift());
 
          const updatedText = JSON.stringify(galleryArr, null, 2) + "\n";
-         const updatedB64 = btoa(updatedText);
+         const updatedB64 = utf8ToB64(updatedText);
 
          const write = await putFile(
             GALLERY_JSON_PATH,
@@ -345,7 +361,7 @@ export default {
       }
 
       // Success response
-      const publicUrl = `https://martinecececek.github.io/3VOM-site/${imagePath}`;
+      const publicUrl = `https://3vomunl.cz/${imagePath}`;
 
       return new Response(
          JSON.stringify({

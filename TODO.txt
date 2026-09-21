@@ -23,3 +23,10 @@ rewrite to astro !!!!!!!
 
 ---
 don't remove the borrowed just update the show to true and false
+
+
+_______
+index.html - uvodka
+popup - nabírame členy
+"mala kronika" aka udelat neco na poslednich 5 akci (Předchozí akce [události | Předchozí akce | Galerie ])
+

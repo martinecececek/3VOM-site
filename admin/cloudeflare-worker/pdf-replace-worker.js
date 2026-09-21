@@ -12,6 +12,7 @@ export default {
        CORS (restricted to allowed origins)
     ---------------------------- */
       const ALLOWED_ORIGINS = [
+         "https://3vomunl.cz",
          "https://martinecececek.github.io",
          "http://127.0.0.1:5500",
          "http://localhost:5500",
@@ -49,7 +50,7 @@ export default {
       const REPO = "3VOM-site";
       const BRANCH = "main";
 
-      const PDF_PATH = "docs/assets/pdf/program_jaro_26.pdf";
+      const PDF_PATH = "pdf/program_jaro_26.pdf";
 
       /* ---------------------------
        GitHub helpers
@@ -183,7 +184,7 @@ export default {
       }
 
       // Success response
-      const publicUrl = `https://martinecececek.github.io/3VOM-site/${PDF_PATH}`;
+      const publicUrl = `https://3vomunl.cz/${PDF_PATH}`;
 
       return new Response(
          JSON.stringify({

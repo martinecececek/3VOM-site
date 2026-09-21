@@ -1,4 +1,4 @@
-const WORKER_URL = "https://-img-replace-worker.martin-jakubuv.workers.dev";
+const WORKER_URL = "https://img-replace-worker.martin-jakubuv.workers.dev";
 
 const form = document.getElementById("uploadForm");
 const statusEl = document.getElementById("uploadStatus");

@@ -11,7 +11,7 @@
      images are assumed in assets/images/
      so go up two levels -> assets/ -> images/
   */
-   background-image: url("../../assets/image/index-pokus.png");
+   background-image: url("../../assets/image/index-pokus.webp");
    background-size: cover;
    background-position: center;
    margin: 2rem 0 3rem;
