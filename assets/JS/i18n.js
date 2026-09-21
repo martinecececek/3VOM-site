@@ -4,7 +4,7 @@
 const i18n = {
    // Main pages
    home: {
-      title: "3.VOM",
+      title: "Domů",
       fullTitle: "3.VOM",
       description: "3. Vodácký oddíl mládeže v Ústí nad Labem – pádlování, túry a výlety pro děti i dospělé. Přidej se k nám!",
    },

@@ -26,7 +26,8 @@ don't remove the borrowed just update the show to true and false
 
 
 _______
-index.html - uvodka
-popup - nabírame členy
+popup - nabírame členy - jenom to chce pushnout (ted nedelat)
+opravit formular
+opravit workery
 "mala kronika" aka udelat neco na poslednich 5 akci (Předchozí akce [události | Předchozí akce | Galerie ])
 
