@@ -66,7 +66,7 @@
             console.error("Remove item error:", err);
          } finally {
             removeBtn.disabled = false;
-            removeBtn.textContent = "Remove";
+            removeBtn.textContent = "Odebrat";
          }
       });
    }

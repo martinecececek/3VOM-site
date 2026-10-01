@@ -41,7 +41,7 @@ function renderAdmin(data) {
           <button type="button"
                   class="admin-btn add-item-btn"
                   data-user-id="${escapeAttr(userId)}">
-            + Add item
+            + Přidat položku
           </button>
         </div>
       </td>
@@ -57,7 +57,7 @@ function renderAdmin(data) {
          empty.dataset.userId = userId;
 
          empty.innerHTML = `
-        <td colspan="4"><span class="borrow-empty">Nothing borrowed</span></td>
+        <td colspan="4"><span class="borrow-empty">Nic nepůjčeno</span></td>
         <td></td>
       `;
          tbody.appendChild(empty);
@@ -92,7 +92,7 @@ function buildItemRow(userId, item) {
     <td>${escapeHtml(item.itemNumber ?? "")}</td>
     <td class="tom-num">${escapeHtml(item.date ?? "")}</td>
     <td>
-      <button class="admin-btn danger remove-item-btn">Remove</button>
+      <button class="admin-btn danger remove-item-btn">Odebrat</button>
     </td>
   `;
    return tr;
@@ -147,13 +147,13 @@ function insertEditorRow(userId, personHeaderRow) {
           <option value="Ostatní">Ostatní</option>
         </select>
 
-        <input class="edit-desc" type="text" placeholder="Description" />
-        <input class="edit-itemnum" type="text" placeholder="Item Number" />
+        <input class="edit-desc" type="text" placeholder="Popis" />
+        <input class="edit-itemnum" type="text" placeholder="Číslo položky" />
         <input class="edit-date" type="date" />
 
         <div class="editor-actions">
-          <button class="admin-btn save-btn">Save</button>
-          <button class="admin-btn danger cancel-btn">Cancel</button>
+          <button class="admin-btn save-btn">Uložit</button>
+          <button class="admin-btn danger cancel-btn">Zrušit</button>
         </div>
 
       </div>

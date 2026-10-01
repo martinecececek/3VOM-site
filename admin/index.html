@@ -15,11 +15,16 @@
          }
       </script>
 
+      <div id="admin-nav"></div>
+      <script src="./JS/admin-nav.js"></script>
+      <script>
+         renderAdminNav("index");
+      </script>
+
       <main class="container">
          <section class="page-hero">
             <h2>Admin Panel</h2>
             <p class="page-hero-text">Správa obsahu webu.</p>
-            <button id="logoutBtn" class="btn secondary" style="margin-top: 1rem;">Odhlásit se</button>
          </section>
 
          <section class="admin-grid">
@@ -29,8 +34,8 @@
                <p class="admin-help">
                   Nahrajte novou fotku do galerie. Podporované formáty: JPG, PNG, WebP.
                </p>
-               <div style="margin-top: 1.5rem;">
-                  <a href="Admin-Photo-Upload.html" class="btn primary" style="width: 100%; text-align: center; display: inline-block;">
+               <div class="admin-card-action">
+                  <a href="Admin-Photo-Upload.html" class="btn primary">
                      Přejít na nahrání fotky
                   </a>
                </div>
@@ -42,8 +47,8 @@
                <p class="admin-help">
                   Nahrajte nebo aktualizujte program.pdf pro aktuální sezónu.
                </p>
-               <div style="margin-top: 1.5rem;">
-                  <a href="Admin-PDF-Upload.html" class="btn primary" style="width: 100%; text-align: center; display: inline-block;">
+               <div class="admin-card-action">
+                  <a href="Admin-PDF-Upload.html" class="btn primary">
                      Přejít na nahrání PDF
                   </a>
                </div>
@@ -55,8 +60,8 @@
                <p class="admin-help">
                   Spravujte a sledujte půjčené vybavení a položky.
                </p>
-               <div style="margin-top: 1.5rem;">
-                  <a href="admin-item-tracker.html" class="btn primary" style="width: 100%; text-align: center; display: inline-block;">
+               <div class="admin-card-action">
+                  <a href="admin-item-tracker.html" class="btn primary">
                      Přejít na správu položek
                   </a>
                </div>
@@ -68,19 +73,13 @@
                <p class="admin-help">
                   Změňte heslo pro přihlášení uživatele.
                </p>
-               <div style="margin-top: 1.5rem;">
-                  <a href="change-password.html" class="btn primary" style="width: 100%; text-align: center; display: inline-block;">
+               <div class="admin-card-action">
+                  <a href="change-password.html" class="btn primary">
                      Přejít na změnu hesla
                   </a>
                </div>
             </div>
          </section>
       </main>
-      <script>
-         document.getElementById("logoutBtn").addEventListener("click", () => {
-            sessionStorage.removeItem("ADMIN_KEY");
-            window.location.replace("login.html");
-         });
-      </script>
    </body>
 </html>

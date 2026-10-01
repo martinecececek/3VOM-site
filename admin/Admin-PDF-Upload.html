@@ -14,6 +14,13 @@
             window.location.replace("login.html");
          }
       </script>
+
+      <div id="admin-nav"></div>
+      <script src="./JS/admin-nav.js"></script>
+      <script>
+         renderAdminNav("pdf");
+      </script>
+
       <main class="container">
          <section class="page-hero">
             <h2>Admin - Nahrání PDF</h2>
@@ -50,12 +57,10 @@
                   <p class="admin-note" id="pdfStatus" aria-live="polite"></p>
                </form>
 
-               <div style="margin-top: 2rem; text-align: center;">
-                  <a href="Admin-Photo-Upload.html" class="btn secondary">Přejít na nahrání fotky</a>
-               </div>
             </div>
          </section>
 
+         <script src="./JS/dropzone.js"></script>
          <script src="./JS/send-file.js"></script>
       </main>
    </body>

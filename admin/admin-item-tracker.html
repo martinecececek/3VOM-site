@@ -1,7 +1,8 @@
 <!doctype html>
-<html lang="en">
+<html lang="cs">
    <head>
       <meta charset="UTF-8" />
+      <meta name="viewport" content="width=device-width, initial-scale=1.0" />
       <title>Půjčené položky (Admin)</title>
       <link rel="icon" type="image/webp" href="../assets/image/logo/3VOM-logo.webp" />
       <link rel="stylesheet" href="../css/styles.css" />
@@ -13,29 +14,42 @@
             window.location.replace("login.html");
          }
       </script>
-      <div class="borrow-card">
-         <h3>Borrowed Items (Admin)</h3>
-         <p class="borrow-help">Admin view – manage borrowed items.</p>
 
-         <div class="borrow-table-wrap">
-            <table class="borrow-table">
-               <thead>
-                  <tr>
-                     <th>Category</th>
-                     <th>Description</th>
-                     <th>Item Number</th>
-                     <th style="width: 180px">Borrowed Date</th>
-                     <th style="width: 140px">Admin</th>
-                     <!-- NEW COLUMN -->
-                  </tr>
-               </thead>
+      <div id="admin-nav"></div>
+      <script src="./JS/admin-nav.js"></script>
+      <script>
+         renderAdminNav("items");
+      </script>
 
-               <tbody id="borrowAdminBody">
-                  <!-- JS WILL INSERT CONTENT -->
-               </tbody>
-            </table>
+      <main class="container">
+         <section class="page-hero">
+            <h2>Půjčené položky</h2>
+            <p class="page-hero-text">Správa a přehled půjčeného vybavení.</p>
+         </section>
+
+         <div class="borrow-card">
+            <h3>Půjčené položky (Admin)</h3>
+            <p class="borrow-help">Správa a přehled půjčených položek.</p>
+
+            <div class="borrow-table-wrap">
+               <table class="borrow-table">
+                  <thead>
+                     <tr>
+                        <th>Kategorie</th>
+                        <th>Popis</th>
+                        <th>Číslo položky</th>
+                        <th style="width: 180px">Datum půjčení</th>
+                        <th style="width: 140px">Správa</th>
+                     </tr>
+                  </thead>
+
+                  <tbody id="borrowAdminBody">
+                     <!-- JS WILL INSERT CONTENT -->
+                  </tbody>
+               </table>
+            </div>
          </div>
-      </div>
+      </main>
 
       <script src="JS/load-borrow-admin.js"></script>
       <script src="JS/add-item.js"></script>

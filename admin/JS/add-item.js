@@ -76,7 +76,7 @@
             console.error("Add item error:", err);
          } finally {
             saveBtn.disabled = false;
-            saveBtn.textContent = "Save";
+            saveBtn.textContent = "Uložit";
          }
       });
    }
