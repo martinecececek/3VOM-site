@@ -32,7 +32,6 @@
       overlay.innerHTML = `
          <div class="recruit-dialog" role="dialog" aria-modal="true" aria-labelledby="recruitTitle">
             <button type="button" class="recruit-close" aria-label="Zavřít">&times;</button>
-            <span class="recruit-badge">Nábor</span>
             <img class="recruit-logo" src="${base}assets/image/logo/3VOM-logo.webp" alt="Logo 3. vodáckého oddílu mládeže" />
             <h2 id="recruitTitle">Nabíráme nové členy!</h2>
             <p class="recruit-age">Pro kluky a holky od 10 let</p>

@@ -26,8 +26,8 @@ don't remove the borrowed just update the show to true and false
 
 
 _______
-popup - nabírame členy - jenom to chce pushnout (ted nedelat)
+
 opravit formular
-opravit workery
+regenerate Github key to all workers
 "mala kronika" aka udelat neco na poslednich 5 akci (Předchozí akce [události | Předchozí akce | Galerie ])
 

@@ -48,9 +48,8 @@ form.addEventListener("submit", async (e) => {
       }
 
       const data = await res.json();
-      const fileName =
-         data.entry?.file || data.uploadedPath || "(neznámý soubor)";
-      const publicUrl = data.publicUrl || "";
+      const fileName = data.uploaded?.file || "(neznámý soubor)";
+      const publicUrl = data.uploaded?.publicUrl || "";
 
       statusEl.innerHTML = publicUrl
          ? `Hotovo ✅ Soubor: <strong>${fileName}</strong><br><a href="${publicUrl}" target="_blank">Otevřít obrázek</a>`
