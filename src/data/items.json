@@ -6,13 +6,6 @@
       "surname": "Balda",
       "borrowed_items": [
         {
-          "id": 102,
-          "category": "Book",
-          "description": "Intro to Algorithms",
-          "itemNumber": "#B-002",
-          "date": "2026-02-05"
-        },
-        {
           "id": "borrow-1771240384439-94ohneh9e",
           "category": "Equipment",
           "description": "asdad",
