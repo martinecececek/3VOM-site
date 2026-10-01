@@ -25,15 +25,7 @@
       "id": 2,
       "name": "Ondřej",
       "surname": "Balda",
-      "borrowed_items": [
-        {
-          "id": 102,
-          "category": "Pádlo",
-          "description": "Profiplast - modrá",
-          "itemNumber": "#P-001",
-          "date": "2026-02-05"
-        }
-      ]
+      "borrowed_items": []
     },
     {
       "id": 3,
