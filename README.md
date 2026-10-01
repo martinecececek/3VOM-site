@@ -4,6 +4,8 @@ Website for the 3rd Youth Paddling Club (3. Vodacky oddil mladeze) based in Usti
 
 **Live site:** https://3vomunl.cz/ (custom domain; GitHub Pages repo formerly at https://martinecececek.github.io/3VOM-site/)
 
+**Maintainer docs:** see [`_docs/`](_docs/README.md) for a deeper dive into the Workers, authentication and troubleshooting (not published to the live site — Jekyll skips `_`-prefixed paths).
+
 ---
 
 ## Project Structure
@@ -13,26 +15,28 @@ Website for the 3rd Youth Paddling Club (3. Vodacky oddil mladeze) based in Usti
 ├── index.html                  # Homepage
 ├── robots.txt                  # Search engine rules (blocks /admin/)
 │
-├── pages/                      # Public pages
-│   ├── about.html              # About the club
-│   ├── activities.html         # Activities & events
-│   ├── gallery.html            # Photo gallery
-│   ├── join.html               # Join the club form
-│   ├── contacts.html           # Contact info
-│   ├── safety.html             # Safety information
+├── pages/                      # Public pages (Czech file names)
+│   ├── o-nas.html              # About the club
+│   ├── aktivity.html           # Activities & events (+ Google Calendar embed)
+│   ├── galerie.html            # Photo gallery
+│   ├── pridej-se.html          # Join the club form
+│   ├── kontakty.html           # Contact info
+│   ├── bezpecnost.html         # Safety information
 │   ├── vybaveni.html           # Equipment overview
-│   ├── bring.html              # What to bring
-│   ├── login.html              # User login (members)
+│   ├── co-s-sebou.html         # What to bring
+│   ├── prihlaseni.html         # User login (members)
 │   └── pujceni.html            # Borrowed items (members, requires login)
 │
 ├── admin/                      # Admin panel (password-protected)
 │   ├── login.html              # Admin login (AES-256-GCM encrypted key)
 │   ├── index.html              # Admin dashboard
-│   ├── Admin-Photo-Upload.html # Upload photos to gallery
-│   ├── Admin-PDF-Upload.html   # Upload/replace program PDF
+│   ├── Admin-Photo-Upload.html # Upload photos to gallery (drag & drop)
+│   ├── Admin-PDF-Upload.html   # Upload/replace program PDF (drag & drop)
 │   ├── admin-item-tracker.html # Manage borrowed items
 │   ├── change-password.html    # Change user passwords
 │   ├── JS/                     # Admin client-side scripts
+│   │   ├── admin-nav.js        # Shared admin nav bar (renderAdminNav)
+│   │   ├── dropzone.js         # Drag-and-drop upgrade for file inputs
 │   │   ├── add-item.js         # Add borrowed item via worker
 │   │   ├── remove-item.js      # Remove borrowed item via worker
 │   │   ├── load-borrow-admin.js # Load & render borrow table
@@ -52,31 +56,35 @@ Website for the 3rd Youth Paddling Club (3. Vodacky oddil mladeze) based in Usti
 │       ├── login.js            # User login logic
 │       ├── borrowed-items-display.js # Display borrowed items for logged user
 │       ├── gallery-img-load.js # Gallery image loading
+│       ├── gallery-precache.js # Prefetch gallery images at idle
 │       ├── lightbox.js         # Image lightbox viewer
 │       ├── location-map.js     # Contact page map
 │       ├── contact-form-handler.js # Contact form handling
+│       ├── recruit-popup.js    # "Nabíráme nové členy" homepage popup
 │       └── service-worker.js   # PWA service worker
 │
 ├── src/
 │   ├── components/             # Reusable HTML components
 │   │   ├── header.js           # Site header/navigation
 │   │   └── footer.js           # Site footer
-│   ├── data/                   # JSON data files
-│   │   ├── items.json          # People & their borrowed items
-│   │   ├── user.json           # User accounts (username, password, personId)
-│   │   └── gallery.json        # Gallery image metadata
-│   └── pdf/
-│       └── program.pdf         # Current season program
+│   └── data/                   # JSON data files
+│       ├── items.json          # People & their borrowed items
+│       ├── user.json           # User accounts (username, password, personId)
+│       └── gallery.json        # Gallery image metadata
+│
+├── pdf/
+│   └── program_jaro_26.pdf     # Current season program (path is hard-coded in the PDF worker + aktivity.html)
 │
 ├── css/
 │   ├── styles.css              # Main stylesheet (imports all below)
-│   ├── fff.css                 # Admin-specific styles
+│   ├── fff.css                 # Legacy monolithic stylesheet — no longer linked from any page, kept for reference only
 │   ├── base/                   # Reset, variables, typography, layout
 │   ├── components/             # Buttons, forms, header, footer, popup
 │   ├── features/               # Borrow, lightbox, map
 │   └── pages/                  # Page-specific styles
 │
-└── TODO.md                     # Known issues & improvements
+├── _docs/                      # Maintainer documentation (workers, auth, troubleshooting) — not published (Jekyll skips `_`-prefixed paths)
+└── TODO.txt                    # Known issues & improvements
 ```
 
 ---
@@ -89,7 +97,7 @@ Website for the 3rd Youth Paddling Club (3. Vodacky oddil mladeze) based in Usti
 - **Backend:** Cloudflare Workers (serverless functions) that read/write data to this repo via GitHub API
 - **Data storage:** JSON files in `src/data/` committed directly to the repo
 - **Authentication:** Two separate systems:
-  - **User login** (`pages/login.html`) - members log in with username/password from `user.json`, personId stored in `sessionStorage`
+  - **User login** (`pages/prihlaseni.html`) - members log in with username/password from `user.json`, personId stored in `localStorage`/`sessionStorage`
   - **Admin login** (`admin/login.html`) - admin key encrypted with AES-256-GCM, decrypted client-side with password
 
 ### Data Flow
@@ -100,17 +108,17 @@ Browser → Cloudflare Worker → GitHub API → src/data/*.json (commit)
           x-admin-key header (from sessionStorage)
 ```
 
-All admin operations (add/remove items, upload photos/PDFs, change passwords) go through Cloudflare Workers which authenticate via `x-admin-key` header and then use a GitHub PAT to read/write files in this repo.
+All admin operations (add/remove items, upload photos/PDFs, change passwords) go through Cloudflare Workers which authenticate via `x-admin-key` header and then use a GitHub PAT to read/write files in this repo. Every admin action is a real commit to `main` — GitHub Pages then redeploys automatically (~1–2 min), and a local clone of this repo can fall behind the live site as a result (`git pull` before editing locally).
 
 ---
 
 ## Cloudflare Workers
 
-Each worker is deployed separately on Cloudflare. Source code is stored in `admin/cloudeflare-worker/` for reference.
+Each worker is deployed separately on Cloudflare. Source code is stored in `admin/cloudeflare-worker/` for reference only — the deployed version in the Cloudflare dashboard is what actually runs.
 
 | Worker | URL | Purpose |
 |--------|-----|---------|
-| add-item | `https://add-borrow.martin-jakubuv.workers.dev` | Add borrowed item to `items.json` |
+| add-item | `https://add-borrow-json.martin-jakubuv.workers.dev` | Add borrowed item to `items.json` |
 | remove-item | `https://remove-borrow.martin-jakubuv.workers.dev` | Remove borrowed item from `items.json` |
 | img-replace | `https://img-replace-worker.martin-jakubuv.workers.dev` | Upload photo to gallery |
 | pdf-replace | `https://pdf-replace-worker.martin-jakubuv.workers.dev` | Upload/replace program PDF |
@@ -144,10 +152,14 @@ All workers restrict CORS to these origins:
 3. The password decrypts the admin key (AES-256-GCM) and stores it in `sessionStorage`
 4. All admin pages check for the key in `sessionStorage`, redirecting to login if missing
 
+### Navigation
+
+Every admin page shares one nav bar (`admin/JS/admin-nav.js`, mounted via `renderAdminNav("<page>")`), so it's always possible to jump directly between tools and log out, instead of relying on page-specific "back" links.
+
 ### Features
 
-- **Photo Upload** - Upload images to the gallery via GitHub API
-- **PDF Upload** - Upload/replace the season program PDF
+- **Photo Upload** - Upload images to the gallery via GitHub API, drag-and-drop or click-to-browse
+- **PDF Upload** - Upload/replace the season program PDF, drag-and-drop or click-to-browse
 - **Item Tracker** - Add/remove borrowed equipment per person
 - **Password Change** - Change any user's login password
 
@@ -236,3 +248,4 @@ The worker files in this repo are **reference copies only** - Cloudflare runs it
 - All workers validate `x-admin-key` header before processing requests
 - CORS is restricted to known origins only
 - User passwords in `user.json` are stored in plaintext (acceptable for this use case - internal club tool)
+- Never commit a `GITHUB_TOKEN` (or any other secret) to this repo — it's public, and anything committed here, including past commits, is readable by anyone. Rotate immediately if one ever leaks.
