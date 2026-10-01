@@ -4,9 +4,6 @@
    - On success, saves personId for use on another page
    - Redirects to the protected page
    - Works on localhost + GitHub Pages
-
-   IMPORTANT:
-   This version uses the repo name explicitly to avoid GitHub Pages base-path issues.
 */
 
 (() => {
@@ -15,12 +12,6 @@
    // =========================
    const LOGIN_FILE = "prihlaseni.html";
    const AFTER_LOGIN_FILE = "pujceni.html";
-
-   // Your GitHub Pages repo name (the folder after your domain)
-   const REPO_NAME = "3VOM-site";
-
-   // JSON location inside the repo
-   const USERS_JSON_ABS_PATH = `/${REPO_NAME}/src/data/user.json`;
 
    // Storage key for logged user
    const PERSON_ID_KEY = "personId";
@@ -78,14 +69,12 @@
    };
 
    // =========================
-   // FETCH USERS (GitHub Pages-safe)
+   // FETCH USERS
    // =========================
    const fetchUsers = async () => {
-      // Absolute path that keeps /3VOM-site/ (repo) on GitHub Pages
-      const usersUrl = new URL(USERS_JSON_ABS_PATH, window.location.origin);
-
-      console.log("Login page:", window.location.href);
-      console.log("Fetching users JSON:", usersUrl.href);
+      // pages/prihlaseni.html is always one level under the site root,
+      // so the JSON is reachable the same way as everywhere else in the codebase.
+      const usersUrl = new URL(BASE_DIR + "../src/data/user.json");
 
       const res = await fetch(usersUrl.href, { cache: "no-store" });
       if (!res.ok) {

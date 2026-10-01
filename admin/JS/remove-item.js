@@ -55,9 +55,10 @@
             const data = await res.json();
 
             if (data.ok) {
-               // Success - remove row from UI or reload
-               alert("Položka úspěšně odebrána ✅");
-               location.reload(); // Reload to show updated data
+               // Remove the row directly instead of reloading the page —
+               // a reload can hit a briefly cached (stale) items.json on
+               // GitHub Pages' CDN and show this same already-deleted row again.
+               itemRow.remove();
             } else {
                alert(`Chyba: ${data.error || "Neznámá chyba"}`);
             }
