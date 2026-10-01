@@ -93,9 +93,28 @@ document.addEventListener("DOMContentLoaded", () => {
    // - arrows navigate
    // -----------------------------
    lb.addEventListener("click", (e) => {
-      if (e.target.closest("[data-lb-close]")) close();
-      else if (e.target.closest("[data-lb-next]")) next();
-      else if (e.target.closest("[data-lb-prev]")) prev();
+      if (e.target.closest("[data-lb-close]")) {
+         close();
+         return;
+      }
+      if (e.target.closest("[data-lb-next]")) {
+         next();
+         return;
+      }
+      if (e.target.closest("[data-lb-prev]")) {
+         prev();
+         return;
+      }
+
+      // The figure panel covers the whole screen, so clicks in the empty
+      // space around the photo land on it (or the frame), not the backdrop.
+      // Treat those as "click outside the photo to close" too.
+      if (
+         e.target.classList.contains("lightbox__content") ||
+         e.target.classList.contains("lightbox__image-frame")
+      ) {
+         close();
+      }
    });
 
    // -----------------------------
